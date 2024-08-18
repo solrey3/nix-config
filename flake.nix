@@ -88,10 +88,10 @@
       specialArgs = specialArgs // { hostname = "charlie"; };
       modules = [
         ./modules/nix-core.nix
-        ./modules/system.nix
-        ./modules/apps.nix
+        ./modules/darwin.nix
+        ./modules/apps-darwin.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/host-users.nix
+        ./modules/host-users-darwin.nix
 
         # home manager
         home-manager.darwinModules.home-manager
@@ -110,11 +110,11 @@
       specialArgs = specialArgs // { hostname = "delta"; };
       modules = [
         ./modules/nix-core.nix
-        ./modules/system.nix
-        ./modules/apps.nix
+        ./modules/darwin.nix
+        ./modules/apps-darwin.nix
         ./modules/apps-aarch64-darwin.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/host-users.nix
+        ./modules/host-users-darwin.nix
         # home manager
         home-manager.darwinModules.home-manager
         {
