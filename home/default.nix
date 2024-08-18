@@ -8,9 +8,13 @@ in
   # Import sub-modules
   imports = [
     ./shell.nix
+    ./zsh.nix
+    ./bash.nix
     ./core.nix
     ./git.nix
     ./starship.nix
+    ./alacritty.nix
+    ./neovim.nix
   ];
 
   # Home Manager needs a bit of information about you and the
