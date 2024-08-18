@@ -13,6 +13,7 @@ in
     ./git.nix
     ./starship.nix
     ./alacritty.nix
+    ./tmux.nix
     ./neovim.nix
   ];
 

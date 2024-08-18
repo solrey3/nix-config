@@ -23,7 +23,7 @@ return {
 	{ "nvim-treesitter/playground" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 	{ "b0o/schemastore.nvim" },
-	{ "nvimtools/none-ls.nvim" },
+	-- { "nvimtools/none-ls.nvim" },
 	{ "mfussenegger/nvim-lint" },
 	{ "mfussenegger/nvim-dap" },
 

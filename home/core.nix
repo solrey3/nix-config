@@ -56,10 +56,6 @@
     
   ];
 
-  home.file = {
-    ".tmux.conf".source = ./dotfiles/tmux/.tmux.conf;
-  };
-
   # Github CLI configuration
   programs.gh = {
     enable = true;
