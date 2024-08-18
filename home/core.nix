@@ -57,8 +57,8 @@
   ];
 
   home.file = {
-    # ".config/nvim/init.lua".source = ./dotfiles/nvim/init.lua;
-    # ".tmux.conf".source = ./dotfiles/tmux/.tmux.conf;
+    ".config/nvim".source = ./dotfiles/nvim;
+    ".tmux.conf".source = ./dotfiles/tmux/.tmux.conf;
   };
 
   # Bash configuration
@@ -127,7 +127,7 @@
         family = "JetBrainsMono Nerd Font";
         style = "Regular";
       };
-      font.size = 16;
+      font.size = 12;
       env.TERM = "xterm-256color";
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
