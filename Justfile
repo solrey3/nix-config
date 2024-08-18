@@ -41,6 +41,9 @@ darwin-intel-debug:
     --extra-experimental-features 'nix-command flakes'
 
   ./result/sw/bin/darwin-rebuild switch --flake .#{{intelHostname}} --show-trace --verbose
+
+nixos-alpha:
+  sudo nixos-rebuild switch --flake .#alpha --impure
 ############################################################################
 #
 #  nix related commands
