@@ -89,9 +89,24 @@
     description = "Buddha Christ";
     extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
     packages = with pkgs; [
-    #  thunderbird
+      # thunderbird
       pavucontrol
       pasystray
+      ## GUI Apps
+      picard
+      wireshark
+      ### darwin or x86_64-linux
+      chromedriver 
+      google-chrome 
+      #### linux only
+      conda 
+      nextcloud-client 
+      vlc 
+      #### linux64 only 
+      obsidian 
+      brave 
+      #### x84_64-linux only 
+      microsoft-edge 
     ];
   };
 
