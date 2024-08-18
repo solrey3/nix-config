@@ -44,6 +44,14 @@ darwin-intel-debug:
 
 nixos-alpha:
   sudo nixos-rebuild switch --flake .#alpha --impure
+
+nixos-alpha-debug:
+  sudo nixos-rebuild switch --flake .#alpha --impure --show-trace
+
+
+
+
+
 ############################################################################
 #
 #  nix related commands

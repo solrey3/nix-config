@@ -57,8 +57,8 @@
   ];
 
   home.file = {
-    ".config/nvim".source = ./dotfiles/nvim;
-    ".tmux.conf".source = ./dotfiles/tmux/.tmux.conf;
+    # ".config/nvim/init.lua".source = ./dotfiles/nvim/init.lua;
+    # ".tmux.conf".source = ./dotfiles/tmux/.tmux.conf;
   };
 
   # Bash configuration
