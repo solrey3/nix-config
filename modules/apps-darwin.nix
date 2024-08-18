@@ -18,12 +18,12 @@
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
   environment.systemPackages = with pkgs; [
-    neovim
+    vim
     git
     just # use Justfile to simplify nix-darwin's commands 
     fastfetch
   ];
-  environment.variables.EDITOR = "nvim";
+  environment.variables.EDITOR = "vim";
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
   # 

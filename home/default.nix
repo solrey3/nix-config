@@ -7,7 +7,6 @@ in
 {
   # Import sub-modules
   imports = [
-    ./shell.nix
     ./zsh.nix
     ./bash.nix
     ./core.nix
