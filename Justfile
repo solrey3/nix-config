@@ -24,9 +24,9 @@ darwin-arm:
 # darwin-debug: darwin-set-proxy
 darwin-arm-debug: 
   nix build .#darwinConfigurations.{{armHostname}}.system --show-trace --verbose \
-    --extra-experimental-features 'nix-command flakes'
+    --extra-experimental-features 'nix-command flakes' --impure
 
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{armHostname}} --show-trace --verbose
+  ./result/sw/bin/darwin-rebuild switch --flake .#{{armHostname}} --show-trace --verbose --impure
 
 # darwin: darwin-set-proxy
 darwin-intel: 

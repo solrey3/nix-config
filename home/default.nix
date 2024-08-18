@@ -1,7 +1,11 @@
-{ username, ... }:
+{ lib, config, pkgs, ... }:
 
+let
+  username = "budchris"; # Ensure that the username is defined here
+  system = builtins.currentSystem; # Set the system type dynamically
+in
 {
-  # import sub modules
+  # Import sub-modules
   imports = [
     ./shell.nix
     ./core.nix
@@ -13,7 +17,9 @@
   # paths it should manage.
   home = {
     username = username;
-    homeDirectory = "/Users/${username}";
+    homeDirectory = if system == "x86_64-linux" || system == "aarch64-linux"
+                    then "/home/${username}"
+                    else "/Users/${username}";
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
