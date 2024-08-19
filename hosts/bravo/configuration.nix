@@ -95,6 +95,18 @@
   };
   networking.firewall.allowedTCPPorts = [ 22 ];
 
+  # Avahi 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;  # Enables NSS support for .local resolution
+    publish = {
+      enable = true;  # Publish hostname and services via mDNS
+      addresses = true;  # Publish IPv4/IPv6 addresses
+      # services = [ "ssh" ];  # Optionally, specify services to be published
+    };
+  };
+  networking.firewall.allowedUDPPorts = [ 5353 ];
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.budchris = {
     isNormalUser = true;
