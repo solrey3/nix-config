@@ -103,6 +103,21 @@
     #  thunderbird
       pavucontrol
       pasystray
+      ## GUI Apps
+      picard
+      wireshark
+      ### darwin or x86_64-linux
+      chromedriver 
+      google-chrome 
+      #### linux only
+      conda 
+      nextcloud-client 
+      vlc 
+      #### linux64 only 
+      obsidian 
+      brave 
+      #### x84_64-linux only 
+      microsoft-edge 
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNTDemhkFYx8kw6p096XBVp7H2gnONZLMX+4uDgwue/ budchris@delta"
@@ -137,7 +152,6 @@
    gcc
    fastfetch
   ];
-
   # Set the default editor to nvim
   environment.variables.EDITOR = "nvim";
 
