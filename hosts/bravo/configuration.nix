@@ -83,6 +83,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Enable the OpenSSH daemon.
+  # Enable SSH services 
+  services.openssh.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.budchris = {
     isNormalUser = true;
@@ -92,6 +96,8 @@
     #  thunderbird
       pavucontrol
       pasystray
+    ];
+    openssh.authorizedKeys.keys = [
     ];
   };
 
@@ -144,9 +150,6 @@
   # };
 
   # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
