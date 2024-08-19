@@ -16,25 +16,25 @@ darwin-set-proxy:
 
 # darwin: darwin-set-proxy
 darwin-arm: 
-  nix build .#darwinConfigurations.{{armHostname}}.system \
+  nix build .#darwinConfigurations.delta.system \
     --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{armHostname}} --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .#delta --impure
 # darwin-debug: darwin-set-proxy
 darwin-arm-debug: 
-  nix build .#darwinConfigurations.{{armHostname}}.system --show-trace --verbose \
+  nix build .#darwinConfigurations.delta.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{armHostname}} --show-trace --verbose --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .#delta --show-trace --verbose --impure
 
 # darwin: darwin-set-proxy
 darwin-intel: 
-  nix build .#darwinConfigurations.{{intelHostname}}.system \
+  nix build .#darwinConfigurations.charlie.system \
     --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{intelHostname}} --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .#charlie --impure
 # darwin-debug: darwin-set-proxy
 darwin-intel-debug: 
-  nix build .#darwinConfigurations.{{intelHostname}}.system --show-trace --verbose \
+  nix build .#darwinConfigurations.charlie.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes'
-  ./result/sw/bin/darwin-rebuild switch --flake .#{{intelHostname}} --show-trace --verbose
+  ./result/sw/bin/darwin-rebuild switch --flake .#charlie --show-trace --verbose
 
 nixos-alpha:
   sudo nixos-rebuild switch --flake .#alpha --impure

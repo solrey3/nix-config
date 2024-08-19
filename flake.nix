@@ -58,7 +58,7 @@
       };
   in {
 
-    # Configuration for NixOS Desktop (x86_64-linux)
+    # Configuration for NixOS Desktop Alpha (x86_64-linux)
     nixosConfigurations = {
       # TODO please change the hostname to your own
       alpha = nixpkgs.lib.nixosSystem {
@@ -71,18 +71,38 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
             # TODO replace ryan with your own username
             home-manager.users.budchris = import ./home;
-
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	    home-manager.backupFileExtension = "backup";
+	          home-manager.backupFileExtension = "backup";
           }
         ];
       };
     };
 
-    # Configuration for 2017 13-inch MacBook Pro (x86_64-darwin)
+    # Configuration for NixOS Desktop Bravo (x86_64-linux)
+    nixosConfigurations = {
+      # TODO please change the hostname to your own
+      bravo = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/bravo/configuration.nix
+          # make home-manager as a module of nixos
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # TODO replace ryan with your own username
+            home-manager.users.budchris = import ./home;
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+	          home-manager.backupFileExtension = "backup";
+          }
+        ];
+      };
+    };
+
+    # Configuration for 2017 13-inch MacBook Pro Charlie (x86_64-darwin)
     darwinConfigurations."charlie" = darwin.lib.darwinSystem {
       system = "x86_64-darwin";
       specialArgs = specialArgs // { hostname = "charlie"; };
@@ -92,7 +112,6 @@
         ./modules/apps-darwin.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
         ./modules/host-users-darwin.nix
-
         # home manager
         home-manager.darwinModules.home-manager
         {
@@ -104,7 +123,7 @@
       ];
     };
 
-    # Configuration for my M2 Macbook Air (aarch64-darwin)
+    # Configuration for my M2 Macbook Air Delta (aarch64-darwin)
     darwinConfigurations."delta" = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = specialArgs // { hostname = "delta"; };
