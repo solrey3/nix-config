@@ -85,7 +85,14 @@
 
   # Enable the OpenSSH daemon.
   # Enable SSH services 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+    };
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.budchris = {
