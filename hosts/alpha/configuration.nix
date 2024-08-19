@@ -93,6 +93,7 @@
       PermitRootLogin = "prohibit-password"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
     };
   };
+  networking.firewall.allowedTCPPorts = [ 22 ];
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.budchris = {
