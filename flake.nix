@@ -65,7 +65,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/alpha/configuration.nix
-          ./modules/nvidia-legacy_470.nix
+          ./modules/nixos-nvidia-legacy_470.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -88,7 +88,7 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/bravo/configuration.nix
-          ./modules/nvidia-stable.nix
+          ./modules/nixos-nvidia-stable.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -111,9 +111,9 @@
       modules = [
         ./modules/nix-core.nix
         ./modules/darwin.nix
-        ./modules/apps-darwin.nix
+        ./modules/darwin-apps.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/host-users-darwin.nix
+        ./modules/darwin-host-users.nix
         # home manager
         home-manager.darwinModules.home-manager
         {
@@ -132,10 +132,10 @@
       modules = [
         ./modules/nix-core.nix
         ./modules/darwin.nix
-        ./modules/apps-darwin.nix
-        ./modules/apps-aarch64-darwin.nix
+        ./modules/darwin-apps.nix
+        ./modules/darwin-apps-aarch64.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/host-users-darwin.nix
+        ./modules/darwin-host-users.nix
         # home manager
         home-manager.darwinModules.home-manager
         {

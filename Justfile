@@ -15,23 +15,23 @@ darwin-set-proxy:
   sudo python3 scripts/darwin_set_proxy.py
 
 # darwin: darwin-set-proxy
-darwin-arm: 
+darwin-delta: 
   nix build .#darwinConfigurations.delta.system \
     --extra-experimental-features 'nix-command flakes' --impure
   ./result/sw/bin/darwin-rebuild switch --flake .#delta --impure
 # darwin-debug: darwin-set-proxy
-darwin-arm-debug: 
+darwin-delta-debug: 
   nix build .#darwinConfigurations.delta.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes' --impure
   ./result/sw/bin/darwin-rebuild switch --flake .#delta --show-trace --verbose --impure
 
 # darwin: darwin-set-proxy
-darwin-intel: 
+darwin-charlie: 
   nix build .#darwinConfigurations.charlie.system \
     --extra-experimental-features 'nix-command flakes' --impure
   ./result/sw/bin/darwin-rebuild switch --flake .#charlie --impure
 # darwin-debug: darwin-set-proxy
-darwin-intel-debug: 
+darwin-charlie-debug: 
   nix build .#darwinConfigurations.charlie.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes'
   ./result/sw/bin/darwin-rebuild switch --flake .#charlie --show-trace --verbose
