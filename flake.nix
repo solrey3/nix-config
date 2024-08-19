@@ -65,7 +65,10 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/alpha/configuration.nix
+          ./modules/nixos.nix
           ./modules/nixos-nvidia-legacy_470.nix
+          ./modules/nixos-xfce4.nix
+          ./modules/linux-apps-gui.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -88,7 +91,10 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/bravo/configuration.nix
+          ./modules/nixos.nix
           ./modules/nixos-nvidia-stable.nix
+          ./modules/nixos-xfce4.nix
+          ./modules/linux-apps-gui.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
