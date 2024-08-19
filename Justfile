@@ -18,35 +18,37 @@ darwin-set-proxy:
 darwin-arm: 
   nix build .#darwinConfigurations.{{armHostname}}.system \
     --extra-experimental-features 'nix-command flakes' --impure
-
   ./result/sw/bin/darwin-rebuild switch --flake .#{{armHostname}} --impure
-
 # darwin-debug: darwin-set-proxy
 darwin-arm-debug: 
   nix build .#darwinConfigurations.{{armHostname}}.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes' --impure
-
   ./result/sw/bin/darwin-rebuild switch --flake .#{{armHostname}} --show-trace --verbose --impure
 
 # darwin: darwin-set-proxy
 darwin-intel: 
   nix build .#darwinConfigurations.{{intelHostname}}.system \
     --extra-experimental-features 'nix-command flakes' --impure
-
   ./result/sw/bin/darwin-rebuild switch --flake .#{{intelHostname}} --impure
-
 # darwin-debug: darwin-set-proxy
 darwin-intel-debug: 
   nix build .#darwinConfigurations.{{intelHostname}}.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes'
-
   ./result/sw/bin/darwin-rebuild switch --flake .#{{intelHostname}} --show-trace --verbose
 
 nixos-alpha:
   sudo nixos-rebuild switch --flake .#alpha --impure
-
 nixos-alpha-debug:
   sudo nixos-rebuild switch --flake .#alpha --impure --show-trace
+
+nixos-bravo:
+  sudo nixos-rebuild switch --flake .#bravo --impure
+nixos-bravo-debug:
+  sudo nixos-rebuild switch --flake .#bravo --impure --show-trace
+
+
+
+
 
 
 
