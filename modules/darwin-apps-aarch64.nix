@@ -21,9 +21,9 @@
       # QQMusic = 595615424;
     # };
 
-    taps = [
-      "homebrew/services"
-    ];
+    # taps = [
+      # "homebrew/services"
+    # ];
 
     # `brew install`
     # TODO Feel free to add your favorite apps here.

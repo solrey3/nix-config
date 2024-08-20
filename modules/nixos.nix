@@ -113,6 +113,8 @@
    just
    gcc # Do I really need this for nvim ??
    fastfetch
+   wget
+   curl
   ];
   # Set the default editor to nvim
   environment.variables.EDITOR = "nvim";

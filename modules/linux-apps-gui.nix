@@ -9,14 +9,9 @@
   users.users.budchris = {
     packages = with pkgs; [
       # thunderbird
-      pavucontrol
-      pasystray
-      ## GUI Apps
       picard
+      transmission
       wireshark
-      ### darwin or x86_64-linux
-      chromedriver 
-      google-chrome 
       #### linux only
       conda 
       nextcloud-client 
@@ -24,8 +19,12 @@
       #### linux64 only 
       obsidian 
       brave 
+      ### darwin or x86_64-linux
+      chromedriver 
+      google-chrome 
       #### x84_64-linux only 
       microsoft-edge 
+      soulseekqt 
     ];
   };
 

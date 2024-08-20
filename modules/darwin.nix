@@ -126,7 +126,7 @@
           askForPasswordDelay = 0;
         };
         "com.apple.screencapture" = {
-          location = "~/Desktop";
+          location = "~/Desktop/Screenshots";
           type = "png";
         };
         "com.apple.AdLib" = {

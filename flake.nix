@@ -27,7 +27,7 @@
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs dependencies.
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -102,7 +102,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             # TODO replace ryan with your own username
-            home-manager.users.budchris = import ./home;
+            home-manager.users.${username} = import ./home;
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
           }
@@ -149,6 +149,23 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = import ./home;
+        }
+      ];
+    };
+
+    # Raspberry Pi 5 (aarch64-linux)
+    homeConfigurations."echo" = home-manager.lib.homeManagerConfiguration {
+      system = "aarch64-linux";
+      modules = [
+        ./modules/linux-apps-gui.nix
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users = {
+            budchris = import ./home;
+          };
+          home-manager.backupFileExtension = "backup";
         }
       ];
     };

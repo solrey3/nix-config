@@ -10,20 +10,24 @@
     _1password
     cowsay
     curl
+    fastfetch
     file
     fortune
     fzf # A command-line fuzzy finder
     gawk
+    gcc
     gnupg
     gnused
     gnutar
     htop
     jq # A lightweight and flexible command-line JSON processor
+    just
     lazygit
     lsof # list open files
     mc
     nnn # terminal file manager
     ripgrep # recursively searches directories for a regex pattern
+    speedtest-cli
     stow
     tmux
     tokei
@@ -34,6 +38,7 @@
     ### archives
     p7zip
     unzip
+    vim
     xz
     zip
     ### devops

@@ -26,4 +26,12 @@
   # Install firefox. ??Should this be here??
   programs.firefox.enable = true;
 
+  users.users.budchris = {
+    packages = with pkgs; [
+      pavucontrol
+      pasystray
+    ];
+  };
+
+
 }
