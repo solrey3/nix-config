@@ -68,6 +68,7 @@
           ./modules/nixos.nix
           ./modules/nixos-nvidia-legacy_470.nix
           ./modules/nixos-xfce4.nix
+          # ./modules/nixos-hyprland.nix
           ./modules/linux-apps-gui.nix
           ./modules/linux-apps-gui-x86_64.nix
           # make home-manager as a module of nixos

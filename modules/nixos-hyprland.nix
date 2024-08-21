@@ -22,7 +22,9 @@
   };
 
   environment.systemPackages = with pkgs; [
+    hyprland 
     waybar
+    wlroots
     dunst
     libnotify
     swww
@@ -31,11 +33,23 @@
     rofi-wayland
   ];
 
+  boot.extraModprobeConfig = ''
+    options nvidia NVreg_PreserveVideoMemoryAllocations=1
+  '';
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  # For better Wayland support
+  # hardware.nvidia.prime.sync.enable = true;
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "budchris";
+
+  services.xserver.displayManager.sessionPackages = [ pkgs.hyprland ];
+  services.xserver.displayManager.defaultSession = "hyprland";
 
   # Install firefox. ??Should this be here??
   programs.firefox.enable = true;
