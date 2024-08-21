@@ -15,6 +15,7 @@
       alias urlencode="python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'"
       alias hist="history 1"
       alias p2="cd ~/Nextcloud/obsidian/player2; nvim todo.md"
+      alias nc="cd ~/nix-config; nvim README.md"
       alias dtf="cd ~/dotfiles; nvim"
       alias ll='ls -lh'
       alias la='ls -A'

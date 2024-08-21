@@ -50,6 +50,8 @@
     ### dev environments
     nodejs
     yarn
+    nodePackages.cdktf-cli
+    nodePackages.cdk8s-cli
     ### multimedia
     ffmpeg
     yt-dlp
