@@ -9,6 +9,7 @@
   users.users.budchris = {
     packages = with pkgs; [
       # thunderbird
+      quodlibet
       picard
       transmission
       wireshark
