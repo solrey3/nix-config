@@ -89,6 +89,7 @@
 
       # My Apps
       "1password"
+      "alacritty"
       "arc"
       "brave-browser"
       "microsoft-edge"
