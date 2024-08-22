@@ -27,7 +27,7 @@
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs dependencies.
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
     darwin = {
       url = "github:lnl7/nix-darwin";
@@ -68,9 +68,7 @@
           ./modules/nixos.nix
           ./modules/nixos-nvidia-legacy_470.nix
           ./modules/nixos-xfce4.nix
-          # ./modules/nixos-hyprland.nix
           ./modules/linux-apps-gui.nix
-          ./modules/linux-apps-gui-x86_64.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -95,9 +93,9 @@
           ./hosts/bravo/configuration.nix
           ./modules/nixos.nix
           ./modules/nixos-nvidia-stable.nix
-          ./modules/nixos-xfce4.nix
+          # ./modules/nixos-xfce4.nix
+          ./modules/nixos-hyprland.nix
           ./modules/linux-apps-gui.nix
-          ./modules/linux-apps-gui-x86_64.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -105,7 +103,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             # TODO replace ryan with your own username
-            home-manager.users.${username} = import ./home;
+            home-manager.users.budchris = import ./home;
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
           }
@@ -156,25 +154,9 @@
       ];
     };
 
-    # Raspberry Pi 5 (aarch64-linux)
-    homeConfigurations."echo" = home-manager.lib.homeManagerConfiguration {
-      system = "aarch64-linux";
-      modules = [
-        ./modules/linux-apps-gui.nix
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.${username} = import ./home;
-          home-manager.backupFileExtension = "backup";
-        }
-      ];
-    };
-
     # nix code formatter for both systems
     formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
   };
 }
