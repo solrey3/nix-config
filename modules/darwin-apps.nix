@@ -86,11 +86,9 @@
 
       # Development
       "insomnia" # REST client
-      "wireshark" # network analyzer
 
       # My Apps
       "1password"
-      "alacritty"
       "arc"
       "brave-browser"
       "microsoft-edge"
@@ -99,9 +97,12 @@
       "obsidian"
       "protonvpn"
       "raspberry-pi-imager"
+      "soulseek"
       "spectacle"
+      "transmission"
       "vlc"
       "whatsapp"
+      "wireshark"
     ];
   };
 }

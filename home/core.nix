@@ -61,6 +61,12 @@
     doctl
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     
+    ## GUI Apps
+    # quodlibet # Broken
+    # picard # Unsupported 
+    # transmission
+    # wireshark
+    
   ];
 
   # Github CLI configuration
