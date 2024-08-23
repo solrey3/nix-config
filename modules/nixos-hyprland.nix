@@ -51,8 +51,8 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "budchris";
 
-  services.xserver.displayManager.sessionPackages = [ pkgs.hyprland ];
-  services.xserver.displayManager.defaultSession = "hyprland";
+  services.displayManager.sessionPackages = [ pkgs.hyprland ];
+  services.displayManager.defaultSession = "hyprland";
 
   # Install firefox. ??Should this be here??
   programs.firefox.enable = true;
