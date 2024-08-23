@@ -31,6 +31,9 @@
     kitty
     alacritty
     rofi-wayland
+    dolphin
+    wofi
+    hyprpaper
   ];
 
   boot.extraModprobeConfig = ''
