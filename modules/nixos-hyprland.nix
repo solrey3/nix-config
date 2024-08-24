@@ -34,7 +34,9 @@
     rofi-wayland
     dolphin
     wofi
-    hyprpaper
+    networkmanagerapplet
+    pavucontrol
+    pasystray
   ];
 
   boot.extraModprobeConfig = ''
@@ -48,6 +50,13 @@
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
+  # Enable SDDM as the display manager with Hyprland
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  
 
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "budchris";
