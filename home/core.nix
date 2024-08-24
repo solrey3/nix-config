@@ -9,8 +9,10 @@
     ## CLI Tools 
     _1password
     cowsay
+    cmatrix
     curl
     fastfetch
+    figlet
     file
     fortune
     fzf # A command-line fuzzy finder

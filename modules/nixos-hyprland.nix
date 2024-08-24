@@ -27,6 +27,7 @@
     wlroots
     dunst
     libnotify
+    hyprpaper
     swww
     kitty
     alacritty
