@@ -23,46 +23,19 @@
       # Set vi mode for copy mode
       setw -g mode-keys vi
 
-      # Set the appearance of the status line
-      set -g status-bg black
-      set -g status-fg white
-      set -g status-left '[#S] '
-      set -g status-right '%Y-%m-%d %H:%M'
-
-      # Resize panes with arrow keys
-      bind -r Up resize-pane -U 5
-      bind -r Down resize-pane -D 5
-      bind -r Left resize-pane -L 5
-      bind -r Right resize-pane -R 5
-
       # Set the default terminal mode
       set -g default-terminal "screen-256color"
-
-      # Enable 256 colors
-      set-option -g default-terminal "screen-256color"
       set-option -ga terminal-overrides ",xterm-256color:Tc"
 
       # Set pane border colors
       set -g pane-border-style fg=brightblack
       set -g pane-active-border-style fg=brightyellow
 
-      # Enhanced status bar settings
-      set -g status-justify centre
-      set -g status-left-length 60
-      set -g status-right-length 90
-      set -g status-left-style fg=colour234,bg=colour58,bold
-      set -g status-right-style fg=colour234,bg=colour58,bold
-      set -g status-style fg=colour234,bg=colour236
-
-      # Status bar colors and separators
-      set -g status-left "#[fg=colour112,bg=colour58,bold] #S #[fg=colour58,bg=colour236,nobold,nounderscore,noitalics]"
-      set -g status-right "#[fg=colour236,bg=colour58,nobold,nounderscore,noitalics]#[fg=colour112,bg=colour58] %Y-%m-%d #[fg=colour58,bg=colour58,nobold,nounderscore,noitalics]#[fg=colour112,bg=colour58] %H:%M:%S #[fg=colour58,bg=colour58,nobold,nounderscore,noitalics]#[fg=colour112,bg=colour58] #(whoami)@#H "
-
-      # Active window status style
-      setw -g window-status-current-format "#[fg=colour234,bg=colour58,bold]#[fg=colour112,bg=colour58,bold] #I:#W #[fg=colour58,bg=colour236,nobold]"
-
-      # Inactive window status style
-      setw -g window-status-format "#[fg=colour234,bg=colour236,nobold] #I:#W #[fg=colour236,bg=colour236,nobold]"
+      # Resize panes with arrow keys
+      bind -r Up resize-pane -U 5
+      bind -r Down resize-pane -D 5
+      bind -r Left resize-pane -L 5
+      bind -r Right resize-pane -R 5
 
       # Set pane navigation to be compatible with vim-tmux-navigator
       bind-key -n C-h select-pane -L
@@ -95,7 +68,29 @@
       bind -n M-2 choose-tree -s
       bind -n M-3 choose-tree -s
 
+      # Catppuccin Mocha theme settings
+      set -g status-bg "#1E1E2E"
+      set -g status-fg "#CDD6F4"
+      set -g pane-border-style fg="#585B70"
+      set -g pane-active-border-style fg="#CDD6F4"
+
+      # Status line colors
+      set -g status-left "#[fg=#FAB387,bg=#1E1E2E,bold] #S #[fg=#1E1E2E,bg=#FAB387,nobold,nounderscore,noitalics]"
+      set -g status-right "#[fg=#1E1E2E,bg=#FAB387,nobold,nounderscore,noitalics]#[fg=#CDD6F4,bg=#FAB387] %Y-%m-%d #[fg=#FAB387,bg=#FAB387,nobold,nounderscore,noitalics]#[fg=#CDD6F4,bg=#FAB387] %H:%M:%S #[fg=#FAB387,bg=#FAB387,nobold,nounderscore,noitalics]#[fg=#CDD6F4,bg=#FAB387] #(whoami)@#H "
+
+      # Active window status style
+      setw -g window-status-current-format "#[fg=#1E1E2E,bg=#FAB387,bold]#[fg=#CDD6F4,bg=#FAB387,bold] #I:#W #[fg=#FAB387,bg=#1E1E2E,nobold]"
+
+      # Inactive window status style
+      setw -g window-status-format "#[fg=#CDD6F4,bg=#1E1E2E,nobold] #I:#W #[fg=#1E1E2E,bg=#1E1E2E,nobold]"
+
+      # Set the appearance of the status line
+      set -g status-justify centre
+      set -g status-left-length 60
+      set -g status-right-length 90
+
       if-shell 'uname | grep -q Darwin' 'bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -in"'
     '';
   };
 }
+

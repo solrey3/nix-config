@@ -8,7 +8,7 @@
         family = "JetBrainsMono Nerd Font";
         style = "Regular";
       };
-      font.size = 12;
+      font.size = 10;
       env.TERM = "xterm-256color";
       scrolling.multiplier = 5;
       selection.save_to_clipboard = true;
