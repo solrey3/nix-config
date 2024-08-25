@@ -168,36 +168,71 @@
 
     # DevShells
     devShells = {
-      x86_64-linux = {
-        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
-        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
-        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
-        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
-        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
+      python-data-science = inputs.nixpkgs.lib.mkShell {
+        packages = with inputs.nixpkgs.pkgs; [
+          python3
+          python3Packages.numpy
+          python3Packages.pandas
+          python3Packages.matplotlib
+          python3Packages.scipy
+          python3Packages.beautifulsoup4
+          python3Packages.lxml
+          python3Packages.selenium
+          python3Packages.requests
+        ];
       };
 
-      x86_64-darwin = {
-        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
-        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
-        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
-        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
-        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
+      python-fasthtml = inputs.nixpkgs.lib.mkShell {
+        packages = with inputs.nixpkgs.pkgs; [
+          python3
+          python3Packages.pip
+        ];
+
+        shellHook = ''
+          pip install python-fasthtml
+        '';
       };
 
-      aarch64-darwin = {
-        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
-        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
-        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
-        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
-        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
+      typescript-devops = inputs.nixpkgs.lib.mkShell {
+        packages = with inputs.nixpkgs.pkgs; [
+          nodejs
+          yarn
+          terraform
+          cdktf
+          cdk8s
+        ];
       };
 
-      aarch64-linux = {
-        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
-        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
-        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
-        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
-        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
+      github-pages = inputs.nixpkgs.lib.mkShell {
+        packages = with inputs.nixpkgs.pkgs; [
+          ruby
+          bundler
+          jekyll
+        ];
+
+        shellHook = ''
+          bundle install
+        '';
+      };
+
+      kali-linux = inputs.nixpkgs.lib.mkShell {
+        packages = with inputs.nixpkgs.pkgs; [
+          nmap
+          wireshark
+          john
+          aircrack-ng
+          hydra
+          sqlmap
+          metasploit
+          nikto
+          gobuster
+          hashcat
+          # Add more tools as needed
+        ];
+
+        shellHook = ''
+          echo "Kali Linux environment activated"
+        '';
       };
     };
 
