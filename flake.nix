@@ -101,6 +101,7 @@
           ./modules/linux-apps-gui.nix
           ./modules/linux-apps-gui-x86_64.nix
           stylix.nixosModules.stylix
+          ./modules/nixos-stylix.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
