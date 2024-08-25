@@ -168,6 +168,39 @@
 
     # DevShells
     devShells = {
+      x86_64-linux = {
+        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
+        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
+        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
+        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
+        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.x86_64-linux; };
+      };
+
+      x86_64-darwin = {
+        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
+        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
+        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
+        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
+        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.x86_64-darwin; };
+      };
+
+      aarch64-darwin = {
+        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
+        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
+        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
+        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
+        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.aarch64-darwin; };
+      };
+
+      aarch64-linux = {
+        python-data-science = devShell "python-data-science" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
+        python-fasthtml = devShell "python-fasthtml" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
+        typescript-devops = devShell "typescript-devops" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
+        github-pages = devShell "github-pages" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
+        kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
+      };
+    };
+    devShells = {
       python-data-science = devShell "python-data-science";
       python-fasthtml = devShell "python-fasthtml";
       typescript-devops = devShell "typescript-devops";
@@ -178,6 +211,7 @@
     # nix code formatter for both systems
     formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
+    formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
 }
