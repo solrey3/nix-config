@@ -172,7 +172,7 @@
       python-fasthtml = devShell "python-fasthtml";
       typescript-devops = devShell "typescript-devops";
       github-pages = devShell "github-pages";
-      kali-linux = devShell "kali-linux";
+      # kali-linux = devShell "kali-linux";
     };
 
     # nix code formatter for both systems
