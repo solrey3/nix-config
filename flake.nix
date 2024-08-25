@@ -60,7 +60,7 @@
       };
 
     # Helper function to load devshells 
-    devShell = name; import ./dev-shells/${name}.nix { pkgs = inputs.nixpkgs; }; 
+    devShell = name: import ./dev-shells/${name}.nix { pkgs = inputs.nixpkgs; }; 
 
   in {
 
