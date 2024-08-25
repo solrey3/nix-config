@@ -33,6 +33,7 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+    stylix.url = "github:danth/stylix";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -45,6 +46,7 @@
     nixpkgs,
     darwin,
     home-manager,
+    stylix,
     ...
   }: let
     # TODO replace with your own username, email, system, and hostname
@@ -98,6 +100,7 @@
           ./modules/nixos-hyprland.nix
           ./modules/linux-apps-gui.nix
           ./modules/linux-apps-gui-x86_64.nix
+          stylix.nixosModules.stylix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager

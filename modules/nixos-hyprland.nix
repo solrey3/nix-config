@@ -66,4 +66,7 @@
   # Install firefox. ??Should this be here??
   programs.firefox.enable = true;
 
+  # Stylix
+  stylix.base16Scheme = "{pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+
 }
