@@ -200,13 +200,6 @@
         kali-linux = devShell "kali-linux" { pkgs = nixpkgs.legacyPackages.aarch64-linux; };
       };
     };
-    devShells = {
-      python-data-science = devShell "python-data-science";
-      python-fasthtml = devShell "python-fasthtml";
-      typescript-devops = devShell "typescript-devops";
-      github-pages = devShell "github-pages";
-      # kali-linux = devShell "kali-linux";
-    };
 
     # nix code formatter for both systems
     formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
