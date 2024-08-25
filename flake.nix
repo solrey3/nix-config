@@ -43,7 +43,6 @@
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
   outputs = inputs @ {
     self,
-    nixpkgs,
     darwin,
     home-manager,
     stylix,
@@ -52,16 +51,11 @@
     # TODO replace with your own username, email, system, and hostname
     username = "budchris";
     useremail = "budchris@solrey3.com";
-
     specialArgs =
       inputs
       // {
         inherit username useremail;
       };
-
-    # Helper function to load devshells 
-    devShell = name: import ./dev-shells/${name}.nix { pkgs = inputs.nixpkgs; }; 
-
   in {
 
     # Configuration for NixOS Desktop Alpha (x86_64-linux)
@@ -164,76 +158,6 @@
           home-manager.users.${username} = import ./home;
         }
       ];
-    };
-
-    # DevShells
-    devShells = {
-      python-data-science = inputs.nixpkgs.lib.mkShell {
-        packages = with inputs.nixpkgs.pkgs; [
-          python3
-          python3Packages.numpy
-          python3Packages.pandas
-          python3Packages.matplotlib
-          python3Packages.scipy
-          python3Packages.beautifulsoup4
-          python3Packages.lxml
-          python3Packages.selenium
-          python3Packages.requests
-        ];
-      };
-
-      python-fasthtml = inputs.nixpkgs.lib.mkShell {
-        packages = with inputs.nixpkgs.pkgs; [
-          python3
-          python3Packages.pip
-        ];
-
-        shellHook = ''
-          pip install python-fasthtml
-        '';
-      };
-
-      typescript-devops = inputs.nixpkgs.lib.mkShell {
-        packages = with inputs.nixpkgs.pkgs; [
-          nodejs
-          yarn
-          terraform
-          cdktf
-          cdk8s
-        ];
-      };
-
-      github-pages = inputs.nixpkgs.lib.mkShell {
-        packages = with inputs.nixpkgs.pkgs; [
-          ruby
-          bundler
-          jekyll
-        ];
-
-        shellHook = ''
-          bundle install
-        '';
-      };
-
-      kali-linux = inputs.nixpkgs.lib.mkShell {
-        packages = with inputs.nixpkgs.pkgs; [
-          nmap
-          wireshark
-          john
-          aircrack-ng
-          hydra
-          sqlmap
-          metasploit
-          nikto
-          gobuster
-          hashcat
-          # Add more tools as needed
-        ];
-
-        shellHook = ''
-          echo "Kali Linux environment activated"
-        '';
-      };
     };
 
     # nix code formatter for both systems
