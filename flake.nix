@@ -58,6 +58,10 @@
       // {
         inherit username useremail;
       };
+
+    # Helper function to load devshells 
+    devShell = name; import ./dev-shells/${name}.nix { pkgs = inputs.nixpkgs; }; 
+
   in {
 
     # Configuration for NixOS Desktop Alpha (x86_64-linux)
@@ -160,6 +164,15 @@
           home-manager.users.${username} = import ./home;
         }
       ];
+    };
+
+    # DevShells
+    devShells = {
+      python-data-science = devShell "python-data-science";
+      python-fasthtml = devShell "python-fasthtml";
+      typescript-devops = devShell "typescript-devops";
+      github-pages = devShell "github-pages";
+      kali-linux = devShell "kali-linux";
     };
 
     # nix code formatter for both systems
