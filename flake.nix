@@ -59,8 +59,9 @@
       };
   in {
 
-    # Configuration for NixOS Desktop Alpha (x86_64-linux)
     nixosConfigurations = {
+
+      # Configuration for NixOS Desktop Alpha (x86_64-linux)
       # TODO please change the hostname to your own
       alpha = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -86,10 +87,8 @@
           }
         ];
       };
-    };
-
-    # Configuration for NixOS Desktop Bravo (x86_64-linux)
-    nixosConfigurations = {
+      
+      # Configuration for NixOS Desktop Bravo (x86_64-linux)
       # TODO please change the hostname to your own
       bravo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -116,6 +115,7 @@
           }
         ];
       };
+
     };
 
     # Configuration for 2017 13-inch MacBook Pro Charlie (x86_64-darwin)
@@ -163,7 +163,8 @@
 
     homeConfigurations = {
       echo = home-manager.lib.homeManagerConfiguration {
-        system = "aaarch64-linux";
+        system = "aarch64-linux";
+        specialArgs = specialArgs // { hostname = "echo"; };
         modules = [
           {
             home-manager.useGlobalPkgs = true;
