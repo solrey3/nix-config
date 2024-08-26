@@ -161,6 +161,20 @@
       ];
     };
 
+    homeConfigurations = {
+      echo = home-manager.lib.homeManagerConfiguration {
+        system = "aaarch64-linux";
+        modules = [
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.${username} = import ./home;
+          }
+        ];
+      };
+    };
+
     # nix code formatter for both systems
     formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;

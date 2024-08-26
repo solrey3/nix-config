@@ -31,28 +31,37 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 Above command will perform a single-user installation of Nix, meaning that nix is owned by the invoking user. You should run this under your usual user account, not as root. The script will invoke sudo to create /nix if it doesn’t already exist.
 
 ## Modules
-- `aarch64-darwin`
-- `aarch64-linux`
-- `darwin` # system.nix
 - `home`/ 
-  - core 
-  - default 
-  - git 
-  - shell 
-  - starship
-- `host-users-darwin` 
-- `host users-linux`
-- `linux`
-- `nixos`
-- `nix-core`
-- `nvidia-legacy_400`
-- `nvidia-stable`
-- `xfce4`
+  - `default` 
+  - `core` 
+  - `zsh`
+  - `bash`
+  - `alacritty` 
+  - `git`
+  - `neovim`
+  - neovim / 
+  - `ssh` 
+  - `starship`
+  - `tmux`
+- `modules`
+  - `darwin`
+  - `darwin-apps` 
+  - `darwin-apps-aarch64`
+  - `darwin-host-users` 
+  - `linux-apps-gui` 
+  - `linux-apps-gui-x86_64` 
+  - `nix-core` 
+  - `nixos` 
+  - `nixos-hyprland` 
+  - `nixos-nvidia-legacy_470` 
+  - `nixos-nvidia-stable` 
+  - `nixos-stylix`
+  - `nixos-xfce4` 
 
 ## Managed Hosts
-- `alpha` - NixOS with XFCE running on Intel Core i5-3570k with NVIDIA GeForce GTX 660
-- `bravo` - NixOS with XFCE running on AMD Ryzen 9 3900X with NVIDIA GeForce RTX 3070
-- `charlie` - MacOS on 2017 Intel 13-inch MacBook Pro 
-- `delta` - MacOS on 2022 M2 13-inch MacBook Air 
+- `alpha` - NixOS 24.05 with XFCE running on Intel Core i5-3570k with NVIDIA GeForce GTX 660
+- `bravo` - NixOS 24.05 with Hyprland running on AMD Ryzen 9 3900X with NVIDIA GeForce RTX 3070
+- `charlie` - MacOS Ventura 13.6.9 on 2017 Intel 13-inch MacBook Pro 
+- `delta` - MacOS Sonoma 14.6.1 on 2022 M2 13-inch MacBook Air
 - `echo` - Raspberry Pi OS with Nix on Raspberry Pi 5 
 

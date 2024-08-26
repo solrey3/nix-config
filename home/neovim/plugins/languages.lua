@@ -71,6 +71,7 @@ return {
 				"vim",
 				"markdown",
 				"javascript",
+				"nix",
 			},
 			highlight = {
 				enable = true,
@@ -94,6 +95,7 @@ return {
 			"marksman",
 			"eslint",
 			"sumneko_lua",
+			"rnix",
 		}
 
 		require("mason").setup()
@@ -150,6 +152,7 @@ return {
 			sql = { "sqlint" },
 			markdown = { "markdownlint" },
 			lua = { "luacheck" },
+			nix = { "nix-linter" },
 		}
 		vim.g.ale_fixers = {
 			python = { "black", "isort" },
@@ -162,6 +165,7 @@ return {
 			sql = { "sqlformat" },
 			markdown = { "prettier" },
 			lua = { "stylua" },
+			nix = { "nixpkgs-fmt" },
 		}
 		vim.g.ale_fix_on_save = 1
 	end,
