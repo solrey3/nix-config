@@ -163,15 +163,19 @@
 
     homeConfigurations = {
       echo = home-manager.lib.homeManagerConfiguration {
-        system = "aarch64-linux";
-        specialArgs = specialArgs // { hostname = "echo"; };
+        pkgs = import nixpkgs {
+          system = "aarch64-linux";
+	  config = {
+            allowUnfree = true;
+ 	  };
+        };
         modules = [
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${username} = import ./home;
+            home.username = "${username}";
+            home.stateVersion = "24.05"; # Update this to the appropriate version
+	    home.homeDirectory = "/home/${username}";
           }
+          ./home
         ];
       };
     };
