@@ -23,7 +23,10 @@
 
   environment.systemPackages = with pkgs; [
     hyprland 
-    waybar
+    (pkgs.waybar.overrideAttrs (oldAttrs: {
+        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      })
+    )
     wlroots
     dunst
     libnotify
@@ -37,6 +40,8 @@
     networkmanagerapplet
     pavucontrol
     pasystray
+    cmatrix
+    swayidle
   ];
 
   boot.extraModprobeConfig = ''

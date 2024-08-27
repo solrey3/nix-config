@@ -35,6 +35,9 @@ in
     stateVersion = "24.05";
   };
 
+  # GNU Stow Alternative
+  xdg.configFile."hypr/hyprland.conf".source = ./hypr/hyprland.conf; 
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

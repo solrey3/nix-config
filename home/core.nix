@@ -8,6 +8,7 @@
     
     ## CLI Tools 
     _1password
+    cbonsai
     cowsay
     cmatrix
     curl
