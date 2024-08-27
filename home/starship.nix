@@ -35,6 +35,12 @@
         format = "[[($all_status$ahead_behind )](fg:#89b4fa bg:#585b70)]($style)";
       };
 
+      nix_shell_indicator = {
+        format = "[  Nix Shell ](fg:#a6e3a1 bg:#45475a)";
+        disabled = false;
+        when = "env(IN_NIX_SHELL)";
+      };
+
       nodejs = {
         symbol = "";
         style = "bg:#45475a";
