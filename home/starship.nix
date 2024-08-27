@@ -3,7 +3,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      format = "[░▒▓](#a6adc8)[  ](bg:#a6adc8 fg:#1e1e2e)$hostname[](bg:#89b4fa fg:#a6adc8)$directory[](fg:#89b4fa bg:#585b70)$git_branch$git_status[](fg:#585b70 bg:#45475a)$nodejs$rust$golang$php$gcloud$conda[](fg:#45475a bg:#313244)$time[ ](fg:#313244)\n$character";
+      format = "[░▒▓](#a6adc8)[  ](bg:#a6adc8 fg:#1e1e2e)$hostname[](bg:#89b4fa fg:#a6adc8)$directory[](fg:#89b4fa bg:#585b70)$git_branch$git_status[](fg:#585b70 bg:#45475a)$nodejs$rust$golang$php$gcloud$conda$nix_shell[](fg:#45475a bg:#313244)$time[ ](fg:#313244)\n$character";
 
       hostname = {
         ssh_only = false;
