@@ -95,7 +95,7 @@ To update the configuration on a host, use the provided Justfile to run the comm
 Development shell environments are provided for the following languages and tools:
 
 - `github-pages` 
-= ``
+- `kali-linux`
 - `python-data-science`
 - `python-fasthtml`
 - `typescript-devops`
