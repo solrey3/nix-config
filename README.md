@@ -69,6 +69,7 @@ To update the configuration on a host, use the provided Justfile to run the comm
 - `linux/`
   - `apps-gui`
   - `apps-gui-x86_64`
+- `nix-core`
 - `nixos/`
   - `base`
   - `hyprland`
@@ -89,6 +90,13 @@ To update the configuration on a host, use the provided Justfile to run the comm
   - `ssh`
   - `starship`
   - `tmux`
+
+#### Dotfiles
+
+If I don't manage application configuration in Nix, I Have conf files for the following to configure further. 
+
+- `hypr` 
+- `neovim` 
 
 ## DevShells
 

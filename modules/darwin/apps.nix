@@ -91,6 +91,7 @@
       "1password"
       "alacritty"
       "arc"
+      "barrier"
       "brave-browser"
       "microsoft-edge"
       "musicbrainz-picard"

@@ -9,6 +9,7 @@
   users.users.budchris = {
     packages = with pkgs; [
       # thunderbird
+      barrier
       quodlibet
       picard
       transmission
