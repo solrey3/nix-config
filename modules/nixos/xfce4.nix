@@ -30,6 +30,7 @@
     packages = with pkgs; [
       pavucontrol
       pasystray
+      barrier
     ];
   };
 
