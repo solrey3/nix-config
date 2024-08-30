@@ -14,7 +14,6 @@
       transmission
       wireshark
       #### linux only
-      conda 
       nextcloud-client 
       vlc 
       #### linux64 only 

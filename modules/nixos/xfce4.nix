@@ -23,9 +23,6 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "budchris";
 
-  # Install firefox. ??Should this be here??
-  programs.firefox.enable = true;
-
   users.users.budchris = {
     packages = with pkgs; [
       pavucontrol
@@ -33,8 +30,5 @@
       barrier
     ];
   };
-
-  # Stylix
-  stylix.base16Scheme = "{pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
 }

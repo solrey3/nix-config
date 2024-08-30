@@ -44,12 +44,6 @@
     swayidle
   ];
 
-  boot.extraModprobeConfig = ''
-    options nvidia NVreg_PreserveVideoMemoryAllocations=1
-  '';
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-
   # For better Wayland support
   # hardware.nvidia.prime.sync.enable = true;
 
@@ -67,8 +61,5 @@
 
   services.displayManager.sessionPackages = [ pkgs.hyprland ];
   services.displayManager.defaultSession = "hyprland";
-
-  # Install firefox. ??Should this be here??
-  programs.firefox.enable = true;
 
 }

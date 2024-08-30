@@ -5,8 +5,12 @@
 { config, pkgs, ... }:
 
 {
-
   
+  # Enable Flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -16,7 +20,6 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -69,7 +72,7 @@
   };
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  # Avahi 
+  # Avahi - Neeeded for my Macs to see my NixOS machines
   services.avahi = {
     enable = true;
     nssmdns4 = true;  # Enables NSS support for .local resolution
@@ -98,11 +101,8 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Enable Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Install firefox. ??Should this be here??
+  programs.firefox.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -118,6 +118,9 @@
   ];
   # Set the default editor to nvim
   environment.variables.EDITOR = "nvim";
+
+  # Stylix
+  stylix.base16Scheme = "{pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 
   # Enabling Docker 
   virtualisation.docker.enable = true;
