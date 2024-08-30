@@ -48,6 +48,5 @@
   boot.extraModprobeConfig = ''
     options nvidia NVreg_PreserveVideoMemoryAllocations=1
   '';
-  services.xserver.videoDrivers = [ "nvidia" ];
 
 }
