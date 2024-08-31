@@ -119,9 +119,6 @@
   # Set the default editor to nvim
   environment.variables.EDITOR = "nvim";
 
-  # Stylix
-  stylix.base16Scheme = "{pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-
   # Enabling Docker 
   virtualisation.docker.enable = true;
   ## Enable Docker rootless mode

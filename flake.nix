@@ -13,25 +13,26 @@
   # This is the standard format for flake.nix. `inputs` are the dependencies of the flake,
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
-    nixpkgs-unstable = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-    };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-24.05";
     };
+    nixpkgs-unstable = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
+    darwin = {
+      url = "github:lnl7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs dependencies.
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
-    };
-    darwin = {
-      url = "github:lnl7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
+      # inputs.nixpkgs.follows = "nixpkgs-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix";
     flake-utils.url = "github:numtide/flake-utils";
@@ -75,7 +76,7 @@
           ./modules/linux/apps-gui.nix
           ./modules/linux/apps-gui-x86_64.nix
           stylix.nixosModules.stylix
-          ./modules/nixos/stylix.nix
+          ./modules/stylix.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -102,7 +103,7 @@
           ./modules/linux/apps-gui.nix
           ./modules/linux/apps-gui-x86_64.nix
           stylix.nixosModules.stylix
-          ./modules/nixos/stylix.nix
+          ./modules/stylix.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -129,6 +130,8 @@
         ./modules/darwin/apps.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
         ./modules/darwin/host-users.nix
+        stylix.darwinModules.stylix
+        ./modules/stylix.nix
         # home manager
         home-manager.darwinModules.home-manager
         {
@@ -151,6 +154,8 @@
         ./modules/darwin/apps-aarch64.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
         ./modules/darwin/host-users.nix
+        stylix.darwinModules.stylix
+        ./modules/stylix.nix
         # home manager
         home-manager.darwinModules.home-manager
         {
@@ -166,9 +171,9 @@
       echo = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "aarch64-linux";
-	  config = {
+	        config = {
             allowUnfree = true;
- 	  };
+ 	        };
         };
         modules = [
           {
@@ -177,6 +182,8 @@
 	    home.homeDirectory = "/home/${username}";
           }
           ./home
+          stylix.homeManagerModules.stylix
+          ./modules/stylix.nix
         ];
       };
     };
