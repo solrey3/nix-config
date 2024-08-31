@@ -5,7 +5,6 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    waylandSupport = true; # Explicitly enabling Wayland support
   };
 
   # Set environment variables for better Wayland and Hyprland performance
@@ -41,7 +40,6 @@
     cmatrix                      # Console-based "Matrix" effect screensaver
     swayidle                     # Idle management daemon for Wayland (e.g., to dim screen or lock)
     swaylock                     # Screen locker for Wayland
-    grimshot                     # Screenshot utility for Wayland
     wayvnc                       # VNC server for Wayland
   ];
 
