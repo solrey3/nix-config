@@ -36,7 +36,7 @@ in
   };
 
   # GNU Stow Alternative
-  xdg.configFile."hypr/hyprland.conf".source = ./hypr/hyprland.conf; 
+  xdg.configFile."hypr/hyprland.conf".source = ./config/hypr/hyprland.conf; 
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
