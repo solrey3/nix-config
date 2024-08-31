@@ -2,80 +2,83 @@
 
 {
   home.packages = with pkgs; [
-    
+
     ## Fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  
-    
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  # Nerd Font with JetBrains Mono
+
     ## CLI Tools 
-    _1password
-    bitwarden-cli
-    cbonsai
-    cowsay
-    cmatrix
-    curl
-    fastfetch
-    figlet
-    file
-    fortune
-    fzf # A command-line fuzzy finder
-    gawk
-    gcc
-    gnupg
-    gnused
-    gnutar
-    htop
-    jq # A lightweight and flexible command-line JSON processor
-    just
-    lazygit
-    lsof # list open files
-    mc
-    nnn # terminal file manager
-    ripgrep # recursively searches directories for a regex pattern
-    speedtest-cli
-    stow
-    tmux
-    tokei
-    tree
-    util-linux # for uuidgen
-    wget
-    which
-    ### archives
-    p7zip
-    unzip
-    vim
-    xz
-    zip
-    ### devops
-    docker
-    docker-compose
-    kubectl
-    nmap # A utility for network discovery and security auditing
-    terraform
-    ### dev environments
-    nodejs
-    yarn
-    nodePackages.cdktf-cli
-    nodePackages.cdk8s-cli
-    ### multimedia
-    ffmpeg
-    yt-dlp
-    ### cloud platforms
-    awscli2
-    azure-cli
-    doctl
-    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
-    
-    ## GUI Apps
-    # quodlibet # Broken
-    # picard # Unsupported 
-    # transmission
-    # wireshark
+    _1password    # Password Manager
+    bitwarden-cli # Password Manager
+    cbonsai       # Bonsai tree generator
+    cowsay        # Configurable speaking/thinking cow
+    cmatrix       # Simulates the display from "The Matrix"
+    curl          # For making HTTP requests and downloading files
+    fastfetch     # Fast system information tool written in C
+    figlet        # Banner generator
+    file          # Determine file type
+    fortune       # Print a random, hopefully interesting, adage
+    fzf           # Command-line fuzzy finder
+    gawk          # GNU awk utility
+    gcc           # GNU Compiler Collection
+    gnupg         # GNU Privacy Guard
+    gnused        # GNU version of the sed stream editor
+    gnutar        # GNU version of the tar archiving utility
+    htop          # Interactive process viewer
+    jq            # Lightweight and flexible command-line JSON processor
+    just          # Handy command runner
+    lazygit       # Simple terminal UI for git commands
+    lsof          # List open files
+    mc            # Midnight Commander, a file manager
+    nnn           # Terminal file manager
+    ripgrep       # Recursively searches directories for a regex pattern
+    speedtest-cli # Internet speed testing tool
+    stow          # Symlink farm manager
+    tmux          # Terminal multiplexer
+    tokei         # Counts code, comments, and blanks lines
+    tree          # Displays directories as trees (with optional color/HTML output)
+    util-linux    # Miscellaneous system utilities (includes uuidgen)
+    wget          # Network downloader
+    which         # Shows the full path of shell commands
+
+    ## Archives and Compression Tools
+    p7zip         # File archiver with high compression ratio
+    unzip         # Decompression utility for .zip files
+    xz            # Lossless data compression tool
+    zip           # Compression utility
+
+    ## DevOps Tools
+    docker            # Docker engine
+    docker-compose    # Define and run multi-container Docker applications
+    kubectl           # Kubernetes command-line tool
+    nmap              # Network exploration and security auditing utility
+    terraform         # Infrastructure as code tool
+
+    ## Development Environments
+    nodejs            # JavaScript runtime
+    yarn              # JavaScript package manager
+    nodePackages.cdktf-cli # CDK for Terraform CLI
+    nodePackages.cdk8s-cli # CDK for Kubernetes CLI
+
+    ## Multimedia Tools
+    ffmpeg        # A complete solution to record, convert, and stream audio and video
+    yt-dlp        # A YouTube downloader with additional features and bug fixes
+
+    ## Cloud Platform CLIs
+    awscli2       # AWS Command Line Interface
+    azure-cli     # Azure Command Line Interface
+    doctl         # DigitalOcean Command Line Interface
+    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin]) # Google Cloud SDK with GKE Auth Plugin
+
+    ## GUI Applications
+    # quodlibet  # Music player, editor and library organizer (currently broken)
+    # picard     # MusicBrainz Picard, a tagger for organizing music files (unsupported)
+    # transmission # BitTorrent client
+    # wireshark  # Network protocol analyzer
     
   ];
 
-  # Github CLI configuration
+  # GitHub CLI configuration
   programs.gh = {
     enable = true;
   };
-
 }
