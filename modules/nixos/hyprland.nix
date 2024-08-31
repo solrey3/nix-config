@@ -1,65 +1,67 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
-
-  # That's all you have to do.  
+  # Enable Hyprland
   programs.hyprland = {
-    # Install the packages from nixpkgs
     enable = true;
-    # Whether to enable XWayland
     xwayland.enable = true;
+    waylandSupport = true; # Explicitly enabling Wayland support
   };
 
+  # Set environment variables for better Wayland and Hyprland performance
   environment.sessionVariables = {
-    # If your cursor becomes invisible
-    WLR_NO_HARDWARE_CURSORS = "1";
-    # Hint election apps to use wayland
-    NIXOS_OZONE_WL = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";  # Fix for invisible cursor issue
+    NIXOS_OZONE_WL = "1";           # Hint to use Wayland for certain applications
+    XDG_CURRENT_DESKTOP = "Hyprland";  # Set the desktop environment
+    MOZ_ENABLE_WAYLAND = "1";       # Enable Wayland for Firefox
+    QT_QPA_PLATFORM = "wayland";    # Use Wayland for Qt applications
+    _JAVA_AWT_WM_NONREPARENTING = "1"; # Improve Java app compatibility with Wayland
   };
 
+  # Essential packages for Hyprland and Wayland environment
   environment.systemPackages = with pkgs; [
-    hyprland 
-    (pkgs.waybar.overrideAttrs (oldAttrs: {
+    hyprland                     # Compositor and window manager for Wayland
+    (waybar.overrideAttrs (oldAttrs: {
         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
       })
-    )
-    wlroots
-    dunst
-    libnotify
-    hyprpaper
-    swww
-    kitty
-    alacritty
-    rofi-wayland
-    dolphin
-    wofi
-    networkmanagerapplet
-    pavucontrol
-    pasystray
-    cmatrix
-    swayidle
+    )                            # Highly customizable status bar for Wayland
+    wlroots                      # Modular Wayland compositor library
+    dunst                        # Lightweight notification daemon
+    libnotify                    # Library for sending desktop notifications
+    hyprpaper                    # Wallpaper manager for Hyprland
+    swww                         # Wallpaper daemon with support for animated wallpapers
+    kitty                        # Fast, feature-rich, GPU-based terminal emulator
+    alacritty                    # Another GPU-accelerated terminal emulator
+    rofi-wayland                 # Window switcher, application launcher, and dmenu replacement for Wayland
+    dolphin                      # KDE file manager, providing a graphical interface for managing files
+    wofi                         # Simple application launcher and dmenu replacement for Wayland
+    networkmanagerapplet         # GUI applet for managing network connections
+    pavucontrol                  # GTK-based volume control tool for PulseAudio
+    pasystray                    # System tray icon for managing PulseAudio volume
+    cmatrix                      # Console-based "Matrix" effect screensaver
+    swayidle                     # Idle management daemon for Wayland (e.g., to dim screen or lock)
+    swaylock                     # Screen locker for Wayland
+    grimshot                     # Screenshot utility for Wayland
+    wayvnc                       # VNC server for Wayland
   ];
 
-  # For better Wayland support
-  # hardware.nvidia.prime.sync.enable = true;
-
+  # Enable XDG portals for better compatibility with Flatpak and sandboxed apps
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr ];
 
-  # services.xserver.enable = true;
-  # services.xserver.displayManager.lightdm.enable = true;
-  # Enable SDDM as the display manager with Hyprland
+  # Enable SDDM as the display manager with Wayland and set Hyprland as default session
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "budchris";
-
   services.displayManager.sessionPackages = [ pkgs.hyprland ];
   services.displayManager.defaultSession = "hyprland";
+
+  # Optional: Enable NVIDIA Prime Sync for better performance on hybrid graphics setups
+  # hardware.nvidia.prime.sync.enable = true;
+
+  # Optional: Enable LightDM instead of SDDM if you prefer
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
 
 }
