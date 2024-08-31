@@ -8,6 +8,7 @@
     
     ## CLI Tools 
     _1password
+    bitwarden-cli
     cbonsai
     cowsay
     cmatrix

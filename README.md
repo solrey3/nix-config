@@ -64,7 +64,7 @@ To update the configuration on a host, use the provided Justfile to run the comm
 - `darwin/`
   - `system`
   - `apps`
-  - `apps-aarch64`
+  - `apps-aarch64` # Apple Silicon only apps
   - `host-users`
 - `linux/`
   - `apps-gui`
@@ -75,8 +75,8 @@ To update the configuration on a host, use the provided Justfile to run the comm
   - `hyprland`
   - `nvidia-legacy_470`
   - `nvidia-stable`
-  - `stylix`
   - `xfce4`
+- `stylix`
 
 ### Home Modules
 - `home/`
