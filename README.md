@@ -1,45 +1,46 @@
 
 # nix-config
 
-What you have here is a Nix flake that provides configuration for every Linux and macOS computer I manage and development shell environments. This flake will work on any computer with Nix installed.
+This repository contains a Nix flake that provides comprehensive configurations for all Linux and macOS machines I manage, alongside development shell environments. This flake ensures consistent system setups and development experiences across all machines running Nix.
 
-### Features
+## Features
 
-This Nix flake serves two main functions:
+1. **System Configuration**: Centralized configuration management for all my machines. As long as Nix is installed, flakes handle system setup and maintenance, simplifying consistency across environments.
+2. **Development Shell Environments**: Pre-configured development shells for various programming languages and tools, ensuring all necessary dependencies are readily available and correctly set up.
 
-1. **System Configuration**: It provides configuration for every computer I manage. If the machine can run Nix, then flakes can handle the configuration, making it easy to maintain consistency across different environments.
-2. **Development Shell Environments**: It provides development shell environments for various programming languages and tools, ensuring that all dependencies are readily available and configured correctly.
+## Installation Instructions
 
-## Install Nix
+### Installing Nix
 
-### Install NixOS
-For installing NixOS, visit the official [NixOS download page](https://nixos.org/download/#nix-more) and follow the instructions.
+#### NixOS
+To install NixOS, refer to the official [NixOS download page](https://nixos.org/download/#nix-more) for detailed instructions.
 
-### Install Nix on macOS
-To install Nix on macOS, run the following command:
+#### macOS
+Install Nix on macOS using the following command:
 ```sh
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
-### Install Nix on Linux
+#### Linux
 
-#### Multi-user installation (recommended)
-If you are on Linux running systemd, with SELinux disabled and can authenticate with sudo, it is recommended to install Nix via the multi-user installation:
+**Multi-user Installation (Recommended)**
+
+For Linux systems with systemd and SELinux disabled, and where sudo authentication is available:
 ```sh 
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
-#### Single-user installation
-If multi-user installation is not an option, you can install Nix via the single-user installation:
+**Single-user Installation**
+
+If the multi-user installation is not feasible:
 ```sh 
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
-This command performs a single-user installation, meaning Nix is owned by the invoking user. Run this under your usual user account, not as root. The script will invoke sudo to create `/nix` if it doesn’t already exist.
+This installs Nix as a single-user setup, owned by the invoking user. Run it under your usual account, not as root. The script will use sudo to create `/nix` if it doesn’t already exist.
 
-## Configure Nix To Use Flakes
+## Enabling Nix Flakes
 
-To use Nix flakes, ensure that your `nix.conf` file is configured to enable flakes:
-
+To enable Nix flakes, add the following configuration to your `nix.conf` file:
 ```sh
 mkdir -p ~/.config/nix
 echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
@@ -47,39 +48,39 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
 ## Managed Hosts
 
-- `alpha` - NixOS 24.05 with XFCE running on Intel Core i5-3570k with NVIDIA GeForce GTX 660.
-- `bravo` - NixOS 24.05 with Hyprland running on AMD Ryzen 9 3900X with NVIDIA GeForce RTX 3070.
-- `charlie` - macOS Ventura 13.6.9 on 2017 Intel 13-inch MacBook Pro.
-- `delta` - macOS Sonoma 14.6.1 on 2022 M2 13-inch MacBook Air.
-- `echo` - Raspberry Pi OS with Nix on Raspberry Pi 5.
-- `foxtrot` - Steam Deck.
+- **alpha**: NixOS 24.05 with XFCE, Intel Core i5-3570k, NVIDIA GeForce GTX 660.
+- **bravo**: NixOS 24.05 with Hyprland, AMD Ryzen 9 3900X, NVIDIA GeForce RTX 3070.
+- **charlie**: macOS Ventura 13.6.9 on 2017 Intel 13-inch MacBook Pro.
+- **delta**: macOS Sonoma 14.6.1 on 2022 M2 13-inch MacBook Air.
+- **echo**: Raspberry Pi OS with Nix on Raspberry Pi 5.
+- **foxtrot**: Steam Deck.
 
-## Update Hosts
+## Updating Hosts
 
-To update the configuration on a host, use the provided Justfile to run the commands needed to apply updates and ensure the latest configurations are applied.
+To update configurations on any host, utilize the provided Justfile to run the necessary commands, ensuring that all machines have the latest settings applied.
 
-## Modules
+## Module Overview
 
 ### System Modules
-- `darwin/`
-  - `system`
-  - `apps`
-  - `apps-aarch64` # Apple Silicon only apps
-  - `host-users`
-- `linux/`
-  - `apps-gui`
-  - `apps-gui-x86_64`
-- `nix-core`
-- `nixos/`
-  - `base`
-  - `hyprland`
-  - `nvidia-legacy_470`
-  - `nvidia-stable`
-  - `xfce4`
-- `stylix`
+- **darwin/**
+  - `system`: macOS system configuration.
+  - `apps`: macOS applications.
+  - `apps-aarch64`: Apple Silicon-specific apps.
+  - `host-users`: macOS user configuration.
+- **linux/**
+  - `apps-gui`: GUI applications.
+  - `apps-gui-x86_64`: x86_64-specific GUI applications.
+- **nix-core**
+- **nixos/**
+  - `base`: NixOS base configuration.
+  - `hyprland`: NixOS Hyprland configuration.
+  - `nvidia-legacy_470`: Legacy NVIDIA driver for GeForce GTX.
+  - `nvidia-stable`: Stable NVIDIA driver for GeForce RTX.
+  - `xfce4`: Xfce desktop environment.
+- **stylix**: Stylix configuration.
 
 ### Home Modules
-- `home/`
+- **home/**
   - `default`
   - `core`
   - `zsh`
@@ -91,32 +92,35 @@ To update the configuration on a host, use the provided Justfile to run the comm
   - `starship`
   - `tmux`
 
-#### Dotfiles
+#### Dotfiles (Home Configuration Files)
 
-If I don't manage application configuration in Nix, I Have conf files for the following to configure further. 
+Additional configuration files are available for:
+- `hypr`
+- `neovim`
+- `waybar`
 
-- `hypr` 
-- `neovim` 
+## Development Shells
 
-## DevShells
+The following development environments are provided:
 
-Development shell environments are provided for the following languages and tools:
+- **github-pages**
+- **kali-linux**
+- **python-data-science**
+- **python-fasthtml**
+- **typescript-devops**
 
-- `github-pages` 
-- `kali-linux`
-- `python-data-science`
-- `python-fasthtml`
-- `typescript-devops`
+These shells include all required dependencies and tools, allowing for immediate development in these environments.
 
-These shells include all necessary dependencies and tools to start developing in these environments immediately.
+## Activating a DevShell
 
-## Activate a DevShell
-
-With Nix installed, the best way to activate a DevShell is to use the `nix develop` command on the GitHub repository:
+With Nix installed, activate a development environment using the `nix develop` command:
 
 ```sh
 nix develop github:solrey3/nix-config#python-data-science
 ```
 
-This command will load the specified development environment with all the tools and dependencies defined in the flake.
+This command loads the specified development environment, complete with all tools and dependencies defined in the flake.
 
+---
+
+This version is more streamlined and polished while retaining all the key details.

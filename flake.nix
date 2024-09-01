@@ -125,7 +125,7 @@
       system = "x86_64-darwin";
       specialArgs = specialArgs // { hostname = "charlie"; };
       modules = [
-        ./modules/nix-core.nix
+        ./modules/darwin/nix-core.nix
         ./modules/darwin/system.nix
         ./modules/darwin/apps.nix
         # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
@@ -148,7 +148,7 @@
       system = "aarch64-darwin";
       specialArgs = specialArgs // { hostname = "delta"; };
       modules = [
-        ./modules/nix-core.nix
+        ./modules/darwin/nix-core.nix
         ./modules/darwin/system.nix
         ./modules/darwin/apps.nix
         ./modules/darwin/apps-aarch64.nix
@@ -179,9 +179,9 @@
           {
             home.username = "${username}";
             home.stateVersion = "24.05"; # Update this to the appropriate version
-	    home.homeDirectory = "/home/${username}";
+	          home.homeDirectory = "/home/${username}";
           }
-          ./home
+          ./modules/home
           stylix.homeManagerModules.stylix
           ./modules/stylix.nix
         ];
@@ -190,25 +190,27 @@
 
     # Development Shells using flake-utils
     devShells = flake-utils.lib.eachSystem [
-      "x86_64-linux"
+      "aarch64-darwin"
       "aarch64-linux"
       "x86_64-darwin"
-      "aarch64-darwin"
+      "x86_64-linux"
     ] (system:
       let
         pkgs = import nixpkgs {
           inherit system;
         };
       in {
+        github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
+        kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
         python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
         python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       });
 
     # nix code formatter for both systems
-    formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
     formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
+    formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
   };
 }

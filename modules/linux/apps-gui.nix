@@ -14,6 +14,7 @@
       transmission
       wireshark
       #### linux only
+      librewolf
       nextcloud-client 
       vlc 
       #### linux64 only 
