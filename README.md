@@ -63,6 +63,7 @@ To update configurations on any host, utilize the provided Justfile to run the n
 
 ### System Modules
 - **darwin/**
+  - `nix-core`
   - `system`: macOS system configuration.
   - `apps`: macOS applications.
   - `apps-aarch64`: Apple Silicon-specific apps.
@@ -70,7 +71,6 @@ To update configurations on any host, utilize the provided Justfile to run the n
 - **linux/**
   - `apps-gui`: GUI applications.
   - `apps-gui-x86_64`: x86_64-specific GUI applications.
-- **nix-core**
 - **nixos/**
   - `base`: NixOS base configuration.
   - `hyprland`: NixOS Hyprland configuration.
