@@ -29,4 +29,10 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
+  #fileSystems."/mnt/sata8tb" = {
+    #device = "/dev/disk/by-uuid/45a1ac4d-c1fd-4754-ba0a-1b77a6990517";
+    #fsType = "ext4";
+    #options = [ "rw" "uid=1000" "gid=100" "umask=0022"];
+  #};
+
 }
