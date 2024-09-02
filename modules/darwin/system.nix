@@ -23,7 +23,7 @@
     defaults = {
       menuExtraClock.Show24Hour = true;  # show 24 hour clock
       menuExtraClock.ShowSeconds = true;  # show seconds 
-      menuExtraClock.ShowDate = true;  # show date 
+      menuExtraClock.ShowDate = 1;  # show date 
       menuExtraClock.ShowDayOfMonth = true;  # show day of month
       menuExtraClock.ShowDayOfWeek = true;  # show day of week
       
