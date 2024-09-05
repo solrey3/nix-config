@@ -84,10 +84,12 @@
       "musicbrainz-picard" # Music tagging application for organizing digital music collections
       "nextcloud" # Open-source platform for file sync and sharing, similar to Dropbox
       "obsidian" # A powerful knowledge management and note-taking application
+      "protonmail-bridge" # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
       "protonvpn" # Secure and privacy-focused VPN service
       "raspberry-pi-imager" # Tool to write operating system images to SD cards for Raspberry Pi
       "soulseek" # Peer-to-peer file-sharing network, mainly used for sharing music
       "spectacle" # Window management utility for arranging windows in macOS
+      "thunderbird" # Free email application that’s easy to set up and customize
       "transmission" # Lightweight, fast, and easy-to-use BitTorrent client
       "visual-studio-code" # Popular source code editor with built-in support for many languages
       "vlc" # Versatile, open-source media player that plays most multimedia files

@@ -8,7 +8,8 @@
 
   users.users.budchris = {
     packages = with pkgs; [
-      # thunderbird
+      thunderbird
+      protonmail-bridge
       quodlibet
       picard
       transmission
