@@ -32,7 +32,7 @@
     kitty                        # Fast, feature-rich, GPU-based terminal emulator
     alacritty                    # Another GPU-accelerated terminal emulator
     rofi-wayland                 # Window switcher, application launcher, and dmenu replacement for Wayland
-    dolphin                      # KDE file manager, providing a graphical interface for managing files
+    xfce.thunar                       # File manager, providing a graphical interface for managing files
     wofi                         # Simple application launcher and dmenu replacement for Wayland
     networkmanagerapplet         # GUI applet for managing network connections
     pavucontrol                  # GTK-based volume control tool for PulseAudio
