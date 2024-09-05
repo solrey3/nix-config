@@ -100,6 +100,7 @@
           ./modules/nixos/base.nix
           ./modules/nixos/nvidia-stable.nix
           ./modules/nixos/hyprland.nix
+          ./modules/nixos/jellyfin.nix
           ./modules/linux/apps-gui.nix
           ./modules/linux/apps-gui-x86_64.nix
           stylix.nixosModules.stylix
