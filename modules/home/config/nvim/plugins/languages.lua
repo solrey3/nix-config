@@ -70,11 +70,13 @@ return {
 				"lua",
 				"vim",
 				"markdown",
+				"markdown_inline",
 				"javascript",
 				"nix",
 			},
 			highlight = {
 				enable = true,
+				additional_vim_regex_highlighting = { "markdown" },
 			},
 			indent = {
 				enable = true,
