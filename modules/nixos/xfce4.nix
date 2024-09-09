@@ -6,25 +6,18 @@
 
 {
 
-  services.xserver = {
-    enable = true;   
-    desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
-    };
-    windowManager.i3.enable = true;
-    # Configure keymap in X11
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
-  services.displayManager.defaultSession = "xfce";
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
 
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
+
+  # Configure keymap in X11
+  services.xserver = {
+    xkb.layout = "us";
+    xkb.variant = "";
+  };
 
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
