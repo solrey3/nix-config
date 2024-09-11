@@ -8,14 +8,18 @@
 
   users.users.budchris = {
     packages = with pkgs; [
+      screen
+      pass
+      gnome.gnome-keyring
+      pinentry-all
       thunderbird
-      protonmail-bridge
+      protonmail-bridge-gui
       quodlibet
       picard
       transmission
       wireshark
       #### linux only
-      librewolf
+      # librewolf
       nextcloud-client 
       vlc 
       #### linux64 only 
