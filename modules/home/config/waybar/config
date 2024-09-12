@@ -77,6 +77,7 @@
         "spacing": 3
     },
     "clock": {
+        "interval": 1,
         "format": "      {:%Y-%m-%d\n      %H:%M:%S}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
