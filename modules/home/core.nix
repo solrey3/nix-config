@@ -47,17 +47,7 @@
     zip           # Compression utility
 
     ## DevOps Tools
-    docker            # Docker engine
-    docker-compose    # Define and run multi-container Docker applications
-    kubectl           # Kubernetes command-line tool
     nmap              # Network exploration and security auditing utility
-    terraform         # Infrastructure as code tool
-
-    ## Development Environments
-    nodejs            # JavaScript runtime
-    yarn              # JavaScript package manager
-    nodePackages.cdktf-cli # CDK for Terraform CLI
-    nodePackages.cdk8s-cli # CDK for Kubernetes CLI
 
     ## Multimedia Tools
     ffmpeg        # A complete solution to record, convert, and stream audio and video

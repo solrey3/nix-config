@@ -12,9 +12,13 @@ pkgsWithConfig.mkShell {
   packages = with pkgsWithConfig; [
     nodejs
     yarn
-    terraform
     nodePackages.cdktf-cli
     nodePackages.cdk8s-cli
+    terraform
+    docker
+    docker-compose
+    kubectl
+    nmap
   ];
 
   shellHook = ''
