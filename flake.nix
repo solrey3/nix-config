@@ -84,7 +84,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             # TODO replace ryan with your own username
-            home-manager.users.budchris = import ./modules/home;
+            home-manager.users.budchris = import ./modules/home/linux.nix;
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
           }
@@ -112,7 +112,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             # TODO replace ryan with your own username
-            home-manager.users.budchris = import ./modules/home;
+            home-manager.users.budchris = import ./modules/home/linux.nix;
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
           }
@@ -139,7 +139,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./modules/home;
+          home-manager.users.${username} = import ./modules/home/darwin.nix;
         }
       ];
     };
@@ -163,7 +163,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./modules/home;
+          home-manager.users.${username} = import ./modules/home/darwin.nix;
         }
       ];
     };
@@ -182,7 +182,7 @@
             home.stateVersion = "24.05"; # Update this to the appropriate version
 	          home.homeDirectory = "/home/${username}";
           }
-          ./modules/home
+          ./modules/home/linux.nix
           stylix.homeManagerModules.stylix
           ./modules/stylix.nix
         ];
