@@ -1,91 +1,110 @@
-{ ... }: {
-  # starship - The minimal, blazing-fast, and infinitely customizable prompt for any shell!
+
+{
   programs.starship = {
     enable = true;
     settings = {
-      format = "[░▒▓](#a6adc8)[  ](bg:#a6adc8 fg:#1e1e2e)$hostname[](bg:#89b4fa fg:#a6adc8)$directory[](fg:#89b4fa bg:#585b70)$git_branch$git_status[](fg:#585b70 bg:#45475a)$nodejs$rust$golang$php$gcloud$conda$nix_shell[](fg:#45475a bg:#313244)$time[ ](fg:#313244)\n$character";
+      format = "$all";
+
+      prompt_order = [
+        "username"
+        "hostname"
+        "directory"
+        "git_branch"
+        "package"
+        "nodejs"
+        "rust"
+        "golang"
+        "php"
+        "gcloud"
+        "conda"
+        "nix_shell"
+        "time"
+        "character"
+      ];
+
+      username = {
+        style = "bold fg:#b8bb26";
+        show_always = true;
+      };
 
       hostname = {
         ssh_only = false;
-        style = "bg:#a6adc8 fg:#1e1e2e";
-        format = "[$hostname]($style)";
+        format = "[$hostname](bold fg:#fabd2f)";
       };
 
       directory = {
-        style = "fg:#f5e0dc bg:#89b4fa";
-        format = "[ $path ]($style)";
+        format = "[$path](bold fg:#83a598) ";
+        style = "bold fg:#83a598";
         truncation_length = 3;
         truncation_symbol = "…/";
-        substitutions = {
-          "Documents" = "󰈙 ";
-          "Downloads" = " ";
-          "Music" = " ";
-          "Pictures" = " ";
-        };
       };
 
       git_branch = {
-        symbol = "";
-        style = "bg:#585b70";
-        format = "[[ $symbol $branch ](fg:#89b4fa bg:#585b70)]($style)";
+        symbol = " ";
+        style = "bold fg:#8ec07c";
+        format = "on [$branch]($style) ";
       };
 
-      git_status = {
-        style = "bg:#585b70";
-        format = "[[($all_status$ahead_behind )](fg:#89b4fa bg:#585b70)]($style)";
+      package = {
+        symbol = " ";
+        style = "bold fg:#fabd2f";
+        disabled = false;
       };
 
       nodejs = {
-        symbol = "";
-        style = "bg:#45475a";
-        format = "[[ $symbol ($version) ](fg:#89b4fa bg:#45475a)]($style)";
+        symbol = " ";
+        style = "bold fg:#b8bb26";
+        disabled = false;
       };
 
       rust = {
-        symbol = "";
-        style = "bg:#45475a";
-        format = "[[ $symbol ($version) ](fg:#89b4fa bg:#45475a)]($style)";
+        symbol = " ";
+        style = "bold fg:#d3869b";
+        disabled = false;
       };
 
       golang = {
-        symbol = "";
-        style = "bg:#45475a";
-        format = "[[ $symbol ($version) ](fg:#89b4fa bg:#45475a)]($style)";
+        symbol = " ";
+        style = "bold fg:#fabd2f";
+        disabled = false;
       };
 
       php = {
-        symbol = "";
-        style = "bg:#45475a";
-        format = "[[ $symbol ($version) ](fg:#89b4fa bg:#45475a)]($style)";
+        symbol = " ";
+        style = "bold fg:#d3869b";
+        disabled = false;
       };
 
       gcloud = {
-        symbol = "";
-        style = "bg:#45475a";
-        format = "[[ $symbol ($account@$project) ](fg:#89b4fa bg:#45475a)]($style)";
+        symbol = " ";
+        style = "bold fg:#fabd2f";
+        disabled = false;
       };
 
       conda = {
-        symbol = "";
-        style = "bg:#45475a";
-        format = "[[ $symbol $environment ](fg:#89b4fa bg:#45475a)]($style)";
+        symbol = " ";
+        style = "bold fg:#d3869b";
+        disabled = false;
       };
 
       nix_shell = {
-        symbol = "";
-        style = "bg:#45475a";
-        format = "[[ $symbol ($name) ](fg:#89b4fa bg:#45475a)]($style)";
+        symbol = " ";
+        style = "bold fg:#d3869b";
         disabled = false;
       };
 
       time = {
-        disabled = false;
+        format = "[$time](bold fg:#d3869b) ";
         time_format = "%F %T";
-        style = "bg:#313244";
-        format = "[[  $time ](fg:#cdd6f4 bg:#313244)]($style)";
+        style = "bold fg:#d3869b";
+      };
+
+      character = {
+        symbol = "➜ ";
+        style = "bold fg:#fabd2f";
+        error_symbol = "✗ ";
+        use_symbol_for_status = true;
       };
     };
   };
-
 }
-
