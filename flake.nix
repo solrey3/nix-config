@@ -168,6 +168,29 @@
       ];
     };
 
+    # Configuration for MacBook Pro (Retina, 13-inch, Early 2013) Foxtrot (x86_64-darwin)
+    darwinConfigurations."foxtrot" = darwin.lib.darwinSystem {
+      system = "x86_64-darwin";
+      specialArgs = specialArgs // { hostname = "foxtrot"; };
+      modules = [
+        ./modules/darwin/nix-core.nix
+        ./modules/darwin/system.nix
+        ./modules/darwin/apps.nix
+        # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
+        ./modules/darwin/host-users.nix
+        stylix.darwinModules.stylix
+        ./modules/stylix.nix
+        # home manager
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = specialArgs;
+          home-manager.users.${username} = import ./modules/home/darwin.nix;
+        }
+      ];
+    };
+
     homeConfigurations = {
       echo = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {

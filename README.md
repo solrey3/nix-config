@@ -16,6 +16,12 @@ This repository contains a Nix flake that provides comprehensive configurations 
 To install NixOS, refer to the official [NixOS download page](https://nixos.org/download/#nix-more) for detailed instructions.
 
 #### macOS
+Install Xcode and Homebrew
+```sh 
+xcode-select --install
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 Install Nix on macOS using the following command:
 ```sh
 sh <(curl -L https://nixos.org/nix/install)
@@ -53,7 +59,8 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 - **charlie**: macOS Ventura 13.6.9 on 2017 Intel 13-inch MacBook Pro.
 - **delta**: macOS Sonoma 14.6.1 on 2022 M2 13-inch MacBook Air.
 - **echo**: Raspberry Pi OS with Nix on Raspberry Pi 5.
-- **foxtrot**: Steam Deck.
+- **foxtrot**: macOS Catalina 10.15.7 on Early 2013 13-inch Retina Macbook Pro.
+- **golf**: Dual-boot NixOS/SteamOS on Steam Deck
 
 ## Updating Hosts
 

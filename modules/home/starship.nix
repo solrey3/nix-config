@@ -8,15 +8,17 @@
       username = {
         style_user = "bold fg:#b8bb26";
         show_always = true;
+        format = "$user";
       };
 
       hostname = {
         ssh_only = false;
-        format = "[$hostname](bold fg:#fabd2f)";
+        format = "@$hostname";  # Combines with username using '@'
+        style = "bold fg:#fabd2f";
       };
 
       directory = {
-        format = "[$path](bold fg:#83a598) ";
+        format = ":[$path](bold fg:#83a598) ";
         style = "bold fg:#83a598";
         truncation_length = 3;
         truncation_symbol = "…/";

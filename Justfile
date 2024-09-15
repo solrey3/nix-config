@@ -49,6 +49,17 @@ nixos-bravo-debug:
 home-echo:
   home-manager switch --flake .#home 
 
+# darwin: darwin-set-proxy
+darwin-foxtrot: 
+  nix build .#darwinConfigurations.foxtrot.system \
+    --extra-experimental-features 'nix-command flakes' --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --impure
+# darwin-debug: darwin-set-proxy
+darwin-charlie-debug: 
+  nix build .#darwinConfigurations.foxtrot.system --show-trace --verbose \
+    --extra-experimental-features 'nix-command flakes'
+  ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --show-trace --verbose
+
 ############################################################################
 #
 #  nix related commands
