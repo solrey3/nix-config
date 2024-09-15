@@ -5,25 +5,8 @@
     settings = {
       format = "$all";
 
-      prompt_order = [
-        "username"
-        "hostname"
-        "directory"
-        "git_branch"
-        "package"
-        "nodejs"
-        "rust"
-        "golang"
-        "php"
-        "gcloud"
-        "conda"
-        "nix_shell"
-        "time"
-        "character"
-      ];
-
       username = {
-        style = "bold fg:#b8bb26";
+        style_user = "bold fg:#b8bb26";
         show_always = true;
       };
 
@@ -100,10 +83,8 @@
       };
 
       character = {
-        symbol = "➜ ";
-        style = "bold fg:#fabd2f";
+        success_symbol = "➜ ";
         error_symbol = "✗ ";
-        use_symbol_for_status = true;
       };
     };
   };
