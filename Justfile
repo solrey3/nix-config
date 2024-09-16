@@ -55,7 +55,7 @@ darwin-foxtrot:
     --extra-experimental-features 'nix-command flakes' --impure
   ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --impure
 # darwin-debug: darwin-set-proxy
-darwin-charlie-debug: 
+darwin-foxtrot-debug: 
   nix build .#darwinConfigurations.foxtrot.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes'
   ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --show-trace --verbose
