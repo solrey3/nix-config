@@ -73,8 +73,6 @@
           ./modules/nixos/base.nix
           ./modules/nixos/nvidia-legacy_470.nix
           ./modules/nixos/xfce4.nix
-          ./modules/linux/apps-gui.nix
-          ./modules/linux/apps-gui-x86_64.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
@@ -84,7 +82,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             # TODO replace ryan with your own username
-            home-manager.users.budchris = import ./modules/home/linux.nix;
+            home-manager.users.budchris = {
+              imports = [
+                ./modules/home/linux.nix
+                ./modules/home/apps-linux-x86_64.nix
+              ];
+            };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
           }
@@ -101,8 +104,6 @@
           ./modules/nixos/nvidia-stable.nix
           ./modules/nixos/hyprland.nix
           ./modules/nixos/jellyfin.nix
-          ./modules/linux/apps-gui.nix
-          ./modules/linux/apps-gui-x86_64.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
@@ -112,7 +113,12 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             # TODO replace ryan with your own username
-            home-manager.users.budchris = import ./modules/home/linux.nix;
+            home-manager.users.budchris = {
+              imports = [
+                ./modules/home/linux.nix
+                ./modules/home/apps-linux-x86_64.nix
+              ];
+            };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
           }
