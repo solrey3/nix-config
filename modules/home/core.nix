@@ -5,10 +5,7 @@
 
     ## Fonts
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  # Nerd Font with JetBrains Mono
-
     ## CLI Tools 
-    _1password    # Password Manager
-    bitwarden-cli # Password Manager
     cbonsai       # Bonsai tree generator
     cowsay        # Configurable speaking/thinking cow
     cmatrix       # Simulates the display from "The Matrix"
@@ -39,32 +36,24 @@
     util-linux    # Miscellaneous system utilities (includes uuidgen)
     wget          # Network downloader
     which         # Shows the full path of shell commands
-
     ## Archives and Compression Tools
     p7zip         # File archiver with high compression ratio
     unzip         # Decompression utility for .zip files
     xz            # Lossless data compression tool
     zip           # Compression utility
-
-    ## DevOps Tools
+    ## Security Tools
+    _1password    # Password Manager
+    bitwarden-cli # Password Manager
     nmap              # Network exploration and security auditing utility
-
     ## Multimedia Tools
     ffmpeg        # A complete solution to record, convert, and stream audio and video
     yt-dlp        # A YouTube downloader with additional features and bug fixes
-
     ## Cloud Platform CLIs
     awscli2       # AWS Command Line Interface
     azure-cli     # Azure Command Line Interface
     doctl         # DigitalOcean Command Line Interface
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin]) # Google Cloud SDK with GKE Auth Plugin
 
-    ## GUI Applications
-    # quodlibet  # Music player, editor and library organizer (currently broken)
-    # picard     # MusicBrainz Picard, a tagger for organizing music files (unsupported)
-    # transmission # BitTorrent client
-    # wireshark  # Network protocol analyzer
-    
   ];
 
   # GitHub CLI configuration
