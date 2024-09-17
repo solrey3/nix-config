@@ -14,7 +14,6 @@ in
     ./alacritty.nix
     ./tmux.nix
     ./neovim.nix
-    ./apps-linux.nix
   ];
 
   # Home Manager needs a bit of information about you and the

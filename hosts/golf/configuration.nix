@@ -1,16 +1,23 @@
 { modulesPath, config, lib, pkgs, ... }: {
+  
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
     ./disk-config.nix
   ];
+
+  
   boot.loader.grub = {
     # no need to set devices, disko will add all devices that have a EF02 partition to the list already
     # devices = [ ];
     efiSupport = true;
     efiInstallAsRemovable = true;
   };
-  services.openssh.enable = true;
+  
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+  };
 
   environment.systemPackages = map lib.lowPrio [
     pkgs.curl
@@ -23,6 +30,11 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHDwRpWc0JaniB1yBdKNkS5srLkCE67y+sI4Sn+wL55L budchris@charlie"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNTDemhkFYx8kw6p096XBVp7H2gnONZLMX+4uDgwue/ budchris@delta"
   ];
+
+  swapDevices = [{
+    device = "/swap/swapfile";
+    size = 1024 * 2; # 2 GB
+  }];
 
   system.stateVersion = "24.05";
 }
