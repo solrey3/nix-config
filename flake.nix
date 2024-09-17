@@ -17,7 +17,7 @@
       url = "github:nixos/nixpkgs/nixos-24.05";
     };
     nixpkgs-unstable = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
+      url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
@@ -36,6 +36,10 @@
     };
     stylix.url = "github:danth/stylix";
     flake-utils.url = "github:numtide/flake-utils";
+    disko = {
+      url = "github:nix-community/disko"
+      inputs.nixpkgs.follows = "nixpkgs-unstable"
+    };
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -50,6 +54,8 @@
     home-manager,
     stylix,
     flake-utils,
+    disko,
+    nixpkgs-unstable,
     ...
   }: let
     # TODO replace with your own username, email, system, and hostname
@@ -122,6 +128,27 @@
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
           }
+        ];
+      };
+
+      # Configuration for Digital Ocean droplets 
+      golf = nixpkgs-unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          disko.nixosModules.disko
+          { disko.devices.disk.disk1.device = "/dev/vda"; }
+          {
+            # do not use DHCP, as DigitalOcean provisions IPs using cloud-init
+            networking.useDHCP = nixpkgs.lib.mkForce false;
+             services.cloud-init = {
+              enable = true;
+              network.enable = true;
+              # not strictly needed, just for good measure 
+              datasource_list = [ "DigitalOcean" ];
+              datasource.DigitalOcean = { };
+            };
+          }
+        ./hosts/golf/configuration.nix
         ];
       };
 
