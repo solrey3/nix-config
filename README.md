@@ -60,9 +60,13 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 - **delta**: macOS Sonoma 14.6.1 on 2022 M2 13-inch MacBook Air.
 - **echo**: Raspberry Pi OS with Nix on Raspberry Pi 5.
 - **foxtrot**: macOS Catalina 10.15.7 on Early 2013 13-inch Retina Macbook Pro.
-- **golf**: NixOS 24.05 on Digital Ocean droplet originally running Ubuntu 
+- **golf**: NixOS 24.05 on Late-2011 15-inch MacBook Pro.
+- **hotel**: NixOS 24.05 on Digital Ocean droplet originally running Ubuntu 
 
-## Updating Hosts
+## Other Configurations
+- **digitalocean**: Uses nixos-anywhere to install NixOS on a 
+
+## Updating Hosts/Configurations
 
 To update configurations on any host, utilize the provided Justfile to run the necessary commands, ensuring that all machines have the latest settings applied.
 
