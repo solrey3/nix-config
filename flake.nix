@@ -177,6 +177,14 @@
       hotel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
+          {
+            # do not use DHCP, as DigitalOcean provisions IPs using cloud-init
+            networking.useDHCP = nixpkgs.lib.mkForce false;
+            services.cloud-init = {
+              enable = true;
+              network.enable = true;
+            };
+          }
           ./hosts/hotel/configuration.nix
           ./modules/nixos/base.nix
           ./modules/nixos/docker.nix
