@@ -46,6 +46,11 @@ nixos-bravo:
 nixos-bravo-debug:
   sudo nixos-rebuild switch --flake .#bravo --impure --show-trace
 
+nixos-golf:
+  sudo nixos-rebuild switch --flake .#golf --impure
+nixos-golf-debug:
+  sudo nixos-rebuild switch --flake .#golf --impure --show-trace
+
 home-echo:
   home-manager switch --flake .#home 
 

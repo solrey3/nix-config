@@ -10,17 +10,14 @@
     enable = true;   
     desktopManager = {
       xterm.enable = false;
-      xfce = {
+      lxqt = {
         enable = true;
-        # noDesktop = true;
-        # enableXfwm = false;
       };
     };
     # windowManager.i3.enable = true;
     xkb.layout = "us";
     xkb.variant = "";
   };
-  services.displayManager.defaultSession = "xfce";
 
   # Enable the XFCE Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
