@@ -49,6 +49,10 @@
     xdg-desktop-portal-hyprland
     xwayland
     kdePackages.polkit-kde-agent-1
+    screen
+    pass
+    gnome.gnome-keyring
+    pinentry-all 
 
   ];
 

@@ -77,6 +77,10 @@
         modules = [
           ./hosts/alpha/configuration.nix
           ./modules/nixos/base.nix
+          ./modules/nixos/pipewire.nix
+          ./modules/nixos/bluetooth.nix
+          ./modules/nixos/avahi.nix
+          ./modules/nixos/docker.nix
           ./modules/nixos/nvidia-legacy_470.nix
           ./modules/nixos/xfce4.nix
           stylix.nixosModules.stylix
@@ -107,6 +111,10 @@
         modules = [
           ./hosts/bravo/configuration.nix
           ./modules/nixos/base.nix
+          ./modules/nixos/pipewire.nix
+          ./modules/nixos/bluetooth.nix
+          ./modules/nixos/avahi.nix
+          ./modules/nixos/docker.nix
           ./modules/nixos/nvidia-stable.nix
           ./modules/nixos/hyprland.nix
           ./modules/nixos/jellyfin.nix
@@ -138,6 +146,10 @@
         modules = [
           ./hosts/golf/configuration.nix
           ./modules/nixos/base.nix
+          ./modules/nixos/pipewire.nix
+          ./modules/nixos/bluetooth.nix
+          ./modules/nixos/avahi.nix
+          ./modules/nixos/docker.nix
           ./modules/nixos/lxqt.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
@@ -152,6 +164,34 @@
               imports = [
                 ./modules/home/linux.nix
                 ./modules/home/apps-linux-x86_64.nix
+              ];
+            };
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+	          home-manager.backupFileExtension = "backup";
+          }
+        ];
+      };
+      
+      # Configuration for NixOS on Digital Ocean droplets (x86_64-linux)
+      # TODO please change the hostname to your own
+      hotel = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/hotel/configuration.nix
+          ./modules/nixos/base.nix
+          ./modules/nixos/docker.nix
+          stylix.nixosModules.stylix
+          ./modules/stylix.nix
+          # make home-manager as a module of nixos
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # TODO replace ryan with your own username
+            home-manager.users.budchris = {
+              imports = [
+                ./modules/home/linux.nix
               ];
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix

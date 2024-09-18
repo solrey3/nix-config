@@ -4,10 +4,7 @@
   home.packages = with pkgs; [
 
     ## GUI Applications
-    screen
-    pass
-    gnome.gnome-keyring
-    pinentry-all
+    
     thunderbird
     protonmail-bridge-gui
     quodlibet

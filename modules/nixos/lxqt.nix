@@ -34,6 +34,10 @@
       pavucontrol
       pasystray
       barrier
+      screen
+      pass
+      gnome.gnome-keyring
+      pinentry-all
     ];
   };
 
