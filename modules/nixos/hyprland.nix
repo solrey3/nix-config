@@ -19,32 +19,33 @@
 
   # Essential packages for Hyprland and Wayland environment
   environment.systemPackages = with pkgs; [
-    hyprland                     # Compositor and window manager for Wayland
-    meson                        # An open source, fast and friendly build system made in Python
+    hyprland                         # Compositor and window manager for Wayland
+    meson                            # An open source, fast and friendly build system made in Python
     (waybar.overrideAttrs (oldAttrs: {
         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      })
-    )                            # Highly customizable status bar for Wayland
-    wlroots                      # Modular Wayland compositor library
-    dunst                        # Lightweight notification daemon
-    libnotify                    # Library for sending desktop notifications
-    hyprpaper                    # Wallpaper manager for Hyprland
-    swww                         # Wallpaper daemon with support for animated wallpapers
-    kitty                        # Fast, feature-rich, GPU-based terminal emulator
-    alacritty                    # Another GPU-accelerated terminal emulator
-    xfce.thunar                  # File manager, providing a graphical interface for managing files
-    rofi-wayland                 # Window switcher, application launcher, and dmenu replacement for Wayland
-    wofi                         # Simple application launcher and dmenu replacement for Wayland
-    networkmanagerapplet         # GUI applet for managing network connections
-    pavucontrol                  # GTK-based volume control tool for PulseAudio
-    pasystray                    # System tray icon for managing PulseAudio volume
-    cmatrix                      # Console-based "Matrix" effect screensaver
-    hypridle                     # Idle daemon
-    hyprlock                     # Lock Screen
-    wayvnc                       # VNC server for Wayland
-    wayland-utils                # Wayland utilities
-    wlroots                      # A modular Wayland compositor library 
-    wl-clipboard                 # Command-line copy/paste utilities for Wayland 
+        })
+    )                                # Highly customizable status bar for Wayland
+    wlroots                          # Modular Wayland compositor library
+    dunst                            # Lightweight notification daemon
+    libnotify                        # Library for sending desktop notifications
+    hyprpaper                        # Wallpaper manager for Hyprland
+    swww                             # Wallpaper daemon with support for animated wallpapers
+    kitty                            # Fast, feature-rich, GPU-based terminal emulator
+    alacritty                        # Another GPU-accelerated terminal emulator
+    xfce.thunar                      # File manager, providing a graphical interface for managing files
+    rofi-wayland                     # Window switcher, application launcher, and dmenu replacement for Wayland
+    wofi                             # Simple application launcher and dmenu replacement for Wayland
+    networkmanagerapplet             # GUI applet for managing network connections
+    pavucontrol                      # GTK-based volume control tool for PulseAudio
+    pasystray                        # System tray icon for managing PulseAudio volume
+    cmatrix                          # Console-based "Matrix" effect screensaver
+    wayvnc                           # VNC server for Wayland
+    wayland-utils                    # Wayland utilities
+    wlroots                          # A modular Wayland compositor library 
+    wl-clipboard                     # Command-line copy/paste utilities for Wayland 
+    swaylock                         # 
+    wlogout
+    swayidle                         # Idle management daemon for Wayland
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
     xwayland
