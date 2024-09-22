@@ -20,7 +20,6 @@
     gnupg         # GNU Privacy Guard
     gnused        # GNU version of the sed stream editor
     gnutar        # GNU version of the tar archiving utility
-    hollywood     # Fill your console with Hollywood melodrama technobabble
     htop          # Interactive process viewer
     jq            # Lightweight and flexible command-line JSON processor
     just          # Handy command runner
@@ -41,11 +40,11 @@
     util-linux    # Miscellaneous system utilities (includes uuidgen)
     wget          # Network downloader
     which         # Shows the full path of shell commands
+    yarn          # Fast, reliable, and secure dependency management for javascript
     ## Archives and Compression Tools
     p7zip         # File archiver with high compression ratio
     unzip         # Decompression utility for .zip files
     xz            # Lossless data compression tool
-    yarn          # Fast, reliable, and secure dependency management for javascript
     zip           # Compression utility
     ## Security Tools
     _1password    # Password Manager
