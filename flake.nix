@@ -116,7 +116,7 @@
           ./modules/nixos/avahi.nix
           ./modules/nixos/docker.nix
           ./modules/nixos/nvidia-stable.nix
-          ./modules/nixos/hyprland.nix
+          ./modules/nixos/xfce4.nix
           ./modules/nixos/jellyfin.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix

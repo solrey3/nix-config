@@ -38,6 +38,7 @@
       pass
       gnome.gnome-keyring
       pinentry-all
+      networkmanagerapplet
     ];
   };
 
