@@ -225,8 +225,6 @@
             };
           }
           ./hosts/digitalocean/configuration.nix
-          ./modules/nixos/base.nix
-          ./modules/nixos/docker.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
