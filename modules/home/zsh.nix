@@ -21,6 +21,10 @@
       alias p2="cd ~/Nextcloud/obsidian/player2; nvim"
       alias urldecode="python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'"
       alias urlencode="python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'"
+      if [ -z "$SSH_AUTH_SOCK" ] ; then
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_ed25519
+      fi
     '';
   };
 }

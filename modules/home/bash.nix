@@ -15,6 +15,10 @@
       alias l='ls -CF'
       alias nano="nvim"
       alias neofetch="fastfetch" 
+      if [ -z "$SSH_AUTH_SOCK" ] ; then
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/id_ed25519
+      fi
     '';
     # set some aliases, feel free to add more or remove some
     shellAliases = {
