@@ -95,6 +95,7 @@
             home-manager.users.budchris = {
               imports = [
                 ./modules/home/linux.nix
+                ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
             };
@@ -130,6 +131,7 @@
             home-manager.users.budchris = {
               imports = [
                 ./modules/home/linux.nix
+                ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
             };
@@ -163,6 +165,7 @@
             home-manager.users.budchris = {
               imports = [
                 ./modules/home/linux.nix
+                ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
             };
