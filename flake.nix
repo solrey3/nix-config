@@ -354,6 +354,7 @@
           inherit system;
         };
       in {
+        azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
         python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
