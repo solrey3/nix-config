@@ -9,6 +9,7 @@ let
   };
 in
 pkgsWithConfig.mkShell {
+  name = "python-data-science";
   packages = with pkgsWithConfig; [
     python3
     python3Packages.numpy

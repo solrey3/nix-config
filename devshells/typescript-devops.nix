@@ -9,6 +9,7 @@ let
   };
 in
 pkgsWithConfig.mkShell {
+  name = "typescript-devops";
   packages = with pkgsWithConfig; [
     nodejs
     yarn

@@ -9,6 +9,7 @@ let
   };
 in
 pkgsWithConfig.mkShell {
+  name = "azure-pern-infra";
   packages = with pkgsWithConfig; [
     nodejs
     yarn

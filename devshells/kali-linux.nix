@@ -2,6 +2,7 @@
 
 pkgs.mkShell {
   packages = with pkgs; [
+  name = "kali-linux";
     nmap
     wireshark
     john

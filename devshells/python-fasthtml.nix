@@ -9,6 +9,7 @@ let
   };
 in
 pkgsWithConfig.mkShell {
+  name = "python-fasthtml";
   packages = with pkgsWithConfig; [
     python3
   ];
