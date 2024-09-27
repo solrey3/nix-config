@@ -342,24 +342,26 @@
       };
     };
 
-      devShells = flake-utils.lib.mapAttrs (name: systems: systems) (flake-utils.lib.eachSystem [
-        "aarch64-darwin"
-        "aarch64-linux"
-        "x86_64-darwin"
-        "x86_64-linux"
-      ] (system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-          };
-        in {
-          azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
-          github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
-          kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
-          python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
-          python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
-          typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
-        }));
+    devShells = let
+      lib = nixpkgs.lib;
+    in lib.mapAttrs (name: systems: systems) (flake-utils.lib.eachSystem [
+      "aarch64-darwin"
+      "aarch64-linux"
+      "x86_64-darwin"
+      "x86_64-linux"
+    ] (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+      in {
+        azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
+        github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
+        kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
+        python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
+        python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
+        typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
+      }));
 
     # nix code formatter for both systems
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
