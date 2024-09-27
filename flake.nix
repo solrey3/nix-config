@@ -342,17 +342,18 @@
       };
     };
 
-    devShells = let
-      lib = nixpkgs.lib;
-    in lib.mapAttrs (name: systems: systems) (flake-utils.lib.eachSystem [
-      "aarch64-darwin"
-      "aarch64-linux"
-      "x86_64-darwin"
+    devShells = flake-utils.lib.eachSystem [
       "x86_64-linux"
+      "x86_64-darwin"
+      "aarch64-linux"
+      "aarch64-darwin"
     ] (system:
       let
         pkgs = import nixpkgs {
           inherit system;
+          config = {
+            allowUnfree = true;
+          };
         };
       in {
         azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
@@ -361,7 +362,7 @@
         python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
         python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
-      }));
+      });
 
     # nix code formatter for both systems
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
