@@ -342,7 +342,7 @@
       };
     };
 
-      devShells = flake-utils.lib.mapAttrs (name systems: systems) (flake-utils.lib.eachSystem [
+      devShells = flake-utils.lib.mapAttrs (name: systems: systems) (flake-utils.lib.eachSystem [
         "aarch64-darwin"
         "aarch64-linux"
         "x86_64-darwin"
