@@ -14,6 +14,7 @@
     figlet        # Banner generator
     file          # Determine file type
     fortune       # Print a random, hopefully interesting, adage
+    freerdp       # Remote Desktop Protocol
     fzf           # Command-line fuzzy finder
     gawk          # GNU awk utility
     gcc           # GNU Compiler Collection

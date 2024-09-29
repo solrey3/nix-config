@@ -29,6 +29,11 @@
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "budchris";
 
+  # Enable RDP 
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "xfce4-session";
+  services.xrdp.openFirewall = true;
+
   # Enable network manager applet
   programs.nm-applet.enable = true;
 

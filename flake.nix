@@ -34,7 +34,7 @@
       # inputs.nixpkgs.follows = "nixpkgs-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:danth/stylix/cf8b6e2d4e8aca8ef14b839a906ab5eb98b08561";
     flake-utils.url = "github:numtide/flake-utils";
     disko = {
       url = "github:nix-community/disko";
