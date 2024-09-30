@@ -16,22 +16,20 @@
         # enableXfwm = false;
       };
     };
+    displayManager.lightdm.enable = true;
     # windowManager.i3.enable = true;
     xkb.layout = "us";
     xkb.variant = "";
   };
   services.displayManager.defaultSession = "xfce";
-
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-
+  
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "budchris";
 
-  # Enable RDP 
+  # RDP
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "xfce4-session";
+  services.xrdp.defaultWindowManager = "start-xfce4";
   services.xrdp.openFirewall = true;
 
   # Enable network manager applet
@@ -46,6 +44,7 @@
       pass
       gnome.gnome-keyring
       pinentry-all
+      tigervnc
 
     ];
   };
