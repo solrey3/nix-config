@@ -30,6 +30,7 @@
     mc            # Midnight Commander, a file manager
     nnn           # Terminal file manager
     nodejs        # Event-driven I/O framework for the V8 JavaScript engine
+    remmina       # Remote desktop client written in GTK
     ripgrep       # Recursively searches directories for a regex pattern
     rsync         # Fast incremental file transfer utility
     speedtest-cli # Internet speed testing tool
