@@ -348,7 +348,7 @@
         python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
-        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
+        python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
       aarch64-linux = let pkgs = import nixpkgs { system = "aarch64-linux"; }; in {
@@ -356,7 +356,7 @@
         python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
-        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
+        python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
       x86_64-darwin = let pkgs = import nixpkgs { system = "x86_64-darwin"; }; in {
@@ -364,7 +364,7 @@
         python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
-        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
+        python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
       x86_64-linux = let pkgs = import nixpkgs { system = "x86_64-linux"; }; in {
@@ -372,7 +372,7 @@
         python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
-        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
+        python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
     };
