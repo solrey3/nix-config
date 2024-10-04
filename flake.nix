@@ -86,7 +86,7 @@
           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -101,7 +101,7 @@
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
-          }
+           }
         ];
       };
       
@@ -119,7 +119,7 @@
           ./modules/nixos/nvidia-stable.nix
           ./modules/nixos/xfce4.nix
           ./modules/nixos/jellyfin.nix
-          stylix.nixosModules.stylix
+           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
@@ -137,7 +137,7 @@
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
-          }
+           }
         ];
       };
 
@@ -152,7 +152,7 @@
           ./modules/nixos/bluetooth.nix
           ./modules/nixos/avahi.nix
           ./modules/nixos/docker.nix
-          ./modules/nixos/lxqt.nix
+           ./modules/nixos/lxqt.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
@@ -342,32 +342,48 @@
       };
     };
 
-    devShells = flake-utils.lib.eachSystem [
-      "x86_64-linux"
-      "x86_64-darwin"
-      "aarch64-linux"
-      "aarch64-darwin"
-    ] (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-          config = {
-            allowUnfree = true;
-          };
-        };
-      in {
+    devShells = {
+      aarch64-darwin = let pkgs = import nixpkgs { system = "aarch64-darwin"; }; in {
         azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
+        python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
-        python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
-        python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
+        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
-      });
+      };
+      aarch64-linux = let pkgs = import nixpkgs { system = "aarch64-linux"; }; in {
+        azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
+        python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
+        github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
+        kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
+        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
+        typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
+      };
+      x86_64-darwin = let pkgs = import nixpkgs { system = "x86_64-darwin"; }; in {
+        azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
+        python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
+        github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
+        kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
+        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
+        typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
+      };
+      x86_64-linux = let pkgs = import nixpkgs { system = "x86_64-linux"; }; in {
+        azure-pern-infra = import ./devshells/azure-pern-infra.nix { inherit pkgs; };
+        python-fasthtml = import ./devshells/python-fasthtml.nix { inherit pkgs; };
+        github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
+        kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
+        python-datascience = import ./devshells/python-datascience.nix { inherit pkgs; };
+        typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
+      };
+    };
 
-    # nix code formatter for both systems
-    formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
-    formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
-    formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
-    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+
+
+  # nix code formatter for both systems
+  formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
+  formatter.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.alejandra;
+  formatter.x86_64-darwin = nixpkgs.legacyPackages.x86_64-darwin.alejandra;
+  formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+
   };
 }
