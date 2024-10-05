@@ -76,13 +76,6 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/alpha/configuration.nix
-          ./modules/nixos/base.nix
-          ./modules/nixos/pipewire.nix
-          ./modules/nixos/bluetooth.nix
-          ./modules/nixos/avahi.nix
-          ./modules/nixos/docker.nix
-          ./modules/nixos/nvidia-legacy_470.nix
-          ./modules/nixos/xfce4.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
@@ -111,14 +104,6 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/bravo/configuration.nix
-          ./modules/nixos/base.nix
-          ./modules/nixos/pipewire.nix
-          ./modules/nixos/bluetooth.nix
-          ./modules/nixos/avahi.nix
-          ./modules/nixos/docker.nix
-          ./modules/nixos/nvidia-stable.nix
-          ./modules/nixos/xfce4.nix
-          ./modules/nixos/jellyfin.nix
            stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
@@ -147,12 +132,6 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/golf/configuration.nix
-          ./modules/nixos/base.nix
-          ./modules/nixos/pipewire.nix
-          ./modules/nixos/bluetooth.nix
-          ./modules/nixos/avahi.nix
-          ./modules/nixos/docker.nix
-           ./modules/nixos/lxqt.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos
@@ -251,77 +230,80 @@
 
     };
 
-    # Configuration for 2017 13-inch MacBook Pro Charlie (x86_64-darwin)
-    darwinConfigurations."charlie" = darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
-      specialArgs = specialArgs // { hostname = "charlie"; };
-      modules = [
-        ./modules/darwin/nix-core.nix
-        ./modules/darwin/system.nix
-        ./modules/darwin/apps.nix
-        # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/darwin/host-users.nix
-        stylix.darwinModules.stylix
-        ./modules/stylix.nix
-        # home manager
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./modules/home/darwin.nix;
-        }
-      ];
+    darwinConfigurations = {
+      # Configuration for 2017 13-inch MacBook Pro Charlie (x86_64-darwin)
+      charlie = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        specialArgs = specialArgs // { hostname = "charlie"; };
+        modules = [
+          ./modules/darwin/nix-core.nix
+          ./modules/darwin/system.nix
+          ./modules/darwin/apps.nix
+          # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
+          ./modules/darwin/host-users.nix
+          stylix.darwinModules.stylix
+          ./modules/stylix.nix
+          # home manager
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.${username} = import ./modules/home/darwin.nix;
+          }
+        ];
+      };
+
+      # Configuration for my M2 Macbook Air Delta (aarch64-darwin)
+      delta = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = specialArgs // { hostname = "delta"; };
+        modules = [
+          ./modules/darwin/nix-core.nix
+          ./modules/darwin/system.nix
+          ./modules/darwin/apps.nix
+          ./modules/darwin/apps-aarch64.nix
+          # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
+          ./modules/darwin/host-users.nix
+          stylix.darwinModules.stylix
+          # home manager
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.budchris = import ./modules/home/darwin.nix;
+          }
+        ];
+      };
+
+      # Configuration for MacBook Pro (Retina, 13-inch, Early 2013) Foxtrot (x86_64-darwin)
+      foxtrot = darwin.lib.darwinSystem {
+        system = "x86_64-darwin";
+        specialArgs = specialArgs // { hostname = "foxtrot"; };
+        modules = [
+          ./modules/darwin/nix-core.nix
+          ./modules/darwin/system.nix
+          ./modules/darwin/apps.nix
+          # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
+          ./modules/darwin/host-users.nix
+          stylix.darwinModules.stylix
+          ./modules/stylix.nix
+          # home manager
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.budchris = import ./modules/home/darwin.nix;
+          }
+        ];
+      };
     };
 
-    # Configuration for my M2 Macbook Air Delta (aarch64-darwin)
-    darwinConfigurations."delta" = darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
-      specialArgs = specialArgs // { hostname = "delta"; };
-      modules = [
-        ./modules/darwin/nix-core.nix
-        ./modules/darwin/system.nix
-        ./modules/darwin/apps.nix
-        ./modules/darwin/apps-aarch64.nix
-        # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/darwin/host-users.nix
-        stylix.darwinModules.stylix
-        ./modules/stylix.nix
-        # home manager
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./modules/home/darwin.nix;
-        }
-      ];
-    };
-
-    # Configuration for MacBook Pro (Retina, 13-inch, Early 2013) Foxtrot (x86_64-darwin)
-    darwinConfigurations."foxtrot" = darwin.lib.darwinSystem {
-      system = "x86_64-darwin";
-      specialArgs = specialArgs // { hostname = "foxtrot"; };
-      modules = [
-        ./modules/darwin/nix-core.nix
-        ./modules/darwin/system.nix
-        ./modules/darwin/apps.nix
-        # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
-        ./modules/darwin/host-users.nix
-        stylix.darwinModules.stylix
-        ./modules/stylix.nix
-        # home manager
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./modules/home/darwin.nix;
-        }
-      ];
-    };
-
+    
     homeConfigurations = {
+      # Configuration for Respberry Pi RPi5
       echo = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "aarch64-linux";
@@ -336,6 +318,7 @@
 	          home.homeDirectory = "/home/${username}";
           }
           ./modules/home/linux.nix
+          ./modules/home/apps-linux.nix
           stylix.homeManagerModules.stylix
           ./modules/stylix.nix
         ];

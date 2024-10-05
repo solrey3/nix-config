@@ -24,8 +24,8 @@
   services.displayManager.defaultSession = "xfce";
   
   # Enable automatic login for the user.
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "budchris";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "budchris";
 
   # RDP
   services.xrdp.enable = true;
