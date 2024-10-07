@@ -29,7 +29,7 @@
 
   # RDP
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "start-xfce4";
+  services.xrdp.defaultWindowManager = "xfce4-session";
   services.xrdp.openFirewall = true;
 
   # Enable network manager applet
