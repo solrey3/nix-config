@@ -79,6 +79,7 @@
       "brave-browser" # Privacy-focused web browser with ad-blocking features
       "google-chrome" # Popular web browser known for its speed and simplicity
       "firefox" # Open-source web browser known for its performance and privacy features
+      "ledger-live" # Official app for managing Ledger hardware wallets
       "librewolf" # Fork of Firefox focused on privacy, security, and freedom
       "microsoft-edge" # Chromium-based web browser by Microsoft, with enterprise features
       "musicbrainz-picard" # Music tagging application for organizing digital music collections
