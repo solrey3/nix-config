@@ -64,8 +64,8 @@
   # Enable SDDM as the display manager with Wayland and set Hyprland as default session
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "budchris";
+  # services.displayManager.autoLogin.enable = true;
+  # services.displayManager.autoLogin.user = "budchris";
   services.displayManager.sessionPackages = [ pkgs.hyprland ];
   services.displayManager.defaultSession = "hyprland";
 
