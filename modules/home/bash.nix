@@ -7,7 +7,7 @@
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
       alias hist="history 1"
-      alias p2="cd ~/Nextcloud/obsidian/player2; nvim README.md"
+      alias p2="cd ~/Nextcloud/obsidian/player2; nvim readme.md"
       alias nc="cd ~/nix-config; nvim README.md"
       alias dtf="cd ~/dotfiles; nvim"
       alias ll='ls -lh'
