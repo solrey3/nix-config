@@ -48,10 +48,11 @@
     unzip         # Decompression utility for .zip files
     xz            # Lossless data compression tool
     zip           # Compression utility
-    ## Security Tools
+    ## DevOps and Security Tools
     _1password    # Password Manager
     bitwarden-cli # Password Manager
     nmap          # Network exploration and security auditing utility
+    terraform     # Infrastructure as Code
     ## Multimedia Tools
     ffmpeg        # A complete solution to record, convert, and stream audio and video
     yt-dlp        # A YouTube downloader with additional features and bug fixes
