@@ -35,6 +35,10 @@ window#waybar {
   color: @content_main;
 }
 
+window#waybar.hidded {
+    opacity: 0.2;
+}
+
 tooltip {
   background: @bg_main_tooltip;
   border-radius: 5px;
