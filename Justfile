@@ -52,7 +52,7 @@ nixos-golf-debug:
   sudo nixos-rebuild switch --flake .#golf --impure --show-trace
 
 home-echo:
-  home-manager switch --flake .#home 
+  home-manager switch --flake .#echo 
 
 # darwin: darwin-set-proxy
 darwin-foxtrot: 
