@@ -62,6 +62,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 - **foxtrot**: macOS Catalina 10.15.7 on Early 2013 13-inch Retina Macbook Pro.
 - **golf**: NixOS 24.05 on Late-2011 15-inch MacBook Pro.
 - **hotel**: NixOS 24.05 on Digital Ocean droplet originally running Ubuntu 
+- **india**: SteamOS 3.0 with NixOS dual-boot on Steam Deck.
 
 ## Other Configurations
 - **digitalocean**: Uses nixos-anywhere to install NixOS on a 

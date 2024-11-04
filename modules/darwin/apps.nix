@@ -55,8 +55,6 @@
     brews = [
       "wget" # Command-line utility for downloading files from the web
       "curl" # Command-line tool for transferring data with URLs; do not install via nixpkgs, as it may not work well on macOS
-      "aria2" # Advanced command-line download utility that supports multiple protocols
-      "httpie" # Command-line HTTP client with a user-friendly interface
     ];
 
     # `brew install --cask`
@@ -68,20 +66,14 @@
       "anki" # Flashcard app for efficient learning and memorization
       "raycast" # Powerful search tool and launcher for macOS, with scripting capabilities
       "stats" # A beautiful system monitor for macOS, providing a range of information at a glance
-      "eudic" # 欧路词典, a Chinese-English dictionary application
-      # Development
-      "insomnia" # REST client for testing and debugging HTTP APIs
       # My Apps
       "1password" # Secure password manager with a strong focus on user-friendly security
       "alacritty" # A fast, cross-platform, OpenGL terminal emulator
-      "arc" # Innovative web browser that combines the best features of modern browsers
       "barrier" # Software to share a mouse and keyboard between multiple computers
       "brave-browser" # Privacy-focused web browser with ad-blocking features
       "google-chrome" # Popular web browser known for its speed and simplicity
       "firefox" # Open-source web browser known for its performance and privacy features
       "ledger-live" # Official app for managing Ledger hardware wallets
-      "librewolf" # Fork of Firefox focused on privacy, security, and freedom
-      "microsoft-edge" # Chromium-based web browser by Microsoft, with enterprise features
       "musicbrainz-picard" # Music tagging application for organizing digital music collections
       "nextcloud" # Open-source platform for file sync and sharing, similar to Dropbox
       "obsidian" # A powerful knowledge management and note-taking application
@@ -94,6 +86,7 @@
       "transmission" # Lightweight, fast, and easy-to-use BitTorrent client
       "visual-studio-code" # Popular source code editor with built-in support for many languages
       "vlc" # Versatile, open-source media player that plays most multimedia files
+      "wezterm" # GPU-accelerated terminal emulator with a beautiful and intuitive interface
       "whatsapp" # Desktop client for the popular messaging app
       "wireshark" # Network protocol analyzer for monitoring and analyzing network traffic
     ];
