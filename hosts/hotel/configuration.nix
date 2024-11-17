@@ -2,7 +2,7 @@
 { config, pkgs, ... }: {
   
   imports = [
-    "${config.nixpkgs.path}/nixos/modules/virtualisation/digital-ocean-image.nix"
+    "${builtins.getAttr "path" pkgs}/nixos/modules/virtualisation/digital-ocean-image.nix"
   ];
 
   users.users.root.openssh.authorizedKeys.keys = [
