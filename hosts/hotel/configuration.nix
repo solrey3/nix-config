@@ -1,14 +1,9 @@
 # ./configuration.nix
-{ config, pkgs, lib, inputs, ... }: {
+{ config, pkgs, ... }: {
   
-  environment.etc.nixpkgs.source = inputs.nixpkgs;
-
   imports = [
-    "${inputs.nixpkgs}/nixos/modules/virtualisation/digital-ocean-image.nix"
+    "${config.nixpkgs.path}/nixos/modules/virtualisation/digital-ocean-image.nix"
   ];
-
-  # Use more aggressive compression then the default.
-  virtualisation.digitalOceanImage.compressionMethod = "bzip2";
 
   users.users.root.openssh.authorizedKeys.keys = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFtQcMtGB55jBNuxxvlKXfeYLhy0wsPtIVt2KorpgXhQ budchris@alpha"
@@ -24,6 +19,9 @@
     device = "/swap/swapfile";
     size = 1024 * 2; # 2 GB
   }];
+
+  # Use more aggressive compression then the default.
+  virtualisation.digitalOceanImage.compressionMethod = "bzip2";
 
   system.stateVersion = "24.05"; # Never change this
 
