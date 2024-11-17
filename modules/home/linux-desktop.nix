@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }@args:
+{ lib, config, pkgs, dotfiles, ... }@args:
 
 let
   username = "budchris"; # Ensure that the username is defined here
@@ -37,8 +37,8 @@ in
   };
 
   # GNU Stow Alternative
-  xdg.configFile."hypr/hyprland.conf".source = ./config/hypr/hyprland.conf; 
-  xdg.configFile."waybar".source = ./config/waybar; 
+  home.file."hypr/hyprland.conf".source = "${dotfiles}/hypr/hyprland.conf"; 
+  home.file."waybar".source = "${dotfiles}/waybar"; 
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

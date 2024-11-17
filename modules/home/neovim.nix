@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, dotfiles, ... }:
 
 {
   programs.neovim = {
@@ -126,5 +126,5 @@
     "${parsers}/parser";
 
   # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
-  xdg.configFile."nvim/lua".source = ./config/nvim;
+  home.file."nvim".source = "${dotfiles}/nvim";
 }
