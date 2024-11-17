@@ -116,6 +116,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
               imports = [
@@ -123,11 +124,10 @@
                 ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
-              dotfiles = dotfiles;
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
-           }
+          }
         ];
       };
 
