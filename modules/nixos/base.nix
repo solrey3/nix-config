@@ -67,26 +67,16 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  # Install firefox. ??Should this be here??
-  programs.firefox.enable = true;
-
-  services.gnome.gnome-keyring = {
-      enable = true;
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   neovim
    git
-   just
-   gcc # Do I really need this for nvim ??
    fastfetch
    wget
    curl
   ];
   # Set the default editor to nvim
-  environment.variables.EDITOR = "nvim";
+  environment.variables.EDITOR = "vim";
 
 }

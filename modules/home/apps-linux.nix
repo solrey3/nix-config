@@ -2,9 +2,11 @@
 
 {
   home.packages = with pkgs; [
-
-    ## GUI Applications
     
+    ## Remote Desktop Protocol
+    freerdp 
+    remmina 
+    ## GUI Applications
     thunderbird
     protonmail-bridge-gui
     quodlibet

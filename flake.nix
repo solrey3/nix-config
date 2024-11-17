@@ -87,7 +87,7 @@
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
               imports = [
-                ./modules/home/linux.nix
+                ./modules/home/linux-desktop.nix
                 ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
@@ -115,7 +115,7 @@
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
               imports = [
-                ./modules/home/linux.nix
+                ./modules/home/linux-desktop.nix
                 ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
@@ -143,7 +143,7 @@
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
               imports = [
-                ./modules/home/linux.nix
+                ./modules/home/linux-desktop.nix
                 ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
@@ -159,14 +159,6 @@
       hotel = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          {
-            # do not use DHCP, as DigitalOcean provisions IPs using cloud-init
-            networking.useDHCP = nixpkgs.lib.mkForce false;
-            services.cloud-init = {
-              enable = true;
-              network.enable = true;
-            };
-          }
           ./hosts/hotel/configuration.nix
           ./modules/nixos/base.nix
           ./modules/nixos/docker.nix

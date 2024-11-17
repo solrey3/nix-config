@@ -11,6 +11,8 @@ in
     ./core.nix
     ./git.nix
     ./starship.nix
+    ./wezterm.nix
+    ./alacritty.nix
     ./tmux.nix
     ./neovim.nix
   ];
@@ -34,6 +36,14 @@ in
     stateVersion = "24.05";
   };
 
+  # GNU Stow Alternative
+  xdg.configFile."hypr/hyprland.conf".source = ./config/hypr/hyprland.conf; 
+  xdg.configFile."waybar".source = ./config/waybar; 
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  # Install firefox. 
+  programs.firefox.enable = true;
+
 }
