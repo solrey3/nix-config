@@ -126,5 +126,5 @@
     "${parsers}/parser";
 
   # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
-  home.file."nvim".source = "${dotfiles}/nvim";
+  home.file."nvim/lua".source = "${dotfiles}/nvim/lua";
 }

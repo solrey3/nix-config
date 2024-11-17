@@ -40,6 +40,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    dotfiles = {
+      url = "github:solrey3/dotfiles";
+      flake = false;
+    };
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -50,12 +54,13 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     darwin,
     home-manager,
     stylix,
     flake-utils,
     disko,
-    nixpkgs-unstable,
+    dotfiles,
     ...
   }: let
     # TODO replace with your own username, email, system, and hostname
@@ -119,6 +124,7 @@
                 ./modules/home/apps-linux.nix
                 ./modules/home/apps-linux-x86_64.nix
               ];
+              dotfiles = dotfiles;
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
 	          home-manager.backupFileExtension = "backup";
