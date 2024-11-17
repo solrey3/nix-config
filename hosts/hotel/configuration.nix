@@ -1,6 +1,8 @@
 # ./configuration.nix
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
   
+  environment.etc.nixpkgs.source = inputs.nixpkgs;
+
   imports = [
     "${inputs.nixpkgs}/nixos/modules/virtualisation/digital-ocean-image.nix"
   ];
