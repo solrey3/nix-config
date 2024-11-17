@@ -42,7 +42,6 @@
     };
     dotfiles = {
       url = "github:solrey3/dotfiles";
-      flake = false;
     };
   };
 
