@@ -21,6 +21,7 @@ pkgsWithConfig.mkShell {
     # Infrastructure as Code
     terraform
     terraform-ls  # Terraform Language Server
+    terragrunt
     python3Packages.cdk8s
     cdktf
 

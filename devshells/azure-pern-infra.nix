@@ -17,7 +17,9 @@ pkgsWithConfig.mkShell {
     nodePackages.cdktf-cli
     nodePackages.cdk8s-cli
     terraform
+    terragrunt
     kubectl
+    helm
     azure-cli
   ];
 

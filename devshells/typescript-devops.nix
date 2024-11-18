@@ -16,9 +16,11 @@ pkgsWithConfig.mkShell {
     nodePackages.cdktf-cli
     nodePackages.cdk8s-cli
     terraform
+    terragrunt
     docker
     docker-compose
     kubectl
+    helm
     nmap
   ];
 

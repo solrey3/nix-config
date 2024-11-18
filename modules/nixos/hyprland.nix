@@ -28,6 +28,8 @@
     hyprshot                         # Screenshot tool for Hyprland
     wayland-utils                    # Wayland utilities
     wlroots                          # Modular Wayland compositor library
+    qt5-wayland                      # Qt5 platform plugin for Wayland
+    qt6-wayland                      # Qt6 platform plugin for Wayland
 
     # Status bar and notifications
     (waybar.overrideAttrs (oldAttrs: {
