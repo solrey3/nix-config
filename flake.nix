@@ -254,7 +254,7 @@
       # Configuration for my M2 Macbook Air Delta (aarch64-darwin)
       delta = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
-        specialArgs = specialArgs // { hostname = "delta"; };
+        specialArgs = specialArgs // { hostname = "delta"; dotfiles = dotfiles; };
         modules = [
           ./modules/darwin/nix-core.nix
           ./modules/darwin/system.nix
