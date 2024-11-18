@@ -37,8 +37,8 @@ in
   };
 
   # GNU Stow Alternative
-  home.file."hypr/hyprland.conf".source = "${dotfiles}/hypr/hyprland.conf"; 
-  home.file."waybar".source = "${dotfiles}/waybar"; 
+  home.file.".config/hypr/hyprland.conf".source = "${dotfiles}/hypr/hyprland.conf"; 
+  home.file.".config/waybar".source = "${dotfiles}/waybar"; 
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
