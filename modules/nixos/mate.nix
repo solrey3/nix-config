@@ -12,11 +12,8 @@
       xterm.enable = false;
       mate = {
         enable = true;
-        # noDesktop = true;
-        # enableXfwm = false;
       };
     };
-    # windowManager.i3.enable = true;
     xkb.layout = "us";
     xkb.variant = "";
   };

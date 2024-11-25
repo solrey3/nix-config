@@ -12,16 +12,17 @@
       xterm.enable = false;
       xfce = {
         enable = true;
-        # noDesktop = true;
-        # enableXfwm = false;
+        noDesktop = true;
+        enableXfwm = false;
       };
     };
     displayManager.lightdm.enable = true;
-    # windowManager.i3.enable = true;
+    windowManager.i3.enable = true;
     xkb.layout = "us";
     xkb.variant = "";
   };
-  services.displayManager.defaultSession = "xfce";
+  services.displayManager.defaultSession = "xfce+i3";
+  security.pam.services.lightdm.enableGnomeKeyring = true;
   
   # Enable automatic login for the user.
   # services.displayManager.autoLogin.enable = true;

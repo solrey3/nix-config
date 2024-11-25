@@ -11,7 +11,7 @@
     protonmail-bridge-gui
     quodlibet
     picard
-    transmission
+    transmission-gtk
     wireshark
     #### linux only
     # librewolf
