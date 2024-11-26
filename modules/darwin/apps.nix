@@ -67,28 +67,28 @@
       "raycast" # Powerful search tool and launcher for macOS, with scripting capabilities
       "stats" # A beautiful system monitor for macOS, providing a range of information at a glance
       # My Apps
-      "1password" # Secure password manager with a strong focus on user-friendly security
+      "wezterm" # GPU-accelerated terminal emulator with a beautiful and intuitive interface
       "alacritty" # A fast, cross-platform, OpenGL terminal emulator
-      "barrier" # Software to share a mouse and keyboard between multiple computers
+      "visual-studio-code" # Popular source code editor with built-in support for many languages
+      "protonvpn" # Secure and privacy-focused VPN service
       "brave-browser" # Privacy-focused web browser with ad-blocking features
       "google-chrome" # Popular web browser known for its speed and simplicity
       "firefox" # Open-source web browser known for its performance and privacy features
-      "ledger-live" # Official app for managing Ledger hardware wallets
+      "1password" # Secure password manager with a strong focus on user-friendly security
+      "thunderbird" # Free email application that’s easy to set up and customize
+      "protonmail-bridge" # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
+      "whatsapp" # Desktop client for the popular messaging app
+      "vlc" # Versatile, open-source media player that plays most multimedia files
       "musicbrainz-picard" # Music tagging application for organizing digital music collections
+      "soulseek" # Peer-to-peer file-sharing network, mainly used for sharing music
+      "transmission" # Lightweight, fast, and easy-to-use BitTorrent client
       "nextcloud" # Open-source platform for file sync and sharing, similar to Dropbox
       "obsidian" # A powerful knowledge management and note-taking application
-      "protonmail-bridge" # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
-      "protonvpn" # Secure and privacy-focused VPN service
-      "raspberry-pi-imager" # Tool to write operating system images to SD cards for Raspberry Pi
-      "soulseek" # Peer-to-peer file-sharing network, mainly used for sharing music
-      "spectacle" # Window management utility for arranging windows in macOS
-      "thunderbird" # Free email application that’s easy to set up and customize
-      "transmission" # Lightweight, fast, and easy-to-use BitTorrent client
-      "visual-studio-code" # Popular source code editor with built-in support for many languages
-      "vlc" # Versatile, open-source media player that plays most multimedia files
-      "wezterm" # GPU-accelerated terminal emulator with a beautiful and intuitive interface
-      "whatsapp" # Desktop client for the popular messaging app
       "wireshark" # Network protocol analyzer for monitoring and analyzing network traffic
+      "nikitabobko/tap/aerospace" # i3-like tiling window manager for macOS
+      "barrier" # Software to share a mouse and keyboard between multiple computers
+      "ledger-live" # Official app for managing Ledger hardware wallets
+      "raspberry-pi-imager" # Tool to write operating system images to SD cards for Raspberry Pi
     ];
 
   };
