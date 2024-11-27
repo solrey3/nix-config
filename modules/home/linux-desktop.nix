@@ -8,13 +8,13 @@ in
   imports = [
     ./zsh.nix
     ./bash.nix
-    ./core.nix
     ./git.nix
+    ./core.nix
     ./starship.nix
-    ./wezterm.nix
-    ./alacritty.nix
     ./tmux.nix
     ./neovim.nix
+    ./wezterm.nix
+    ./alacritty.nix
   ];
 
   # Home Manager needs a bit of information about you and the

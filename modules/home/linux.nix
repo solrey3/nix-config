@@ -8,8 +8,8 @@ in
   imports = [
     ./zsh.nix
     ./bash.nix
-    ./core.nix
     ./git.nix
+    ./core.nix
     ./starship.nix
     ./tmux.nix
     ./neovim.nix
