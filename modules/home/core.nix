@@ -37,6 +37,7 @@
     ## Development Tools 
     lazygit       # Simple terminal UI for git commands
     nodejs        # Event-driven I/O framework for the V8 JavaScript engine
+    postgresql    # Object-relational database management system
     tokei         # Counts code, comments, and blanks lines
     yarn          # Fast, reliable, and secure dependency management for javascript
     ## DevOps Tools 
