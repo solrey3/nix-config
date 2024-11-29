@@ -8,13 +8,13 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../../modules/nixos/xfce4.nix
       ./../../modules/nixos/base.nix
+      ./../../modules/nixos/nvidia-legacy_470.nix
+      ./../../modules/nixos/xfce4.nix
       ./../../modules/nixos/pipewire.nix
       ./../../modules/nixos/bluetooth.nix
       ./../../modules/nixos/avahi.nix
       ./../../modules/nixos/docker.nix
-      ./../../modules/nixos/nvidia-legacy_470.nix
     ];
 
   # Bootloader.

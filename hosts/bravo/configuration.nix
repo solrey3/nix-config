@@ -9,14 +9,12 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/nixos/base.nix
+      ./../../modules/nixos/nvidia-stable.nix
+      ./../../modules/nixos/xfce4.nix
       ./../../modules/nixos/pipewire.nix
       ./../../modules/nixos/bluetooth.nix
       ./../../modules/nixos/avahi.nix
       ./../../modules/nixos/docker.nix
-      ./../../modules/nixos/nvidia-stable.nix
-      ./../../modules/nixos/xfce4.nix
-      # ./../../modules/nixos/hyprland.nix
-      # ./../../modules/nixos/mate.nix
       ./../../modules/nixos/jellyfin.nix
     ];
 
