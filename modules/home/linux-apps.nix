@@ -13,14 +13,13 @@
     picard
     transmission-gtk
     wireshark
-    #### linux only
-    # librewolf
     protonvpn-gui
     nextcloud-client 
     vlc 
     #### linux64 only 
     obsidian 
     brave 
+    vscode
 
   ];
 }

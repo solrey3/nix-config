@@ -88,12 +88,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
               imports = [
                 ./modules/home/linux-desktop.nix
-                ./modules/home/apps-linux.nix
-                ./modules/home/apps-linux-x86_64.nix
+                ./modules/home/linux-apps-x86_64.nix
               ];
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
@@ -121,8 +121,7 @@
             home-manager.users.budchris = {
               imports = [
                 ./modules/home/linux-desktop.nix
-                ./modules/home/apps-linux.nix
-                ./modules/home/apps-linux-x86_64.nix
+                ./modules/home/linux-apps-x86_64.nix
               ];
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
@@ -145,12 +144,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
               imports = [
                 ./modules/home/linux-desktop.nix
-                ./modules/home/apps-linux.nix
-                ./modules/home/apps-linux-x86_64.nix
+                ./modules/home/linux-apps-x86_64.nix
               ];
             };
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
@@ -159,33 +158,33 @@
         ];
       };
       
-      # Configuration for NixOS on Digital Ocean droplets (x86_64-linux)
-      # TODO please change the hostname to your own
-      hotel = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/hotel/configuration.nix
-          ./modules/nixos/base.nix
-          ./modules/nixos/docker.nix
-          stylix.nixosModules.stylix
-          ./modules/stylix.nix
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            # TODO replace ryan with your own username
-            home-manager.users.budchris = {
-              imports = [
-                ./modules/home/linux.nix
-              ];
-            };
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	          home-manager.backupFileExtension = "backup";
-          }
-        ];
-      };
+      # # Configuration for NixOS on Digital Ocean droplets (x86_64-linux)
+      # hotel = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   modules = [
+      #     ./hosts/hotel/configuration.nix
+      #     ./modules/nixos/base.nix
+      #     ./modules/nixos/docker.nix
+      #     stylix.nixosModules.stylix
+      #     ./modules/stylix.nix
+      #     # make home-manager as a module of nixos
+      #     # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+      #     home-manager.nixosModules.home-manager
+      #     {
+      #       home-manager.useGlobalPkgs = true;
+      #       home-manager.useUserPackages = true;
+      #       home-manager.extraSpecialArgs.dotfiles = dotfiles;
+      #       # TODO replace ryan with your own username
+      #       home-manager.users.budchris = {
+      #         imports = [
+      #           ./modules/home/linux.nix
+      #         ];
+      #       };
+      #       # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+	    #       home-manager.backupFileExtension = "backup";
+      #     }
+      #   ];
+      # };
       
       # Configuration for Digital Ocean droplets 
       digitalocean = nixpkgs.lib.nixosSystem {
@@ -212,6 +211,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
               imports = [
@@ -231,7 +231,7 @@
       # Configuration for 2017 13-inch MacBook Pro Charlie (x86_64-darwin)
       charlie = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
-        specialArgs = specialArgs // { hostname = "charlie"; };
+        specialArgs = specialArgs // { hostname = "charlie"; dotfiles = dotfiles; };
         modules = [
           ./modules/darwin/nix-core.nix
           ./modules/darwin/system.nix
@@ -277,7 +277,7 @@
       # Configuration for MacBook Pro (Retina, 13-inch, Early 2013) Foxtrot (x86_64-darwin)
       foxtrot = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
-        specialArgs = specialArgs // { hostname = "foxtrot"; };
+        specialArgs = specialArgs // { hostname = "foxtrot"; dotfiles = dotfiles; };
         modules = [
           ./modules/darwin/nix-core.nix
           ./modules/darwin/system.nix
@@ -304,20 +304,29 @@
       echo = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "aarch64-linux";
-	        config = {
+          config = {
             allowUnfree = true;
- 	        };
+          };
         };
         modules = [
           {
             home.username = "${username}";
             home.stateVersion = "24.05"; # Update this to the appropriate version
-	          home.homeDirectory = "/home/${username}";
+            home.homeDirectory = "/home/${username}";
           }
-          ./modules/home/linux.nix
-          ./modules/home/apps-linux.nix
           stylix.homeManagerModules.stylix
           ./modules/stylix.nix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
+            home-manager.users.${username} = {
+              imports = [
+                ./modules/home/linux-desktop.nix
+              ];
+            };
+            home-manager.backupFileExtension = "backup";
+          }
         ];
       };
     };

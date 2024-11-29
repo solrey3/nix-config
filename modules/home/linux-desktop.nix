@@ -15,6 +15,7 @@ in
     ./neovim.nix
     ./wezterm.nix
     ./alacritty.nix
+    ./linux-apps.nix
   ];
 
   # Home Manager needs a bit of information about you and the
