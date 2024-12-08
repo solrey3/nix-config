@@ -186,6 +186,34 @@
       #   ];
       # };
       
+      # Configuration for NixOS Desktop India (x86_64-linux)
+      # TODO please change the hostname to your own
+      india = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/india/configuration.nix
+          stylix.nixosModules.stylix
+          ./modules/stylix.nix
+          # make home-manager as a module of nixos
+           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
+            # TODO replace ryan with your own username
+            home-manager.users.budchris = {
+              imports = [
+                ./modules/home/linux-desktop.nix
+                ./modules/home/linux-apps-x86_64.nix
+              ];
+            };
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+	          home-manager.backupFileExtension = "backup";
+           }
+        ];
+      };
+      
       # Configuration for Digital Ocean droplets 
       digitalocean = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
