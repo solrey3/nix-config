@@ -13,8 +13,8 @@ in
     ./starship.nix
     ./tmux.nix
     ./neovim.nix
-    ./alacritty.nix
-    ./wezterm.nix
+    # ./alacritty.nix
+    # ./wezterm.nix
   ];
 
   # Home Manager needs a bit of information about you and the

@@ -299,6 +299,20 @@
             home-manager.extraSpecialArgs = specialArgs;
             home-manager.users.budchris = import ./modules/home/darwin.nix;
           }
+          # Overlay to disable tests for dnspython
+          {
+            nixpkgs.overlays = [
+              (self: super: {
+                python3Packages = super.python3Packages.override {
+                  overrides = self: super: {
+                    dnspython = super.dnspython.overrideAttrs (oldAttrs: {
+                      doCheck = false;
+                    });
+                  };
+                };
+              })
+            ];
+          }
         ];
       };
 

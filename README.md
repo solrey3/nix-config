@@ -65,7 +65,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 - **india**: SteamOS 3.0 with NixOS dual-boot on Steam Deck.
 
 ## Other Configurations
-- **digitalocean**: Uses nixos-anywhere to install NixOS on a 
+- **digitalocean**: Uses nixos-anywhere to install NixOS on a Linux droplet 
 
 ## Updating Hosts/Configurations
 
