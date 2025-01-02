@@ -47,8 +47,8 @@
     minikube      # Run Kubernetes locally
     kind          # Run local Kubernetes clusters using Docker container nodes
     ## Cloud Platform CLIs 
-    _1password    # Password Manager
-    bitwarden-cli # Password Manager
+    _1password-cli    # Password Manager
+    #bitwarden-cli # Password Manager
     awscli2       # AWS Command Line Interface
     azure-cli     # Azure Command Line Interface
     doctl         # DigitalOcean Command Line Interface
