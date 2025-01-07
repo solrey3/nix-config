@@ -86,6 +86,7 @@
       "anki"                      # Flashcard app for efficient learning and memorization
       "raycast"                   # Powerful search tool and launcher for macOS, with scripting capabilities
       "stats"                     # A beautiful system monitor for macOS, providing a range of information at a glance
+      "steam"
     ];
 
   };
