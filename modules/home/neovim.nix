@@ -1,4 +1,3 @@
-
 { config, lib, pkgs, dotfiles, ... }:
 
 {
@@ -107,13 +106,16 @@
             -- import/override with your plugins
             { import = "plugins" },
             -- treesitter handled by xdg.configFile."nvim/parser", put this line at the end of spec to clear ensure_installed
-            { "nvim-treesitter/nvim-treesitter", opts = { ensure_installed = {} } },
+            { "nvim-treesitter/nvim-treesitter", opts = { 
+              ensure_installed = {}, 
+              parser_install_dir = vim.fn.stdpath('data') .. "/parser" 
+            } },
           },
         })
       '';
   };
 
-  # https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
+  # Configure writable parser directory for nvim-treesitter
   xdg.configFile."nvim/parser".source =
     let
       parsers = pkgs.symlinkJoin {
