@@ -26,6 +26,7 @@
       # Set the default terminal mode
       set -g default-terminal "screen-256color"
       set-option -ga terminal-overrides ",xterm-256color:Tc"
+      set-option -g default-command "/bin/zsh"
 
       # Set pane border colors
       set -g pane-border-style fg=brightblack
