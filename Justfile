@@ -26,6 +26,17 @@ darwin-delta-debug:
   ./result/sw/bin/darwin-rebuild switch --flake .#delta --show-trace --verbose --impure
 
 # darwin: darwin-set-proxy
+darwin-juliet: 
+  nix build .#darwinConfigurations.juliet.system \
+    --extra-experimental-features 'nix-command flakes' --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .#juliet --impure
+# darwin-debug: darwin-set-proxy
+darwin-juliet-debug: 
+  nix build .#darwinConfigurations.juliet.system --show-trace --verbose \
+    --extra-experimental-features 'nix-command flakes' --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .#juliet --show-trace --verbose --impure
+
+# darwin: darwin-set-proxy
 darwin-charlie: 
   nix build .#darwinConfigurations.charlie.system \
     --extra-experimental-features 'nix-command flakes' --impure
