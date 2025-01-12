@@ -316,6 +316,43 @@
         ];
       };
 
+      # Configuration for my M2 Macbook Air Delta (aarch64-darwin)
+      juliet = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = specialArgs // { hostname = "juliet"; dotfiles = dotfiles; };
+        modules = [
+          ./modules/darwin/nix-core.nix
+          ./modules/darwin/system.nix
+          ./modules/darwin/apps.nix
+          ./modules/darwin/apps-aarch64.nix
+          # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
+          ./modules/darwin/host-users.nix
+          stylix.darwinModules.stylix
+          # home manager
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = specialArgs;
+            home-manager.users.budchris = import ./modules/home/darwin.nix;
+          }
+          # Overlay to disable tests for dnspython
+          {
+            nixpkgs.overlays = [
+              (self: super: {
+                python3Packages = super.python3Packages.override {
+                  overrides = self: super: {
+                    dnspython = super.dnspython.overrideAttrs (oldAttrs: {
+                      doCheck = false;
+                    });
+                  };
+                };
+              })
+            ];
+          }
+        ];
+      };
+
       # Configuration for MacBook Pro (Retina, 13-inch, Early 2013) Foxtrot (x86_64-darwin)
       foxtrot = darwin.lib.darwinSystem {
         system = "x86_64-darwin";

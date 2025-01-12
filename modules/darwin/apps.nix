@@ -58,6 +58,7 @@
     # `brew install --cask`
     casks = [
       # My Apps
+      "ghostty"                  # A simple and beautiful Ghost blog editor
       "wezterm"                   # GPU-accelerated terminal emulator with a beautiful and intuitive interface
       "alacritty"                 # A fast, cross-platform, OpenGL terminal emulator
       "visual-studio-code"        # Popular source code editor with built-in support for many languages
