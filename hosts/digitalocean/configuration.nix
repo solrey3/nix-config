@@ -30,6 +30,7 @@
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFm804g6IUQO1ELH716hLjTBj3zzzbuOUbL3jCE7Gej8 budchris@bravo"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHDwRpWc0JaniB1yBdKNkS5srLkCE67y+sI4Sn+wL55L budchris@charlie"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNTDemhkFYx8kw6p096XBVp7H2gnONZLMX+4uDgwue/ budchris@delta"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlWwXAozSb4h6jPnhw34P0Niebj5LskgC3DVM76cbQY budchris@juliet"
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -42,6 +43,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFm804g6IUQO1ELH716hLjTBj3zzzbuOUbL3jCE7Gej8 budchris@bravo"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHDwRpWc0JaniB1yBdKNkS5srLkCE67y+sI4Sn+wL55L budchris@charlie"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNTDemhkFYx8kw6p096XBVp7H2gnONZLMX+4uDgwue/ budchris@delta"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlWwXAozSb4h6jPnhw34P0Niebj5LskgC3DVM76cbQY budchris@juliet"
     ];
   };
   

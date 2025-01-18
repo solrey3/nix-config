@@ -13,6 +13,7 @@ in
     ./starship.nix
     ./tmux.nix
     ./neovim.nix
+    ./ghostty.nix
     ./wezterm.nix
     ./alacritty.nix
     ./linux-apps.nix
