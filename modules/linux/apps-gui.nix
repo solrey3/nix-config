@@ -10,7 +10,7 @@
     packages = with pkgs; [
       screen
       pass
-      gnome.gnome-keyring
+      gnome-keyring
       pinentry-all
       thunderbird
       protonmail-bridge-gui

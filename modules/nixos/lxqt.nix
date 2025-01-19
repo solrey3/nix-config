@@ -36,7 +36,7 @@
       barrier
       screen
       pass
-      gnome.gnome-keyring
+      gnome-keyring
       pinentry-all
       networkmanagerapplet
     ];

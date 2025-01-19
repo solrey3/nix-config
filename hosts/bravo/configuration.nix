@@ -16,6 +16,7 @@
       ./../../modules/nixos/avahi.nix
       ./../../modules/nixos/docker.nix
       ./../../modules/nixos/jellyfin.nix
+      ./../../modules/nixos/steam.nix
     ];
 
   # Bootloader.

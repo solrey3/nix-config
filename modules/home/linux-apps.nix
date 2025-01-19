@@ -11,7 +11,7 @@
     protonmail-bridge-gui
     quodlibet
     picard
-    transmission-gtk
+    transmission_4-gtk
     wireshark
     protonvpn-gui
     nextcloud-client 

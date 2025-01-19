@@ -65,7 +65,7 @@
 
     # Authentication agents
     kdePackages.polkit-kde-agent-1    # Authentication agent for Polkit
-    gnome.gnome-keyring               # GNOME keyring daemon
+    gnome-keyring               # GNOME keyring daemon
     pinentry-all                      # Collection of PIN or passphrase entry dialogs
 
     # Utilities
