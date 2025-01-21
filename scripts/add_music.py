@@ -45,15 +45,24 @@ def download_youtube_audio(url, output_path, metadata):
     new_filename = f"{artist} - {title}.mp3"
     new_filepath = os.path.join(output_path, new_filename)
     os.rename(downloaded_file, new_filepath)
-
+    
     # Add ID3 tags
     audio = EasyID3(new_filepath)
     audio['artist'] = artist
     audio['title'] = title
     audio['album'] = metadata.get('album', '')
-    audio['label'] = metadata.get('label', [''])[0]
-    audio['genre'] = metadata.get('genre', '')
-
+    label = metadata.get('label', '')
+    if isinstance(label, list):
+        label = label[0] if label else 'Unknown'
+    audio['organization'] = label or 'Unknown'
+    genre = metadata.get('genre', '')
+    audio['genre'] = genre if genre else 'Unknown'
+    
+    # Add release date to ID3 tag
+    release_date = metadata.get('release_date', '')
+    if release_date:
+        audio['date'] = release_date
+    
     # Add custom ID3 tags
     audio.save()
     audio = ID3(new_filepath)
@@ -67,8 +76,8 @@ def download_youtube_audio(url, output_path, metadata):
     return new_filepath
 
 def main():
-    input_dir = './markdown_files'  # Replace with your directory containing markdown files
-    output_dir = './downloads'  # Replace with your desired download directory
+    input_dir = '/Users/budchris/Nextcloud/obsidian/player2/song/ready'  # Replace with your directory containing markdown files
+    output_dir = '/Users/budchris/Downloads/yt-dlp'  # Replace with your desired download directory
     os.makedirs(output_dir, exist_ok=True)
 
     # Read markdown files and create a DataFrame

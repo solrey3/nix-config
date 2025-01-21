@@ -67,6 +67,11 @@
     ## Multimedia Tools
     ffmpeg        # A complete solution to record, convert, and stream audio and video
     yt-dlp        # A YouTube downloader with additional features and bug fixes
+    ## Python Tools
+    python310
+    python310Packages.pandas
+    python310Packages.python-frontmatter
+    python310Packages.mutagen
 
   ];
 
