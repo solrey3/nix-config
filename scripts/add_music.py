@@ -1,6 +1,7 @@
 
 import os
 import pandas as pd
+import datetime
 import frontmatter
 from yt_dlp import YoutubeDL
 from mutagen.easyid3 import EasyID3
@@ -61,8 +62,17 @@ def download_youtube_audio(url, output_path, metadata):
     # Add release date to ID3 tag
     release_date = metadata.get('release_date', '')
     if release_date:
-        audio['date'] = release_date
+        if isinstance(release_date, (list, tuple)):  # Handle list values
+            release_date = release_date[0] if release_date else ''
+        if isinstance(release_date, pd.Timestamp):  # Pandas timestamp
+            release_date = release_date.strftime('%Y-%m-%d')
+        if isinstance(release_date, (int, float)):  # Handle numeric timestamps
+            release_date = str(int(release_date))
+        if isinstance(release_date, (datetime.date, datetime.datetime)):  # Convert date/datetime to string
+            release_date = release_date.strftime('%Y-%m-%d')
     
+        audio['date'] = release_date  # Assign as string
+
     # Add custom ID3 tags
     audio.save()
     audio = ID3(new_filepath)
