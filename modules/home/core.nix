@@ -46,6 +46,7 @@
     kubernetes-helm # The Kubernetes Package Manager
     minikube      # Run Kubernetes locally
     kind          # Run local Kubernetes clusters using Docker container nodes
+    act           # Run GitHub Actions locally
     ## Cloud Platform CLIs 
     _1password-cli    # Password Manager
     #bitwarden-cli # Password Manager

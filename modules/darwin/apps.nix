@@ -70,7 +70,7 @@
       "zen-browser"               # A privacy-focused web browser with built-in ad-blocking and VPN
       "1password"                 # Secure password manager with a strong focus on user-friendly security
       "thunderbird"               # Free email application that’s easy to set up and customize
-      "protonmail-bridge"         # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
+      "proton-mail-bridge"         # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
       "whatsapp"                  # Desktop client for the popular messaging app
       "telegram"                  # Popular messaging app focused on speed and security
       "discord"                   # Free voice, video, and text chat app, mainly for gamers
@@ -81,6 +81,7 @@
       "nextcloud"                 # Open-source platform for file sync and sharing, similar to Dropbox
       "obsidian"                  # A powerful knowledge management and note-taking application
       "wireshark"                 # Network protocol analyzer for monitoring and analyzing network traffic
+      "pgadmin4"                  # Open-source administration and development platform for PostgreSQL
       # "nikitabobko/tap/aerospace" # i3-like tiling window manager for macOS
       "aerospace" # i3-like tiling window manager for macOS
       "barrier"                   # Software to share a mouse and keyboard between multiple computers
