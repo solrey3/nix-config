@@ -8,7 +8,6 @@
     google-chrome
     synology-drive-client
     #### x84_64-linux only 
-    microsoft-edge 
     soulseekqt
 
   ];

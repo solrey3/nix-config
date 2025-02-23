@@ -43,6 +43,7 @@
     dotfiles = {
       url = "github:solrey3/dotfiles";
     };
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -60,6 +61,7 @@
     flake-utils,
     disko,
     dotfiles,
+    zen-browser,
     ...
   }: let
     # TODO replace with your own username, email, system, and hostname
@@ -88,6 +90,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.extraSpecialArgs.dotfiles = dotfiles;
             # TODO replace ryan with your own username
             home-manager.users.budchris = {
@@ -116,6 +119,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.extraSpecialArgs.dotfiles = dotfiles;
             # TODO replace ryan with your own username
             home-manager.users.budchris = {

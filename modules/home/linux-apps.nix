@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
-    
+
+    inputs.zen-browser.packages."${system}".default
     ## Remote Desktop Protocol
     freerdp 
     remmina 

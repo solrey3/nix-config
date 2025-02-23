@@ -44,4 +44,19 @@
     options = [ "defaults" "rw" "user" ];
   };
 
+  services.samba = {
+    enable = true; # Enables the Samba service
+    settings = { 
+      "SolReyDio" = {
+        "path" = "/mnt/sata8tb/SolReyDio";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0777";
+        "directory mask" = "0777";
+      };
+    };
+  };
+  networking.firewall.allowedTCPPorts = [ 137 138 139 445 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
+
 }
