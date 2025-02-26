@@ -75,6 +75,7 @@
       "telegram"                  # Popular messaging app focused on speed and security
       "discord"                   # Free voice, video, and text chat app, mainly for gamers
       "vlc"                       # Versatile, open-source media player that plays most multimedia files
+      "mixxx"                     # Free DJ software for mixing songs and creating live performances
       "musicbrainz-picard"        # Music tagging application for organizing digital music collections
       "soulseek"                  # Peer-to-peer file-sharing network, mainly used for sharing music
       "transmission"              # Lightweight, fast, and easy-to-use BitTorrent client
