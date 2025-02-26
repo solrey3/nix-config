@@ -1,5 +1,5 @@
-{ ... }: {
-  # Zsh configuration
+{ config, lib, pkgs, dotfiles, ... }: {
+  
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -8,19 +8,8 @@
       theme = "robbyrussell";
       plugins = [ "git" "z" "sudo" "kubectl" ];
     };
-    initExtra = ''
-      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-      alias hist="history 1"\
-      alias k="kubectl"
-      alias l='ls -CF'
-      alias la='ls -A'
-      alias ll='ls -lh'
-      alias nano="nvim"
-      alias nc="cd ~/Repos/github.com/solrey3/nix-config/; nvim"
-      alias p1="~/Repos/github.com/solrey3/nix-config/scripts/tmux_startup.sh"
-      alias p2="cd ~/Repos/github.com/solrey3/notes; nvim readme.md"
-      alias urldecode="python3 -c 'import sys, urllib.parse as ul; print(ul.unquote_plus(sys.stdin.read()))'"
-      alias urlencode="python3 -c 'import sys, urllib.parse as ul; print(ul.quote_plus(sys.stdin.read()))'"
-    '';
   };
+
+  home.file.".zshrc".source = "${dotfiles}/zsh/.zshrc";
+
 }
