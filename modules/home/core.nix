@@ -12,6 +12,7 @@
     stow          # Symlink farm manager
     lsof          # List open files
     mc            # Midnight Commander, a file manager
+    ncurses      # System for text-based user interfaces
     nnn           # Terminal file manager
     ripgrep       # Recursively searches directories for a regex pattern
     fzf           # Command-line fuzzy finder
