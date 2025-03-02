@@ -6,7 +6,7 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = [ "git" "z" "sudo" "kubectl" "zsh-syntax-highlighting" "fast-syntax-highlighting" "zsh-autocomplete" ];
+      plugins = [ "git" "z" "sudo" "kubectl" ];
     };
   };
 
@@ -14,6 +14,9 @@
 
   home.packages = with pkgs; [
     oh-my-zsh
+    zsh-syntax-highlighting
+    zsh-fast-syntax-highlighting
+    zsh-autocomplete
   ];
 
 }
