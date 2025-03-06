@@ -295,6 +295,7 @@
           # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
           ./modules/darwin/host-users.nix
           stylix.darwinModules.stylix
+          ./modules/stylix.nix
           # home manager
           home-manager.darwinModules.home-manager
           {
@@ -332,6 +333,7 @@
           # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
           ./modules/darwin/host-users.nix
           stylix.darwinModules.stylix
+          ./modules/stylix.nix
           # home manager
           home-manager.darwinModules.home-manager
           {
