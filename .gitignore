@@ -2,3 +2,4 @@ result
 result/
 .venv 
 .venv/
+.DS_Store
