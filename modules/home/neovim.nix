@@ -7,13 +7,6 @@
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
-    extraPackages = with pkgs; [
-      # LazyVim
-      lua-language-server
-      stylua
-      # Telescope
-      ripgrep
-    ];
   };
 
 
