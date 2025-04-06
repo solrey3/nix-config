@@ -41,6 +41,9 @@
     postgresql    # Object-relational database management system
     tokei         # Counts code, comments, and blanks lines
     yarn          # Fast, reliable, and secure dependency management for javascript
+    cargo         # Downloads your Rust project's dependencies and builds your project
+    rustc         # Safe, concurrent, practical language (wrapper script)
+    marksman      # Language server for Markdown
     ## DevOps Tools 
     kubectl       # Kubernetes CLI 
     terraform     # Infrastructure as Code
