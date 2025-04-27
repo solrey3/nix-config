@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
 
     ## Fonts
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })  # Nerd Font with JetBrains Mono
+    nerd-fonts.jetbrains-mono  # Nerd Font with JetBrains Mono
     ## CLI Tools 
     ## System Tools
     fastfetch     # Fast system information tool written in C
@@ -44,6 +44,7 @@
     cargo         # Downloads your Rust project's dependencies and builds your project
     rustc         # Safe, concurrent, practical language (wrapper script)
     marksman      # Language server for Markdown
+    fabric-ai     # Modular framework for solving specific problems using a crowdsourced set of AI prompts
     ## DevOps Tools 
     kubectl       # Kubernetes CLI 
     terraform     # Infrastructure as Code
@@ -73,10 +74,10 @@
     ffmpeg        # A complete solution to record, convert, and stream audio and video
     yt-dlp        # A YouTube downloader with additional features and bug fixes
     ## Python Tools
-    python310
-    python310Packages.pandas
-    python310Packages.python-frontmatter
-    python310Packages.mutagen
+    python311
+    python311Packages.pandas
+    python311Packages.python-frontmatter
+    python311Packages.mutagen
 
   ];
 

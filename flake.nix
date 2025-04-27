@@ -32,7 +32,7 @@
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs dependencies.
       # inputs.nixpkgs.follows = "nixpkgs-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     stylix.url = "github:danth/stylix/cf8b6e2d4e8aca8ef14b839a906ab5eb98b08561";
     flake-utils.url = "github:numtide/flake-utils";
@@ -107,7 +107,7 @@
       
       # Configuration for NixOS Desktop Bravo (x86_64-linux)
       # TODO please change the hostname to your own
-      bravo = nixpkgs.lib.nixosSystem {
+      bravo = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/bravo/configuration.nix

@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, dotfiles, ... }:
 
 {
 
@@ -17,7 +17,9 @@
       };
     };
     displayManager.lightdm.enable = true;
-    windowManager.i3.enable = true;
+    windowManager.i3 = {
+      enable = true;
+    };
     xkb.layout = "us";
     xkb.variant = "";
   };
@@ -49,5 +51,6 @@
 
     ];
   };
+
 
 }
