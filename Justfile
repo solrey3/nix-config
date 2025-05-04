@@ -28,7 +28,8 @@ darwin-delta-debug:
 # darwin: darwin-set-proxy
 darwin-juliet: 
   nix build .#darwinConfigurations.juliet.system \
-    --extra-experimental-features 'nix-command flakes' --impure
+    --extra-experimental-features 'nix-command flakes' --impure \
+    --option substitute true
   ./result/sw/bin/darwin-rebuild switch --flake .#juliet --impure
 # darwin-debug: darwin-set-proxy
 darwin-juliet-debug: 

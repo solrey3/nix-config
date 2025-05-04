@@ -54,6 +54,8 @@
     brews = [
       "wget" # Command-line utility for downloading files from the web
       "curl" # Command-line tool for transferring data with URLs; do not install via nixpkgs, as it may not work well on macOS
+      "nodejs"
+      "yarn"
     ];
 
     # `brew install --cask`

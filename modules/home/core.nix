@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-
     ## Fonts
-    nerd-fonts.jetbrains-mono  # Nerd Font with JetBrains Mono
+    # nerd-fonts.jetbrains-mono  # Nerd Font with JetBrains Mono
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ## CLI Tools 
     ## System Tools
     fastfetch     # Fast system information tool written in C
@@ -37,10 +37,8 @@
     speedtest-cli # Internet speed testing tool
     ## Development Tools 
     lazygit       # Simple terminal UI for git commands
-    nodejs        # Event-driven I/O framework for the V8 JavaScript engine
     postgresql    # Object-relational database management system
     tokei         # Counts code, comments, and blanks lines
-    yarn          # Fast, reliable, and secure dependency management for javascript
     cargo         # Downloads your Rust project's dependencies and builds your project
     rustc         # Safe, concurrent, practical language (wrapper script)
     marksman      # Language server for Markdown
@@ -52,6 +50,7 @@
     minikube      # Run Kubernetes locally
     kind          # Run local Kubernetes clusters using Docker container nodes
     act           # Run GitHub Actions locally
+    k9s 
     ## Cloud Platform CLIs 
     _1password-cli    # Password Manager
     #bitwarden-cli # Password Manager
@@ -78,7 +77,6 @@
     python311Packages.pandas
     python311Packages.python-frontmatter
     python311Packages.mutagen
-
   ];
 
   # GitHub CLI configuration

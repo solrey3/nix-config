@@ -32,7 +32,7 @@
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs dependencies.
       # inputs.nixpkgs.follows = "nixpkgs-darwin";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix.url = "github:danth/stylix/cf8b6e2d4e8aca8ef14b839a906ab5eb98b08561";
     flake-utils.url = "github:numtide/flake-utils";
@@ -345,6 +345,9 @@
           # Overlay to disable tests for dnspython
           {
             nixpkgs.overlays = [
+              (final: prev: {
+                nodejs = prev.nodejs_20;
+              })  
               (self: super: {
                 python3Packages = super.python3Packages.override {
                   overrides = self: super: {
