@@ -14,20 +14,20 @@
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-24.11";
+      url = "github:nixos/nixpkgs/nixos-25.05";
     };
     nixpkgs-unstable = {
       url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
+    nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.05-darwin";
     darwin = {
-      url = "github:lnl7/nix-darwin/nix-darwin-24.11";
+      url = "github:lnl7/nix-darwin/nix-darwin-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # home-manager, used for managing user configuration
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.05";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs dependencies.
@@ -111,6 +111,35 @@
         system = "x86_64-linux";
         modules = [
           ./hosts/bravo/configuration.nix
+           stylix.nixosModules.stylix
+          ./modules/stylix.nix
+          # make home-manager as a module of nixos
+          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
+            # TODO replace ryan with your own username
+            home-manager.users.budchris = {
+              imports = [
+                ./modules/home/linux-desktop.nix
+                ./modules/home/linux-apps-x86_64.nix
+              ];
+            };
+            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+	          home-manager.backupFileExtension = "backup";
+          }
+        ];
+      };
+
+      # Configuration for NixOS Desktop Bravo (x86_64-linux)
+      # TODO please change the hostname to your own
+      charlie = nixpkgs-unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/charlie/configuration.nix
            stylix.nixosModules.stylix
           ./modules/stylix.nix
           # make home-manager as a module of nixos

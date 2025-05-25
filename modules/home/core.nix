@@ -2,8 +2,8 @@
 {
   home.packages = with pkgs; [
     ## Fonts
-    # nerd-fonts.jetbrains-mono  # Nerd Font with JetBrains Mono
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono  # Nerd Font with JetBrains Mono
+    # (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     ## CLI Tools 
     ## System Tools
     fastfetch     # Fast system information tool written in C

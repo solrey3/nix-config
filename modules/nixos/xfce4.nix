@@ -16,14 +16,10 @@
         enableXfwm = false;
       };
     };
-    displayManager.lightdm.enable = true;
-    windowManager.i3 = {
-      enable = true;
-    };
     xkb.layout = "us";
     xkb.variant = "";
   };
-  services.displayManager.defaultSession = "xfce+i3";
+  services.displayManager.defaultSession = "xfce";
   security.pam.services.lightdm.enableGnomeKeyring = true;
   
   # Enable automatic login for the user.
@@ -32,7 +28,7 @@
 
   # RDP
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "i3";
+  services.xrdp.defaultWindowManager = "xfce+i3";
   services.xrdp.openFirewall = true;
 
   # Enable network manager applet

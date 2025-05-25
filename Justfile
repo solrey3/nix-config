@@ -58,6 +58,11 @@ nixos-bravo:
 nixos-bravo-debug:
   sudo nixos-rebuild switch --flake .#bravo --impure --show-trace
 
+nixos-charlie:
+  sudo nixos-rebuild switch --flake .#charlie --impure
+nixos-charlie-debug:
+  sudo nixos-rebuild switch --flake .#charlie --impure --show-trace
+
 nixos-golf:
   sudo nixos-rebuild switch --flake .#golf --impure
 nixos-golf-debug:
