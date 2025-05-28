@@ -18,35 +18,35 @@ darwin-set-proxy:
 darwin-delta: 
   nix build .#darwinConfigurations.delta.system \
     --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#delta --impure
+  sudo ./result/sw/bin/darwin-rebuild switch --flake .#delta --impure
 # darwin-debug: darwin-set-proxy
 darwin-delta-debug: 
   nix build .#darwinConfigurations.delta.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#delta --show-trace --verbose --impure
+  sudo ./result/sw/bin/darwin-rebuild switch --flake .#delta --show-trace --verbose --impure
+
+# darwin: darwin-set-proxy
+darwin-foxtrot: 
+  nix build .#darwinConfigurations.foxtrot.system \
+    --extra-experimental-features 'nix-command flakes' --impure
+  ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --impure
+# darwin-debug: darwin-set-proxy
+darwin-foxtrot-debug: 
+  nix build .#darwinConfigurations.foxtrot.system --show-trace --verbose \
+    --extra-experimental-features 'nix-command flakes'
+  ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --show-trace --verbose
 
 # darwin: darwin-set-proxy
 darwin-juliet: 
   nix build .#darwinConfigurations.juliet.system \
     --extra-experimental-features 'nix-command flakes' --impure \
     --option substitute true
-  ./result/sw/bin/darwin-rebuild switch --flake .#juliet --impure
+  sudo ./result/sw/bin/darwin-rebuild switch --flake .#juliet --impure
 # darwin-debug: darwin-set-proxy
 darwin-juliet-debug: 
   nix build .#darwinConfigurations.juliet.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#juliet --show-trace --verbose --impure
-
-# darwin: darwin-set-proxy
-darwin-charlie: 
-  nix build .#darwinConfigurations.charlie.system \
-    --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#charlie --impure
-# darwin-debug: darwin-set-proxy
-darwin-charlie-debug: 
-  nix build .#darwinConfigurations.charlie.system --show-trace --verbose \
-    --extra-experimental-features 'nix-command flakes'
-  ./result/sw/bin/darwin-rebuild switch --flake .#charlie --show-trace --verbose
+  sudo ./result/sw/bin/darwin-rebuild switch --flake .#juliet --show-trace --verbose --impure
 
 nixos-alpha:
   sudo nixos-rebuild switch --flake .#alpha --impure
@@ -75,17 +75,6 @@ nixos-india-debug:
 
 home-echo:
   home-manager switch --flake .#echo 
-
-# darwin: darwin-set-proxy
-darwin-foxtrot: 
-  nix build .#darwinConfigurations.foxtrot.system \
-    --extra-experimental-features 'nix-command flakes' --impure
-  ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --impure
-# darwin-debug: darwin-set-proxy
-darwin-foxtrot-debug: 
-  nix build .#darwinConfigurations.foxtrot.system --show-trace --verbose \
-    --extra-experimental-features 'nix-command flakes'
-  ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --show-trace --verbose
 
 ############################################################################
 #
