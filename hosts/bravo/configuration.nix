@@ -61,4 +61,4 @@
   networking.firewall.allowedTCPPorts = [ 137 138 139 445 ];
   networking.firewall.allowedUDPPorts = [ 137 138 ];
 
-}
+  }

@@ -13,6 +13,7 @@
   home.file.".zshrc".source = "${dotfiles}/zsh/.zshrc";
 
   home.packages = with pkgs; [
+    zsh
     oh-my-zsh
     zsh-syntax-highlighting
     zsh-fast-syntax-highlighting
