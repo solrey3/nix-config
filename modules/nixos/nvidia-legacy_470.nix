@@ -14,6 +14,9 @@
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
+    extraPackages = with pkgs; [
+      rocmPackages.clr.icd
+    ];
   };
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
