@@ -68,8 +68,9 @@
       "protonvpn"                 # Secure and privacy-focused VPN service
       "brave-browser"             # Privacy-focused web browser with ad-blocking features
       "google-chrome"             # Popular web browser known for its speed and simplicity
+      "librewolf"                 # Fork of Firefox, focused on privacy, security and freedom
       "firefox"                   # Open-source web browser known for its performance and privacy features
-      "zen-browser"               # A privacy-focused web browser with built-in ad-blocking and VPN
+      "zen"               # A privacy-focused web browser with built-in ad-blocking and VPN
       "1password"                 # Secure password manager with a strong focus on user-friendly security
       "thunderbird"               # Free email application that’s easy to set up and customize
       "proton-mail-bridge"         # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols

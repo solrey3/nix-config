@@ -12,6 +12,7 @@
       pass
       gnome-keyring
       pinentry-all
+      librewolf
       thunderbird
       protonmail-bridge-gui
       quodlibet
