@@ -7,7 +7,10 @@
     enable = true;
     config = {
       modifier = "Mod4"; # Windows key
-      fonts = [ "pango:JetBrainsMono Nerd Font 12" ];
+      fonts = { 
+        names = [ "JetBrainsMono Nerd Font" ];
+        size = 12.0;
+      };
 
       keybindings = {
         "Mod4+Return" = "exec alacritty";
@@ -29,7 +32,10 @@
       bars = [
         {
           statusCommand = "i3status";
-          fonts = [ "pango:JetBrainsMono Nerd Font 10" ];
+          fonts = { 
+            names = [ "JetBrainsMono Nerd Font" ];
+            size = 12.0;
+          };
         }
       ];
     };
