@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
 
+    nodejs
+    yarn
     inputs.zen-browser.packages."${system}".default
     ## Remote Desktop Protocol
     freerdp 
