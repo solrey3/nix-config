@@ -113,15 +113,15 @@ Additional configuration files are available for:
 
 ## Development Shells
 
-The following development environments are provided:
+The flake exposes several ready-to-use development shells:
 
-- **github-pages**
-- **kali-linux**
-- **python-data-science**
-- **python-fasthtml**
-- **typescript-devops**
+- **github-pages** – tools for building static sites with GitHub Pages.
+- **kali-linux** – packages commonly used for security testing.
+- **python-data-science** – a data science stack with NumPy, pandas, and Jupyter.
+- **python-fasthtml** – environment for building FastAPI applications.
+- **typescript-devops** – Node.js tooling for TypeScript projects.
 
-These shells include all required dependencies and tools, allowing for immediate development in these environments.
+Run `nix develop .#<name>` to enter one of these environments.
 
 ## Activating a DevShell
 
@@ -132,7 +132,3 @@ nix develop github:solrey3/nix-config#python-data-science
 ```
 
 This command loads the specified development environment, complete with all tools and dependencies defined in the flake.
-
----
-
-This version is more streamlined and polished while retaining all the key details.

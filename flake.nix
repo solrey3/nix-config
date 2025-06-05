@@ -64,130 +64,75 @@
     zen-browser,
     ...
   }: let
-    # TODO replace with your own username, email, system, and hostname
-    username = "budchris";
-    useremail = "budchris@solrey3.com";
-    specialArgs =
-      inputs
-      // {
-        inherit username useremail;
-      };
+    # Load local user configuration
+    user = import ./user.nix;
+    username = user.username;
+    useremail = user.useremail;
+    specialArgs = inputs // { inherit username useremail; };
+
+    mkHome = homeModule: imports: [
+      homeModule
+      ({ config, pkgs, ... }: {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = specialArgs // { dotfiles = dotfiles; };
+        home-manager.users.${username} = { imports = imports; };
+        home-manager.backupFileExtension = "backup";
+      })
+    ];
   in {
 
     nixosConfigurations = {
 
       # Configuration for NixOS Desktop Alpha (x86_64-linux)
-      # TODO please change the hostname to your own
       alpha = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/alpha/configuration.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
-          # make home-manager as a module of nixos
-           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            # TODO replace ryan with your own username
-            home-manager.users.budchris = {
-              imports = [
-                ./modules/home/linux-desktop.nix
-                ./modules/home/linux-apps-x86_64.nix
-              ];
-            };
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	          home-manager.backupFileExtension = "backup";
-           }
+        ] ++ mkHome home-manager.nixosModules.home-manager [
+          ./modules/home/linux-desktop.nix
+          ./modules/home/linux-apps-x86_64.nix
         ];
       };
       
       # Configuration for NixOS Desktop Bravo (x86_64-linux)
-      # TODO please change the hostname to your own
       bravo = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/bravo/configuration.nix
            stylix.nixosModules.stylix
           ./modules/stylix.nix
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            # TODO replace ryan with your own username
-            home-manager.users.budchris = {
-              imports = [
-                ./modules/home/linux-desktop.nix
-                ./modules/home/linux-apps-x86_64.nix
-              ];
-            };
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	          home-manager.backupFileExtension = "backup";
-          }
+        ] ++ mkHome home-manager.nixosModules.home-manager [
+          ./modules/home/linux-desktop.nix
+          ./modules/home/linux-apps-x86_64.nix
         ];
       };
 
       # Configuration for NixOS Desktop Bravo (x86_64-linux)
-      # TODO please change the hostname to your own
       charlie = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/charlie/configuration.nix
            stylix.nixosModules.stylix
           ./modules/stylix.nix
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            # TODO replace ryan with your own username
-            home-manager.users.budchris = {
-              imports = [
-                ./modules/home/linux-desktop.nix
-                ./modules/home/linux-apps-x86_64.nix
-              ];
-            };
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	          home-manager.backupFileExtension = "backup";
-          }
+        ] ++ mkHome home-manager.nixosModules.home-manager [
+          ./modules/home/linux-desktop.nix
+          ./modules/home/linux-apps-x86_64.nix
         ];
       };
 
       # Configuration for NixOS on MacBookPro8,2 (x86_64-linux)
-      # TODO please change the hostname to your own
       golf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/golf/configuration.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            # TODO replace ryan with your own username
-            home-manager.users.budchris = {
-              imports = [
-                ./modules/home/linux-desktop.nix
-                ./modules/home/linux-apps-x86_64.nix
-              ];
-            };
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	          home-manager.backupFileExtension = "backup";
-          }
+        ] ++ mkHome home-manager.nixosModules.home-manager [
+          ./modules/home/linux-desktop.nix
+          ./modules/home/linux-apps-x86_64.nix
         ];
       };
       
@@ -207,7 +152,6 @@
       #       home-manager.useGlobalPkgs = true;
       #       home-manager.useUserPackages = true;
       #       home-manager.extraSpecialArgs.dotfiles = dotfiles;
-      #       # TODO replace ryan with your own username
       #       home-manager.users.budchris = {
       #         imports = [
       #           ./modules/home/linux.nix
@@ -220,30 +164,15 @@
       # };
       
       # Configuration for NixOS Desktop India (x86_64-linux)
-      # TODO please change the hostname to your own
       india = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/india/configuration.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
-          # make home-manager as a module of nixos
-           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            # TODO replace ryan with your own username
-            home-manager.users.budchris = {
-              imports = [
-                ./modules/home/linux-desktop.nix
-                ./modules/home/linux-apps-x86_64.nix
-              ];
-            };
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	          home-manager.backupFileExtension = "backup";
-           }
+        ] ++ mkHome home-manager.nixosModules.home-manager [
+          ./modules/home/linux-desktop.nix
+          ./modules/home/linux-apps-x86_64.nix
         ];
       };
       
@@ -266,23 +195,8 @@
           ./hosts/digitalocean/configuration.nix
           stylix.nixosModules.stylix
           ./modules/stylix.nix
-          # make home-manager as a module of nixos
-          # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            # TODO replace ryan with your own username
-            home-manager.users.budchris = {
-              imports = [
-                ./modules/home/linux.nix
-              ];
-            };
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
-	          home-manager.backupFileExtension = "backup";
-          }
-          
+        ] ++ mkHome home-manager.nixosModules.home-manager [
+          ./modules/home/linux.nix
         ];
       };
 
@@ -301,14 +215,8 @@
           ./modules/darwin/host-users.nix
           stylix.darwinModules.stylix
           ./modules/stylix.nix
-          # home manager
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.${username} = import ./modules/home/darwin.nix;
-          }
+        ] ++ mkHome home-manager.darwinModules.home-manager [
+          ./modules/home/darwin.nix
         ];
       };
 
@@ -325,14 +233,9 @@
           ./modules/darwin/host-users.nix
           # stylix.darwinModules.stylix
           # ./modules/stylix.nix
-          # home manager
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.budchris = import ./modules/home/darwin.nix;
-          }
+        ] ++ mkHome home-manager.darwinModules.home-manager [
+          ./modules/home/darwin.nix
+        ] ++ [
           # Overlay to disable tests for dnspython
           {
             nixpkgs.overlays = [
@@ -363,20 +266,15 @@
           ./modules/darwin/host-users.nix
           stylix.darwinModules.stylix
           ./modules/stylix.nix
-          # home manager
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.budchris = import ./modules/home/darwin.nix;
-          }
+        ] ++ mkHome home-manager.darwinModules.home-manager [
+          ./modules/home/darwin.nix
+        ] ++ [
           # Overlay to disable tests for dnspython
           {
             nixpkgs.overlays = [
               (final: prev: {
                 nodejs = prev.nodejs_20;
-              })  
+              })
               (self: super: {
                 python3Packages = super.python3Packages.override {
                   overrides = self: super: {
@@ -403,14 +301,8 @@
           ./modules/darwin/host-users.nix
           stylix.darwinModules.stylix
           ./modules/stylix.nix
-          # home manager
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = specialArgs;
-            home-manager.users.budchris = import ./modules/home/darwin.nix;
-          }
+        ] ++ mkHome home-manager.darwinModules.home-manager [
+          ./modules/home/darwin.nix
         ];
       };
     };

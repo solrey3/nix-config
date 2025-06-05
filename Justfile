@@ -1,6 +1,5 @@
 # just is a command runner, Justfile is very similar to Makefile, but simpler.
 
-# TODO update hostname here!
 armHostname := "delta"
 intelHostname := "charlie"
 
@@ -10,7 +9,7 @@ intelHostname := "charlie"
 #
 ############################################################################
 
-#  TODO Feel free to remove this target if you don't need a proxy to speed up the build process
+#  Remove this target if a proxy is not required during builds
 darwin-set-proxy:
   sudo python3 scripts/darwin_set_proxy.py
 
@@ -85,6 +84,11 @@ home-echo:
 
 update:
   nix flake update
+
+update-lock:
+  nix flake update
+  git add flake.lock
+  git commit -m "chore: update flake.lock"
 
 history:
   nix profile history --profile /nix/var/nix/profiles/system

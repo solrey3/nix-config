@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: nixfmt
+        name: Format Nix files
+        entry: nix fmt
+        language: system
+        types: ["nix"]
