@@ -1,6 +1,6 @@
 { pkgs, ... }: {
 
-  # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
+  # Homebrew must be installed manually for these apps to work; see https://brew.sh
   # 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
@@ -11,7 +11,7 @@
     # otherwise Apple Store will refuse to install them.
     # For details, see https://github.com/mas-cli/mas 
     # masApps = {
-      # TODO Feel free to add your favorite apps here.
+      # Add your favorite apps here.
       # Xcode = 497799835;
       # Wechat = 836500024;
       # NeteaseCloudMusic = 944848654;
@@ -26,12 +26,12 @@
     # ];
 
     # `brew install`
-    # TODO Feel free to add your favorite apps here.
+    # Add your favorite apps here.
     # brews = [
     # ];
 
     # `brew install --cask`
-    # TODO Feel free to add your favorite apps here.
+    # Add your favorite apps here.
     casks = [
       "chatgpt"
     ];

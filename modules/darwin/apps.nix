@@ -7,7 +7,7 @@
   #  NOTE: You can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
   # 
-  # TODO Feel free to modify this file to fit your needs.
+  # Customize this file to fit your needs.
   #
   ##########################################################################
 
@@ -25,7 +25,7 @@
   ];
   environment.variables.EDITOR = "vim"; # Set Vim as the default text editor
 
-  # TODO To make this work, Homebrew needs to be installed manually, see https://brew.sh
+  # Homebrew must be installed manually for these apps to work; see https://brew.sh
   # 
   # The apps installed by Homebrew are not managed by Nix and are not reproducible!
   # However, on macOS, Homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!

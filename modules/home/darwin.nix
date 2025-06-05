@@ -1,8 +1,4 @@
-{ lib, config, pkgs, ... }@args:
-
-let
-  username = "budchris"; # Ensure that the username is defined here
-in
+{ lib, config, pkgs, username, ... }:
 {
   # Import sub-modules
   imports = [
