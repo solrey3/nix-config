@@ -48,7 +48,7 @@
 
   services.samba = {
     enable = true; # Enables the Samba service
-    settings = { 
+    settings = {
       "SolReyDio" = {
         "path" = "/mnt/sata8tb/SolReyDio";
         "read only" = "no";

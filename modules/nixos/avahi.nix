@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  
+
   # Avahi - Neeeded for my Macs to see my NixOS machines
   services.avahi = {
     enable = true;
@@ -17,5 +17,5 @@
     };
   };
   networking.firewall.allowedUDPPorts = [ 5353 ];
-  
+
 }

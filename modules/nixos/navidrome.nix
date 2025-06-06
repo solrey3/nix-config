@@ -16,5 +16,5 @@
   systemd.services.navidrome.serviceConfig.Environment = [
       "ND_LISTENADDRESS=0.0.0.0"
   ];
-  
+
 }

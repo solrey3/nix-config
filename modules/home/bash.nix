@@ -13,7 +13,7 @@
       alias la='ls -A'
       alias l='ls -CF'
       alias nano="nvim"
-      alias neofetch="fastfetch" 
+      alias neofetch="fastfetch"
     '';
     # set some aliases, feel free to add more or remove some
     shellAliases = {

@@ -1,5 +1,5 @@
 { modulesPath, config, lib, pkgs, ... }: {
-  
+
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
@@ -14,7 +14,7 @@
   };
 
   networking.hostName = "ubuntu2nixos";
-  
+
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
@@ -46,7 +46,7 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlWwXAozSb4h6jPnhw34P0Niebj5LskgC3DVM76cbQY budchris@juliet"
     ];
   };
-  
+
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

@@ -21,7 +21,7 @@
 
     includes = [
       {
-        # use diffrent email & name for work
+        # use different email & name for work
         path = "~/work/.gitconfig";
         condition = "gitdir:~/work/";
       }

@@ -17,7 +17,7 @@ To install NixOS, refer to the official [NixOS download page](https://nixos.org/
 
 #### macOS
 Install Xcode and Homebrew
-```sh 
+```sh
 xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
@@ -32,14 +32,14 @@ sh <(curl -L https://nixos.org/nix/install)
 **Multi-user Installation (Recommended)**
 
 For Linux systems with systemd and SELinux disabled, and where sudo authentication is available:
-```sh 
+```sh
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
 **Single-user Installation**
 
 If the multi-user installation is not feasible:
-```sh 
+```sh
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 ```
 This installs Nix as a single-user setup, owned by the invoking user. Run it under your usual account, not as root. The script will use sudo to create `/nix` if it doesn’t already exist.
@@ -61,11 +61,11 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 - **echo**: Raspberry Pi OS with Nix on Raspberry Pi 5.
 - **foxtrot**: macOS Catalina 10.15.7 on Early 2013 13-inch Retina Macbook Pro.
 - **golf**: NixOS 24.05 on Late-2011 15-inch MacBook Pro.
-- **hotel**: NixOS 24.05 on Digital Ocean droplet originally running Ubuntu 
+- **hotel**: NixOS 24.05 on Digital Ocean droplet originally running Ubuntu
 - **india**: SteamOS 3.0 with NixOS dual-boot on Steam Deck.
 
 ## Other Configurations
-- **digitalocean**: Uses nixos-anywhere to install NixOS on a Linux droplet 
+- **digitalocean**: Uses nixos-anywhere to install NixOS on a Linux droplet
 
 ## Updating Hosts/Configurations
 

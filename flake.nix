@@ -96,7 +96,7 @@
           ./modules/home/linux-apps-x86_64.nix
         ];
       };
-      
+
       # Configuration for NixOS Desktop Bravo (x86_64-linux)
       bravo = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
@@ -110,7 +110,7 @@
         ];
       };
 
-      # Configuration for NixOS Desktop Bravo (x86_64-linux)
+      # Configuration for NixOS Desktop Charlie (x86_64-linux)
       charlie = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -135,7 +135,7 @@
           ./modules/home/linux-apps-x86_64.nix
         ];
       };
-      
+
       # # Configuration for NixOS on Digital Ocean droplets (x86_64-linux)
       # hotel = nixpkgs.lib.nixosSystem {
       #   system = "x86_64-linux";
@@ -162,7 +162,7 @@
       #     }
       #   ];
       # };
-      
+
       # Configuration for NixOS Desktop India (x86_64-linux)
       india = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -175,8 +175,8 @@
           ./modules/home/linux-apps-x86_64.nix
         ];
       };
-      
-      # Configuration for Digital Ocean droplets 
+
+      # Configuration for Digital Ocean droplets
       digitalocean = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -307,7 +307,7 @@
       };
     };
 
-    
+
     homeConfigurations = {
       # Configuration for Respberry Pi RPi5
       echo = home-manager.lib.homeManagerConfiguration {

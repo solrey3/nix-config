@@ -2,10 +2,10 @@
 
   programs.ssh = {
     enable = true; # Ensure SSH is enabled.
-    startAgent = true; # Start the ssh-agent on login.   
-    addKeys = [ 
-      "~/.ssh/id_ed25519" 
-      "~/.ssh/google_compute_engine" 
+    startAgent = true; # Start the ssh-agent on login.
+    addKeys = [
+      "~/.ssh/id_ed25519"
+      "~/.ssh/google_compute_engine"
     ];
     extraConfig = ''
       AddKeysToAgent yes
@@ -20,11 +20,11 @@
       Host alpha
         HostName alpha.local
         User budchris
-    
+
       Host bravo
         HostName bravo.local
         User budchris
-    
+
     '';
   };
 

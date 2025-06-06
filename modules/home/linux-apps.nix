@@ -7,8 +7,8 @@
     yarn
     inputs.zen-browser.packages."${system}".default
     ## Remote Desktop Protocol
-    freerdp 
-    remmina 
+    freerdp
+    remmina
     ## GUI Applications
     thunderbird
     protonmail-bridge-gui
@@ -17,11 +17,11 @@
     transmission_4-gtk
     wireshark
     # protonvpn-gui
-    nextcloud-client 
-    vlc 
-    #### linux64 only 
-    obsidian 
-    brave 
+    nextcloud-client
+    vlc
+    #### linux64 only
+    obsidian
+    brave
     vscode
 
   ];

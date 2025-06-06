@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Function to create a new Tmux session
 create_session() {
   session_name=$1

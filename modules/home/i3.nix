@@ -7,7 +7,7 @@
     enable = true;
     config = {
       modifier = "Mod4"; # Windows key
-      fonts = { 
+      fonts = {
         names = [ "JetBrainsMono Nerd Font" ];
         size = 12.0;
       };
@@ -32,7 +32,7 @@
       bars = [
         {
           statusCommand = "i3status";
-          fonts = { 
+          fonts = {
             names = [ "JetBrainsMono Nerd Font" ];
             size = 12.0;
           };
