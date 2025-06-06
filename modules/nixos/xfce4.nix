@@ -7,7 +7,7 @@
 {
 
   services.xserver = {
-    enable = true;   
+    enable = true;
     desktopManager = {
       xterm.enable = false;
       xfce = {
@@ -21,7 +21,7 @@
   };
   services.displayManager.defaultSession = "xfce";
   security.pam.services.lightdm.enableGnomeKeyring = true;
-  
+
   # Enable automatic login for the user.
   # services.displayManager.autoLogin.enable = true;
   # services.displayManager.autoLogin.user = "budchris";

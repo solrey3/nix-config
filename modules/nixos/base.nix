@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  
+
   # Enable Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -39,7 +39,7 @@
   # services.xserver.libinput.enable = true;
 
   # Enable the OpenSSH daemon.
-  # Enable SSH services 
+  # Enable SSH services
   services.openssh = {
     enable = true;
     ports = [ 22 ];

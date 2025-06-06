@@ -5,8 +5,8 @@
 { config, pkgs, ... }:
 
 {
-  
-  # Enabling Docker 
+
+  # Enabling Docker
   virtualisation.docker.enable = true;
   ## Enable Docker rootless mode
   virtualisation.docker.rootless = {

@@ -5,7 +5,7 @@
 { config, pkgs, ... }:
 
 {
-  
+
   # Enable sound with pipewire.
   security.rtkit.enable = true;
   services.pipewire = {

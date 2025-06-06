@@ -14,35 +14,35 @@ darwin-set-proxy:
   sudo python3 scripts/darwin_set_proxy.py
 
 # darwin: darwin-set-proxy
-darwin-delta: 
+darwin-delta:
   nix build .#darwinConfigurations.delta.system \
     --extra-experimental-features 'nix-command flakes' --impure
   sudo ./result/sw/bin/darwin-rebuild switch --flake .#delta --impure
 # darwin-debug: darwin-set-proxy
-darwin-delta-debug: 
+darwin-delta-debug:
   nix build .#darwinConfigurations.delta.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes' --impure
   sudo ./result/sw/bin/darwin-rebuild switch --flake .#delta --show-trace --verbose --impure
 
 # darwin: darwin-set-proxy
-darwin-foxtrot: 
+darwin-foxtrot:
   nix build .#darwinConfigurations.foxtrot.system \
     --extra-experimental-features 'nix-command flakes' --impure
   ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --impure
 # darwin-debug: darwin-set-proxy
-darwin-foxtrot-debug: 
+darwin-foxtrot-debug:
   nix build .#darwinConfigurations.foxtrot.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes'
   ./result/sw/bin/darwin-rebuild switch --flake .#foxtrot --show-trace --verbose
 
 # darwin: darwin-set-proxy
-darwin-juliet: 
+darwin-juliet:
   nix build .#darwinConfigurations.juliet.system \
     --extra-experimental-features 'nix-command flakes' --impure \
     --option substitute true
   sudo ./result/sw/bin/darwin-rebuild switch --flake .#juliet --impure
 # darwin-debug: darwin-set-proxy
-darwin-juliet-debug: 
+darwin-juliet-debug:
   nix build .#darwinConfigurations.juliet.system --show-trace --verbose \
     --extra-experimental-features 'nix-command flakes' --impure
   sudo ./result/sw/bin/darwin-rebuild switch --flake .#juliet --show-trace --verbose --impure
@@ -73,7 +73,7 @@ nixos-india-debug:
   sudo nixos-rebuild switch --flake .#india --impure --show-trace
 
 home-echo:
-  home-manager switch --flake .#echo 
+  home-manager switch --flake .#echo
 
 ############################################################################
 #

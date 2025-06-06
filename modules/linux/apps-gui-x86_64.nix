@@ -8,15 +8,15 @@
 
   users.users.budchris = {
     packages = with pkgs; [
-      ### darwin or linux64 
+      ### darwin or linux64
       vscode
       ### darwin or x86_64-linux
-      chromedriver 
+      chromedriver
       google-chrome
       synology-drive-client
-      #### x84_64-linux only 
-      microsoft-edge 
-      soulseekqt 
+      #### x86_64-linux only
+      microsoft-edge
+      soulseekqt
     ];
   };
 

@@ -21,11 +21,11 @@
       wireshark
       #### linux only
       # librewolf
-      nextcloud-client 
-      vlc 
-      #### linux64 only 
-      obsidian 
-      brave 
+      nextcloud-client
+      vlc
+      #### linux64 only
+      obsidian
+      brave
     ];
   };
 

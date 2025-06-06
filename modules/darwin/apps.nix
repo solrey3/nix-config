@@ -1,12 +1,12 @@
 { pkgs, ... }: {
 
   ##########################################################################
-  # 
+  #
   #  Install all apps and packages here.
   #
   #  NOTE: You can find all available options in:
   #    https://daiderd.com/nix-darwin/manual/index.html
-  # 
+  #
   # Customize this file to fit your needs.
   #
   ##########################################################################
@@ -26,7 +26,7 @@
   environment.variables.EDITOR = "vim"; # Set Vim as the default text editor
 
   # Homebrew must be installed manually for these apps to work; see https://brew.sh
-  # 
+  #
   # The apps installed by Homebrew are not managed by Nix and are not reproducible!
   # However, on macOS, Homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
   homebrew = {
@@ -40,7 +40,7 @@
     # Applications to install from Mac App Store using mas.
     # You need to install all these apps manually first so that your Apple account has records for them.
     # Otherwise, the Apple Store will refuse to install them.
-    # For details, see https://github.com/mas-cli/mas 
+    # For details, see https://github.com/mas-cli/mas
     masApps = {
       Xcode = 497799835; # Apple’s IDE for macOS, required for building software
     };

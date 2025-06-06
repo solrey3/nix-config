@@ -1,6 +1,6 @@
 # ./configuration.nix
 { config, pkgs, ... }: {
-  
+
   imports = [
     "${config.nixpkgs.system}/nixos/modules/virtualisation/digital-ocean-image.nix"
   ];

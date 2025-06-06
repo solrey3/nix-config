@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 import os
 import pandas as pd
@@ -46,7 +47,7 @@ def download_youtube_audio(url, output_path, metadata):
     new_filename = f"{artist} - {title}.mp3"
     new_filepath = os.path.join(output_path, new_filename)
     os.rename(downloaded_file, new_filepath)
-    
+
     # Add ID3 tags
     audio = EasyID3(new_filepath)
     audio['artist'] = artist
@@ -58,7 +59,7 @@ def download_youtube_audio(url, output_path, metadata):
     audio['organization'] = label or 'Unknown'
     genre = metadata.get('genre', '')
     audio['genre'] = genre if genre else 'Unknown'
-    
+
     # Add release date to ID3 tag
     release_date = metadata.get('release_date', '')
     if release_date:
@@ -70,7 +71,7 @@ def download_youtube_audio(url, output_path, metadata):
             release_date = str(int(release_date))
         if isinstance(release_date, (datetime.date, datetime.datetime)):  # Convert date/datetime to string
             release_date = release_date.strftime('%Y-%m-%d')
-    
+
         audio['date'] = release_date  # Assign as string
 
     # Add custom ID3 tags
