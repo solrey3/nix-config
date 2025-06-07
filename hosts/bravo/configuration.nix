@@ -46,6 +46,12 @@
     options = [ "defaults" "rw" "user" ];
   };
 
+  fileSystems."/mnt/files2" = {
+    device = "/dev/disk/by-partuuid/564a218e-f527-47e2-924f-124f983bb9d2";
+    fsType = "ntfs";
+    options = [ "defaults" "rw" "user" ];
+  };
+
   services.samba = {
     enable = true; # Enables the Samba service
     settings = {
