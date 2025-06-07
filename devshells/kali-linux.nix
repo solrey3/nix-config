@@ -17,7 +17,6 @@ pkgs.mkShell {
     enum4linux    # Tool for enumerating information from Windows and Samba systems
     hydra         # Network logon cracker
     netcat        # Utility for reading from and writing to network connections
-    nikto         # Web server scanner (duplicate, can be removed)
     openvpn       # Open-source VPN software
     smbclient     # Samba client
     tcpdump       # Command-line packet analyzer
