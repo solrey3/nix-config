@@ -1,4 +1,3 @@
-
 # nix-config
 
 This repository contains a Nix flake that provides comprehensive configurations for all Linux and macOS machines I manage, alongside development shell environments. This flake ensures consistent system setups and development experiences across all machines running Nix.

@@ -253,7 +253,7 @@
         ];
       };
 
-      # Configuration for my M2 Macbook Air Delta (aarch64-darwin)
+      # Configuration for my M2 Macbook Air Juliet (aarch64-darwin)
       juliet = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = specialArgs // { hostname = "juliet"; dotfiles = dotfiles; };
@@ -309,7 +309,7 @@
 
 
     homeConfigurations = {
-      # Configuration for Respberry Pi RPi5
+      # Configuration for Raspberry Pi RPi5
       echo = home-manager.lib.homeManagerConfiguration {
         pkgs = import nixpkgs {
           system = "aarch64-linux";
@@ -347,6 +347,8 @@
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
         python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
+        python-devops = import ./devshells/python-devops.nix { inherit pkgs; };
+        python-ytdlp = import ./devshells/python-ytdlp.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
       aarch64-linux = let pkgs = import nixpkgs { system = "aarch64-linux"; }; in {
@@ -355,6 +357,8 @@
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
         python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
+        python-devops = import ./devshells/python-devops.nix { inherit pkgs; };
+        python-ytdlp = import ./devshells/python-ytdlp.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
       x86_64-darwin = let pkgs = import nixpkgs { system = "x86_64-darwin"; }; in {
@@ -363,6 +367,8 @@
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
         python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
+        python-devops = import ./devshells/python-devops.nix { inherit pkgs; };
+        python-ytdlp = import ./devshells/python-ytdlp.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
       x86_64-linux = let pkgs = import nixpkgs { system = "x86_64-linux"; }; in {
@@ -371,6 +377,8 @@
         github-pages = import ./devshells/github-pages.nix { inherit pkgs; };
         kali-linux = import ./devshells/kali-linux.nix { inherit pkgs; };
         python-data-science = import ./devshells/python-data-science.nix { inherit pkgs; };
+        python-devops = import ./devshells/python-devops.nix { inherit pkgs; };
+        python-ytdlp = import ./devshells/python-ytdlp.nix { inherit pkgs; };
         typescript-devops = import ./devshells/typescript-devops.nix { inherit pkgs; };
       };
     };
