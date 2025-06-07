@@ -68,7 +68,7 @@
     user = import ./user.nix;
     username = user.username;
     useremail = user.useremail;
-    specialArgs = inputs // { inherit username useremail; };
+    specialArgs = inputs // { inputs = inputs; inherit username useremail; };
 
     mkHome = homeModule: imports: [
       homeModule
