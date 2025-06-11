@@ -83,6 +83,7 @@
       "soulseek"                  # Peer-to-peer file-sharing network, mainly used for sharing music
       "transmission"              # Lightweight, fast, and easy-to-use BitTorrent client
       "nextcloud"                 # Open-source platform for file sync and sharing, similar to Dropbox
+      "synology-drive"
       "obsidian"                  # A powerful knowledge management and note-taking application
       "wireshark"                 # Network protocol analyzer for monitoring and analyzing network traffic
       "pgadmin4"                  # Open-source administration and development platform for PostgreSQL
