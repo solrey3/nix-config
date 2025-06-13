@@ -16,6 +16,7 @@
         enableXfwm = false;
       };
     };
+    windowManager.i3.enable = true;
     xkb.layout = "us";
     xkb.variant = "";
   };
@@ -28,7 +29,7 @@
 
   # RDP
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "startxfce4";
+  services.xrdp.defaultWindowManager = "i3";
   services.xrdp.openFirewall = true;
 
   # Enable network manager applet

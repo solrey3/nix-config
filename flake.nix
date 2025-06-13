@@ -98,7 +98,7 @@
       };
 
       # Configuration for NixOS Desktop Bravo (x86_64-linux)
-      bravo = nixpkgs-unstable.lib.nixosSystem {
+      bravo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./hosts/bravo/configuration.nix
