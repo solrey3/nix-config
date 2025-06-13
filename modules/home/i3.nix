@@ -8,7 +8,7 @@
   };
 
   # Use configuration from the dotfiles repository
-  home.file.".config/i3/config".source = "${dotfiles}/i3/config";
+  xdg.configFile."i3/config".source = lib.mkForce "${dotfiles}/i3/config";
 
   home.packages = with pkgs; [
     i3
