@@ -53,15 +53,20 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
 ## Managed Hosts
 
-- **alpha**: NixOS 24.05 with XFCE, Intel Core i5-3570k, NVIDIA GeForce GTX 660.
-- **bravo**: NixOS 24.05 with Hyprland, AMD Ryzen 9 3900X, NVIDIA GeForce RTX 3070.
-- **charlie**: macOS Ventura 13.6.9 on 2017 Intel 13-inch MacBook Pro.
-- **delta**: macOS Sonoma 14.6.1 on 2022 M2 13-inch MacBook Air.
-- **echo**: Raspberry Pi OS with Nix on Raspberry Pi 5.
-- **foxtrot**: macOS Catalina 10.15.7 on Early 2013 13-inch Retina Macbook Pro.
-- **golf**: NixOS 24.05 on Late-2011 15-inch MacBook Pro.
-- **hotel**: NixOS 24.05 on Digital Ocean droplet originally running Ubuntu
-- **india**: SteamOS 3.0 with NixOS dual-boot on Steam Deck.
+- **alpha**: NixOS 24.11 (Vicuna) on Intel Core i5-3570K with NVIDIA GeForce GTX 660.
+- **bravo**: NixOS 24.11 (Vicuna) with i3 on AMD Ryzen 9 3900X and NVIDIA GeForce RTX 3070.
+- **charlie**: 2017 Intel 13-inch MacBook Pro.
+- **delta**: macOS Sequoia 15.4 on 2022 M2 13-inch MacBook Air.
+- **echo**: Raspberry Pi 5.
+- **foxtrot**: Early 2013 13-inch Retina MacBook Pro.
+- **golf**: Late-2011 15-inch MacBook Pro.
+- **hotel**: Digital Ocean droplet originally running Ubuntu.
+- **india**: Steam Deck.
+- **juliet**: macOS Sequoia 15.3.2 on 2024 M4 Mac Mini.
+- **kilo**: Ubuntu 24.04.2 LTS on Beelink EQR5 with AMD Ryzen 7 5825U.
+- **lima**: Beelink EQR5 worker node.
+- **mike**: Beelink EQR5 worker node.
+- **november**: Mac Mini A1347.
 
 ## Other Configurations
 - **digitalocean**: Uses nixos-anywhere to install NixOS on a Linux droplet
