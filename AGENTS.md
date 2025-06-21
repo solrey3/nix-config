@@ -16,7 +16,7 @@ Before submitting a change, run the following commands:
 2. `nix flake check` – verifies the flake evaluates correctly.
 
 If these commands fail due to missing dependencies or network restrictions,
-note this in the PR under the **Testing** section.
+use `scripts/setup_testing_tools.sh` to install the necessary tools. Note this in the PR under the **Testing** section.
 
 ## Commit Guidelines
 
