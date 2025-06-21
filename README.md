@@ -61,7 +61,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 - **foxtrot**: Early 2013 13-inch Retina MacBook Pro.
 - **golf**: Late-2011 15-inch MacBook Pro.
 - **hotel**: Digital Ocean droplet originally running Ubuntu.
-- **india**: Steam Deck.
+- **india**: Steam Deck running SteamOS with home-manager.
 - **juliet**: macOS Sequoia 15.3.2 on 2024 M4 Mac Mini.
 - **kilo**: Ubuntu 24.04.2 LTS on Beelink EQR5 with AMD Ryzen 7 5825U.
 - **lima**: Beelink EQR5 worker node.

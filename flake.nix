@@ -163,18 +163,6 @@
       #   ];
       # };
 
-      # Configuration for NixOS Desktop India (x86_64-linux)
-      india = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/india/configuration.nix
-          stylix.nixosModules.stylix
-          ./modules/stylix.nix
-        ] ++ mkHome home-manager.nixosModules.home-manager [
-          ./modules/home/linux-desktop.nix
-          ./modules/home/linux-apps-x86_64.nix
-        ];
-      };
 
       # Configuration for Digital Ocean droplets
       digitalocean = nixpkgs.lib.nixosSystem {
@@ -337,7 +325,39 @@
             home-manager.backupFileExtension = "backup";
           }
         ];
+        };
+
+      # Configuration for Steam Deck India running SteamOS
+      india = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          config = {
+            allowUnfree = true;
+          };
+        };
+        modules = [
+          {
+            home.username = "${username}";
+            home.stateVersion = "24.11";
+            home.homeDirectory = "/home/${username}";
+          }
+          stylix.homeManagerModules.stylix
+          ./modules/stylix.nix
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.dotfiles = dotfiles;
+            home-manager.users.${username} = {
+              imports = [
+                ./modules/home/linux-desktop.nix
+                ./modules/home/linux-apps-x86_64.nix
+              ];
+            };
+            home-manager.backupFileExtension = "backup";
+          }
+        ];
       };
+
     };
 
     devShells = {
