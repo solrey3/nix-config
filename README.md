@@ -53,20 +53,20 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
 ## Managed Hosts
 
-- **alpha**: NixOS 24.11 (Vicuna) on Intel Core i5-3570K with NVIDIA GeForce GTX 660.
-- **bravo**: NixOS 24.11 (Vicuna) with i3 on AMD Ryzen 9 3900X and NVIDIA GeForce RTX 3070.
-- **charlie**: 2017 Intel 13-inch MacBook Pro (two Thunderbolt 3 ports, **MacBookPro14,1**).
-- **delta**: macOS Sequoia 15.4 on 2022 M2 13-inch MacBook Air (**Mac14,2**).
-- **echo**: Raspberry Pi 5.
+- **alpha**: Intel Core i5-3570K with NVIDIA GeForce GTX 660 and 32GB RAM running NixOS.
+- **bravo**: AMD Ryzen 9 3900X and NVIDIA GeForce RTX 3070 and 32GB RAM running NixOS.
+- **charlie**: 2017 Intel 13-inch MacBook Pro, two Thunderbolt 3 ports (**MacBookPro14,1**).
+- **delta**: 2022 M2 13-inch MacBook Air (**Mac14,2**).
+- **echo**: Raspberry Pi 5 running RaspberryPi OS using home-manager.
 - **foxtrot**: Early 2013 13-inch Retina MacBook Pro (**MacBookPro10,2**).
 - **golf**: Late-2011 15-inch MacBook Pro (**MacBookPro8,2**).
-- **hotel**: Digital Ocean droplet originally running Ubuntu.
- - **india**: Steam Deck running SteamOS with home-manager. Hardware: 8 × AMD Custom APU 0932, 14.5 GiB RAM, and AMD Custom GPU 0932 (Valve Galileo, System Version 1).
-- **juliet**: macOS Sequoia 15.3.2 on 2024 base M4 Mac Mini (**Mac16,10**).
-- **kilo**: Ubuntu 24.04.2 LTS on Beelink EQR5 with AMD Ryzen 7 5825U.
+- **hotel**: Digital Ocean droplet originally running Ubuntu injected to run nixos.
+- **india**: Steam Deck OLED (Galileo) running SteamOS using home-manager.
+- **juliet**: 2024 base M4 Mac Mini (**Mac16,10**).
+- **kilo**: Beelink EQR5 with AMD Ryzen 7 5825U running Ubuntu LTS.
 - **lima**: Beelink EQR5 worker node.
 - **mike**: Beelink EQR5 worker node.
-- **november**: Mac Mini A1347 (Late 2014, **Macmini7,1**).
+- **november**: Late 2014 Mac Mini (**Macmini7,1**).
 
 ## Other Configurations
 - **digitalocean**: Uses nixos-anywhere to install NixOS on a Linux droplet
