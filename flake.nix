@@ -110,7 +110,7 @@
         ];
       };
 
-      # Configuration for NixOS Desktop Charlie (x86_64-linux)
+      # Configuration for NixOS on MacBookPro14,1 Charlie (x86_64-linux)
       charlie = nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -191,7 +191,7 @@
     };
 
     darwinConfigurations = {
-      # Configuration for 2017 13-inch MacBook Pro Charlie (x86_64-darwin)
+      # Configuration for 2017 13-inch MacBook Pro (two Thunderbolt 3 ports, MacBookPro14,1) Charlie (x86_64-darwin)
       charlie = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         specialArgs = specialArgs // { hostname = "charlie"; dotfiles = dotfiles; };
@@ -208,7 +208,7 @@
         ];
       };
 
-      # Configuration for my M2 Macbook Air Delta (aarch64-darwin)
+      # Configuration for 2022 M2 MacBook Air (Mac14,2) Delta (aarch64-darwin)
       delta = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = specialArgs // { hostname = "delta"; dotfiles = dotfiles; };
@@ -241,7 +241,7 @@
         ];
       };
 
-      # Configuration for my M2 Macbook Air Juliet (aarch64-darwin)
+      # Configuration for 2024 base M4 Mac mini (Mac16,10) Juliet (aarch64-darwin)
       juliet = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = specialArgs // { hostname = "juliet"; dotfiles = dotfiles; };
@@ -277,7 +277,7 @@
         ];
       };
 
-      # Configuration for MacBook Pro (Retina, 13-inch, Early 2013) Foxtrot (x86_64-darwin)
+      # Configuration for MacBook Pro (Retina, 13-inch, Early 2013, MacBookPro10,2) Foxtrot (x86_64-darwin)
       foxtrot = darwin.lib.darwinSystem {
         system = "x86_64-darwin";
         specialArgs = specialArgs // { hostname = "foxtrot"; dotfiles = dotfiles; };
