@@ -1,6 +1,6 @@
 # India
 
-Steam Deck running SteamOS 3.0. Apply with `just home-india`.
+Steam Deck running SteamOS 3.0. Hardware: 8 × AMD Custom APU 0932, 14.5 GiB RAM, and AMD Custom GPU 0932 (Valve Galileo, System Version 1). Apply with `just home-india`.
 
 ## Installing Nix
 
