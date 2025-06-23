@@ -56,12 +56,13 @@
       "curl" # Command-line tool for transferring data with URLs; do not install via nixpkgs, as it may not work well on macOS
       "nodejs"
       "yarn"
+      "navidrome" # Modern Music Server and Streamer compatible with Subsonic/Airsonic
     ];
 
     # `brew install --cask`
     casks = [
       # My Apps
-      "ghostty"                  # A simple and beautiful Ghost blog editor
+      "ghostty"                   # A simple and beautiful Ghost blog editor
       "wezterm"                   # GPU-accelerated terminal emulator with a beautiful and intuitive interface
       "alacritty"                 # A fast, cross-platform, OpenGL terminal emulator
       "visual-studio-code"        # Popular source code editor with built-in support for many languages
@@ -69,11 +70,11 @@
       "brave-browser"             # Privacy-focused web browser with ad-blocking features
       "google-chrome"             # Popular web browser known for its speed and simplicity
       "librewolf"                 # Fork of Firefox, focused on privacy, security and freedom
-      "firefox"                   # Open-source web browser known for its performance and privacy features
-      "zen"               # A privacy-focused web browser with built-in ad-blocking and VPN
+      "zen"                       # A privacy-focused web browser with built-in ad-blocking and VPN
       "1password"                 # Secure password manager with a strong focus on user-friendly security
       "thunderbird"               # Free email application that’s easy to set up and customize
-      "proton-mail-bridge"         # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
+      "proton-mail-bridge"        # Bridges Proton Mail to email clients supporting IMAP and SMTP protocols
+      "signal"                    # nstant messaging application focusing on security
       "whatsapp"                  # Desktop client for the popular messaging app
       "telegram"                  # Popular messaging app focused on speed and security
       "discord"                   # Free voice, video, and text chat app, mainly for gamers
@@ -83,12 +84,11 @@
       "soulseek"                  # Peer-to-peer file-sharing network, mainly used for sharing music
       "transmission"              # Lightweight, fast, and easy-to-use BitTorrent client
       "nextcloud"                 # Open-source platform for file sync and sharing, similar to Dropbox
-      "synology-drive"
-      "obsidian"                  # A powerful knowledge management and note-taking application
+      "synology-drive"            # Sync and backup service to Synology NAS drives
       "wireshark"                 # Network protocol analyzer for monitoring and analyzing network traffic
       "pgadmin4"                  # Open-source administration and development platform for PostgreSQL
       # "nikitabobko/tap/aerospace" # i3-like tiling window manager for macOS
-      "aerospace" # i3-like tiling window manager for macOS
+      "aerospace"                 # i3-like tiling window manager for macOS
       "barrier"                   # Software to share a mouse and keyboard between multiple computers
       "ledger-live"               # Official app for managing Ledger hardware wallets
       "raspberry-pi-imager"       # Tool to write operating system images to SD cards for Raspberry Pi
@@ -96,7 +96,7 @@
       "anki"                      # Flashcard app for efficient learning and memorization
       "raycast"                   # Powerful search tool and launcher for macOS, with scripting capabilities
       "stats"                     # A beautiful system monitor for macOS, providing a range of information at a glance
-      "steam"
+      "steam"                     # Video game digital distribution service
     ];
 
   };
