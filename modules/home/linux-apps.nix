@@ -10,6 +10,7 @@
     freerdp
     remmina
     ## GUI Applications
+    librewolf
     thunderbird
     protonmail-bridge-gui
     quodlibet
