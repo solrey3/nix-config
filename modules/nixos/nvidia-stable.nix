@@ -44,6 +44,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  boot.kernelModules = [ "nvidia" ];
+
   # Hyprland stuff
   boot.extraModprobeConfig = ''
     options nvidia NVreg_PreserveVideoMemoryAllocations=1
