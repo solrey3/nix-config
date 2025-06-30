@@ -55,6 +55,8 @@
     cargo         # Downloads your Rust project's dependencies and builds your project
     rustc         # Safe, concurrent, practical language (wrapper script)
     marksman      # Language server for Markdown
+    codex         # Lightweight coding agent that runs in your terminal
+    gemini-cli    # AI agent that brings the power of Gemini directly into your terminal
     fabric-ai     # Modular framework for solving specific problems using a crowdsourced set of AI prompts
 
     ## DevOps Tools
