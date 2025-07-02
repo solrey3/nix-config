@@ -62,6 +62,7 @@
     ## DevOps Tools
     kubectl          # Kubernetes CLI
     terraform        # Infrastructure as Code
+    terraformer      # CLI tool to generate terraform files from existing infrastructure (reverse Terraform). Infrastructure to Code
     kubernetes-helm  # The Kubernetes Package Manager
     minikube         # Run Kubernetes locally
     kind             # Run local Kubernetes clusters using Docker container nodes

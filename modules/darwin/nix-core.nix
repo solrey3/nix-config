@@ -3,7 +3,7 @@
 
 {
   # Set the correct GID for nixbld group to avoid mismatch error
-  ids.gids.nixbld = 30000;
+  ids.gids.nixbld = 350;
 
   # enable flakes globally
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
