@@ -66,6 +66,10 @@ nixos-golf:
   sudo nixos-rebuild switch --flake .#golf --impure
 nixos-golf-debug:
   sudo nixos-rebuild switch --flake .#golf --impure --show-trace
+nixos-november:
+  sudo nixos-rebuild switch --flake .#november --impure
+nixos-november-debug:
+  sudo nixos-rebuild switch --flake .#november --impure --show-trace
 home-echo:
   home-manager switch --flake .#echo
 
