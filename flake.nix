@@ -136,6 +136,19 @@
         ];
       };
 
+      # Configuration for NixOS November (x86_64-linux)
+      november = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/november/configuration.nix
+          stylix.nixosModules.stylix
+          ./modules/stylix.nix
+        ] ++ mkHome home-manager.nixosModules.home-manager [
+          ./modules/home/linux-desktop.nix
+          ./modules/home/linux-apps-x86_64.nix
+        ];
+      };
+
       # # Configuration for NixOS on Digital Ocean droplets (x86_64-linux)
       # hotel = nixpkgs.lib.nixosSystem {
       #   system = "x86_64-linux";
