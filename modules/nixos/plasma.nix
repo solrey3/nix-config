@@ -1,24 +1,28 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver = {
-    enable = true;
+  services = {
     desktopManager.plasma6.enable = true;
     displayManager.sddm.enable = true;
-    xkb.layout = "us";
-    xkb.variant = "";
+    displayManager.sddm.wayland.enable = true;
   };
 
   services.displayManager.defaultSession = "plasma";
 
-  # Optional: common packages for KDE
-  users.users.budchris = {
-    packages = with pkgs; [
-      kdePackages.kdeplasma-addons
-      pavucontrol
-      pasystray
-      gnome-keyring
-      pinentry-all
-    ];
-  };
+  environment.systemPackages = with pkgs; [
+    kdePackages.discover
+    kdePackages.kcalc
+    kdePackages.kcharselect
+    kdePackages.kcolorchooser
+    kdePackages.kolourpaint
+    kdePackages.ksystemlog
+    kdePackages.sddm-kcm
+    kdiff3
+    kdePackages.isoimagewriter
+    kdePackages.partitionmanager
+    hardinfo2
+    haruna
+    wayland-utils
+    wl-clipboard
+  ];
 }
