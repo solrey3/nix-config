@@ -92,6 +92,7 @@ To update configurations on any host, utilize the provided Justfile to run the n
   - `hyprland`: NixOS Hyprland configuration.
   - `nvidia-legacy_470`: Legacy NVIDIA driver for GeForce GTX.
   - `nvidia-stable`: Stable NVIDIA driver for GeForce RTX.
+  - `plasma`: KDE Plasma desktop environment.
   - `xfce4`: Xfce desktop environment.
 - **stylix**: Stylix configuration.
 
