@@ -10,7 +10,9 @@
       ./hardware-configuration.nix
       ./../../modules/nixos/base.nix
       ./../../modules/nixos/nvidia-stable.nix
-      ./../../modules/nixos/xfce4.nix
+      # ./../../modules/nixos/plasma.nix
+      # ./../../modules/nixos/xfce4.nix
+      ./../../modules/nixos/hyprland.nix
       ./../../modules/nixos/pipewire.nix
       ./../../modules/nixos/bluetooth.nix
       ./../../modules/nixos/avahi.nix

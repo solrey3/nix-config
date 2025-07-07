@@ -17,11 +17,10 @@
     picard
     transmission_4-gtk
     wireshark
-    # protonvpn-gui
+    protonvpn-gui
     nextcloud-client
     vlc
     #### linux64 only
-    obsidian
     brave
     vscode
 
