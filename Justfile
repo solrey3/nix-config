@@ -62,6 +62,11 @@ nixos-charlie:
 nixos-charlie-debug:
   sudo nixos-rebuild switch --flake .#charlie --impure --show-trace
 
+nixos-oscar:
+  sudo nixos-rebuild switch --flake .#oscar --impure
+nixos-oscar-debug:
+  sudo nixos-rebuild switch --flake .#oscar --impure --show-trace
+
 nixos-golf:
   sudo nixos-rebuild switch --flake .#golf --impure
 nixos-golf-debug:
