@@ -65,7 +65,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 - **juliet**: 2024 base M4 Mac Mini (**Mac16,10**).
 - **kilo**: Beelink EQR5 with AMD Ryzen 7 5825U running Ubuntu LTS.
 - **lima**: Beelink EQR5 worker node.
-- **mike**: Beelink EQR5 worker node.
+- **mike**: Beelink EQR5 running NixOS 25.05 with KDE Plasma.
 - **november**: Late 2014 Mac Mini (**Macmini7,1**).
 
 ## Other Configurations
