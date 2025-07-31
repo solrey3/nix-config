@@ -75,6 +75,10 @@ nixos-november:
   sudo nixos-rebuild switch --flake .#november --impure
 nixos-november-debug:
   sudo nixos-rebuild switch --flake .#november --impure --show-trace
+nixos-mike:
+  sudo nixos-rebuild switch --flake .#mike --impure
+nixos-mike-debug:
+  sudo nixos-rebuild switch --flake .#mike --impure --show-trace
 home-echo:
   home-manager switch --flake .#echo
 
