@@ -49,6 +49,7 @@
     };
   };
   networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.checkReversePath = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.budchris = {
@@ -77,6 +78,8 @@
    wget
    curl
    just
+   wireguard-tools
+   protonvpn-gui
   ];
   # Set the default editor to nvim
   environment.variables.EDITOR = "vim";

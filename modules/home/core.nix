@@ -93,6 +93,10 @@
     ffmpeg        # A complete solution to record, convert, and stream audio and video
     yt-dlp        # A YouTube downloader with additional features and bug fixes
 
+    ## Python Utilities
+    python313
+    python313Packages.python-frontmatter
+
   ];
 
   # GitHub CLI configuration
