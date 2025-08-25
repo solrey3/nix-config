@@ -121,6 +121,13 @@
             omarchy-nix.nixosModules.default
           ]
           ++ mkHome home-manager.nixosModules.home-manager [
+            {
+              home = {
+                username = username;
+                homeDirectory = "/home/${username}";
+                stateVersion = "24.11";
+              };
+            }
             omarchy-nix.homeManagerModules.default
           ];
       };
