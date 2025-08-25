@@ -12,11 +12,7 @@
       ./../../modules/nixos/nvidia-stable.nix
       # ./../../modules/nixos/plasma.nix
       # ./../../modules/nixos/xfce4.nix
-      ./../../modules/nixos/hyprland.nix
-      ./../../modules/nixos/pipewire.nix
-      ./../../modules/nixos/bluetooth.nix
       ./../../modules/nixos/avahi.nix
-      ./../../modules/nixos/docker.nix
       ./../../modules/nixos/jellyfin.nix
       ./../../modules/nixos/navidrome.nix
       ./../../modules/nixos/ollama.nix
@@ -29,6 +25,12 @@
 
   networking.hostName = "bravo"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  omarchy = {
+    full_name = "Buddha Christ";
+    email_address = "budchris@solrey3.com";
+    theme = "tokyo-night";
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

@@ -44,6 +44,11 @@
       url = "github:solrey3/dotfiles";
     };
     zen-browser.url = "github:MarceColl/zen-browser-flake";
+    omarchy-nix = {
+      url = "github:henrysipp/omarchy-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -62,6 +67,7 @@
     disko,
     dotfiles,
     zen-browser,
+    omarchy-nix,
     ...
   }: let
     # Load local user configuration
@@ -112,12 +118,10 @@
         modules =
           [
             ./hosts/bravo/configuration.nix
-            stylix.nixosModules.stylix
-            ./modules/stylix.nix
+            omarchy-nix.nixosModules.default
           ]
           ++ mkHome home-manager.nixosModules.home-manager [
-            ./modules/home/linux-desktop.nix
-            ./modules/home/linux-apps-x86_64.nix
+            omarchy-nix.homeManagerModules.default
           ];
       };
 
