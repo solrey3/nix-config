@@ -128,6 +128,7 @@
                 stateVersion = "24.11";
               };
             }
+            ./modules/home/linux-desktop.nix
             omarchy-nix.homeManagerModules.default
           ];
       };
