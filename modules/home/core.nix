@@ -55,6 +55,7 @@
     cargo         # Downloads your Rust project's dependencies and builds your project
     rustc         # Safe, concurrent, practical language (wrapper script)
     marksman      # Language server for Markdown
+    claude-code   # An agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
     codex         # Lightweight coding agent that runs in your terminal
     fabric-ai     # Modular framework for solving specific problems using a crowdsourced set of AI prompts
 
