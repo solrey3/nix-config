@@ -43,7 +43,7 @@
     dotfiles = {
       url = "github:solrey3/dotfiles";
     };
-    zen-browser.url = "github:MarceColl/zen-browser-flake";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     omarchy-nix = {
       url = "github:henrysipp/omarchy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
