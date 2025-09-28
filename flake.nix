@@ -287,6 +287,7 @@
       };
 
       # Configuration for 2022 M2 MacBook Air (Mac14,2) Delta (aarch64-darwin)
+      # Optimized for closed-clamshell desktop operation with external monitor
       delta = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs =
@@ -299,6 +300,7 @@
           [
             ./modules/darwin/nix-core.nix
             ./modules/darwin/system.nix
+            ./hosts/delta/desktop-configuration.nix  # Closed-clamshell desktop configuration
             ./modules/darwin/apps.nix
             ./modules/darwin/apps-aarch64.nix
             # ./modules/homebrew-mirror.nix # comment this line if you don't need a homebrew mirror
