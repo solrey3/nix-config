@@ -162,11 +162,11 @@
     },
     "dotfiles": {
       "locked": {
-        "lastModified": 1759611602,
-        "narHash": "sha256-ACYz8Cnkmyyr8iBNtkfa6gRB6PHDtFGBxLKcUSPB2iA=",
+        "lastModified": 1759613180,
+        "narHash": "sha256-ul/SKbQOOdzqQeDZhel9Vx8wnZOZeVVP9sU6eIRDFLA=",
         "owner": "solrey3",
         "repo": "dotfiles",
-        "rev": "e2e5997c5ba61b777274beb3caba1c226ff6d694",
+        "rev": "9bf765b92b2794090b156f2c1f8bfa63b703a40b",
         "type": "github"
       },
       "original": {
