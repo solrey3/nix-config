@@ -163,6 +163,36 @@
           ];
       };
 
+      # Configuration for NixOS Kilo on Beelink EQR5 (x86_64-linux)
+      kilo = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules =
+          [
+            ./hosts/kilo/configuration.nix
+            stylix.nixosModules.stylix
+            ./modules/stylix.nix
+          ]
+          ++ mkHome home-manager.nixosModules.home-manager [
+            ./modules/home/linux-desktop.nix
+            ./modules/home/linux-apps-x86_64.nix
+          ];
+      };
+
+      # Configuration for NixOS Mike (x86_64-linux)
+      mike = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules =
+          [
+            ./hosts/mike/configuration.nix
+            stylix.nixosModules.stylix
+            ./modules/stylix.nix
+          ]
+          ++ mkHome home-manager.nixosModules.home-manager [
+            ./modules/home/linux-desktop.nix
+            ./modules/home/linux-apps-x86_64.nix
+          ];
+      };
+
       # Configuration for NixOS November (x86_64-linux)
       november = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -184,21 +214,6 @@
         modules =
           [
             ./hosts/oscar/configuration.nix
-            stylix.nixosModules.stylix
-            ./modules/stylix.nix
-          ]
-          ++ mkHome home-manager.nixosModules.home-manager [
-            ./modules/home/linux-desktop.nix
-            ./modules/home/linux-apps-x86_64.nix
-          ];
-      };
-
-      # Configuration for NixOS Mike (x86_64-linux)
-      mike = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules =
-          [
-            ./hosts/mike/configuration.nix
             stylix.nixosModules.stylix
             ./modules/stylix.nix
           ]

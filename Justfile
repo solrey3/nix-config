@@ -62,23 +62,31 @@ nixos-charlie:
 nixos-charlie-debug:
   sudo nixos-rebuild switch --flake .#charlie --impure --show-trace
 
+nixos-golf:
+  sudo nixos-rebuild switch --flake .#golf --impure
+nixos-golf-debug:
+  sudo nixos-rebuild switch --flake .#golf --impure --show-trace
+
+nixos-kilo:
+  sudo nixos-rebuild switch --flake .#kilo --impure
+nixos-kilo-debug:
+  sudo nixos-rebuild switch --flake .#kilo --impure --show-trace
+
+nixos-mike:
+  sudo nixos-rebuild switch --flake .#mike --impure
+nixos-mike-debug:
+  sudo nixos-rebuild switch --flake .#mike --impure --show-trace
+
+nixos-november:
+  sudo nixos-rebuild switch --flake .#november --impure
+nixos-november-debug:
+  sudo nixos-rebuild switch --flake .#november --impure --show-trace
+
 nixos-oscar:
   sudo nixos-rebuild switch --flake .#oscar --impure
 nixos-oscar-debug:
   sudo nixos-rebuild switch --flake .#oscar --impure --show-trace
 
-nixos-golf:
-  sudo nixos-rebuild switch --flake .#golf --impure
-nixos-golf-debug:
-  sudo nixos-rebuild switch --flake .#golf --impure --show-trace
-nixos-november:
-  sudo nixos-rebuild switch --flake .#november --impure
-nixos-november-debug:
-  sudo nixos-rebuild switch --flake .#november --impure --show-trace
-nixos-mike:
-  sudo nixos-rebuild switch --flake .#mike --impure
-nixos-mike-debug:
-  sudo nixos-rebuild switch --flake .#mike --impure --show-trace
 home-echo:
   home-manager switch --flake .#echo
 

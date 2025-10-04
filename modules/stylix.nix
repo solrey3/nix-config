@@ -7,7 +7,7 @@
 {
 
   # Stylix
-  stylix.base16Scheme = "{pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
   stylix.fonts = {
     monospace = {
       package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};

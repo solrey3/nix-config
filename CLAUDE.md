@@ -25,6 +25,7 @@ The repository uses `just` as a command runner. The Justfile contains targets fo
 - `just nixos-bravo` - Build and switch configuration for bravo (AMD Ryzen desktop)
 - `just nixos-charlie` - Build and switch configuration for charlie (MacBook Pro running NixOS)
 - `just nixos-golf` - Build and switch configuration for golf (Late 2011 MacBook Pro)
+- `just nixos-kilo` - Build and switch configuration for kilo (Beelink EQR5)
 - `just nixos-mike` - Build and switch configuration for mike (Beelink EQR5)
 - `just nixos-november` - Build and switch configuration for november (Late 2014 Mac Mini)
 - `just nixos-oscar` - Build and switch configuration for oscar
@@ -107,9 +108,11 @@ The flake uses a `mkHome` helper function to compose home-manager configurations
 
 #### Input Management
 All external dependencies are centrally managed in the flake inputs with version pinning:
-- `nixpkgs` follows 25.05 stable
-- `nixpkgs-unstable` for bleeding-edge packages
-- `nixpkgs-darwin` for macOS-specific package versions
+- `nixpkgs` follows nixos-25.05 stable
+- `nixpkgs-unstable` for bleeding-edge packages 
+- `nixpkgs-darwin` follows nixpkgs-25.05-darwin for macOS-specific package versions
+- `home-manager` follows release-25.05 but uses nixpkgs-unstable
+- External inputs: `stylix`, `disko`, `dotfiles`, `zen-browser`, `omarchy-nix`
 - Input following ensures consistent dependency versions
 
 #### Special Arguments

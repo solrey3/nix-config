@@ -35,11 +35,11 @@
     fzf           # Command-line fuzzy finder
 
     ### Terminal UI & Display
-    ncurses       # System for text-based user interfaces
+    # ncurses       # System for text-based user interfaces
 
     ## Monitoring Tools
     btop          # A monitor of resources
-    htop          # Interactive process viewer
+    # htop          # Interactive process viewer
 
     ## Network Tools
     curl          # For making HTTP requests and downloading files
@@ -60,22 +60,22 @@
     fabric-ai     # Modular framework for solving specific problems using a crowdsourced set of AI prompts
 
     ## DevOps Tools
-    kubectl          # Kubernetes CLI
-    terraform        # Infrastructure as Code
-    terraformer      # CLI tool to generate terraform files from existing infrastructure (reverse Terraform). Infrastructure to Code
-    kubernetes-helm  # The Kubernetes Package Manager
-    minikube         # Run Kubernetes locally
-    kind             # Run local Kubernetes clusters using Docker container nodes
-    act              # Run GitHub Actions locally
-    k9s              # Kubernetes terminal UI
+    # kubectl          # Kubernetes CLI
+    # terraform        # Infrastructure as Code
+    # terraformer      # CLI tool to generate terraform files from existing infrastructure (reverse Terraform). Infrastructure to Code
+    # kubernetes-helm  # The Kubernetes Package Manager
+    # minikube         # Run Kubernetes locally
+    # kind             # Run local Kubernetes clusters using Docker container nodes
+    # act              # Run GitHub Actions locally
+    # k9s              # Kubernetes terminal UI
 
     ## Cloud Platform CLIs
     _1password-cli   # Password Manager
     #bitwarden-cli  # Password Manager
-    awscli2          # AWS Command Line Interface
-    azure-cli        # Azure Command Line Interface
-    doctl            # DigitalOcean Command Line Interface
-    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin]) # Google Cloud SDK with GKE Auth Plugin
+    # awscli2          # AWS Command Line Interface
+    # azure-cli        # Azure Command Line Interface
+    # doctl            # DigitalOcean Command Line Interface
+    # (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin]) # Google Cloud SDK with GKE Auth Plugin
 
     ## Fun Tools
     cbonsai       # Bonsai tree generator
@@ -103,6 +103,9 @@
   # GitHub CLI configuration
   programs.gh = {
     enable = true;
+    settings = {
+      git_protocol = "https";
+    };
   };
 
 }
