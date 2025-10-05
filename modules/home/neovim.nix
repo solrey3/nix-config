@@ -21,5 +21,9 @@
     rust-analyzer
     gopls
     clang-tools
+    
+    # Tree-sitter CLI and common parsers
+    tree-sitter
+    vimPlugins.nvim-treesitter.withAllGrammars
   ];
 }
