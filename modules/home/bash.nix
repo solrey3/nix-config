@@ -8,7 +8,7 @@
       alias hist="history 1"
       alias p2="cd ~/Nextcloud/obsidian/player2; nvim readme.md"
       alias nc="cd ~/nix-config; nvim README.md"
-      alias dtf="cd ~/dotfiles; nvim"
+      alias dtf="cd ~/nix-config/config; nvim"
       alias ll='ls -lh'
       alias la='ls -A'
       alias l='ls -CF'

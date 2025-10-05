@@ -1,4 +1,4 @@
-{ config, lib, pkgs, dotfiles, ... }: {
+{ config, lib, pkgs, ... }: {
 
   programs.zsh = {
     enable = true;
@@ -6,18 +6,28 @@
     oh-my-zsh = {
       enable = true;
       theme = "robbyrussell";
-      plugins = [ "git" "z" "sudo" "kubectl" "fast-syntax-highlighting" "zsh-syntax-highlighting" "zsh-autocomplete" ];
+      plugins = [ "git" "z" "sudo" "kubectl" ];
     };
+    syntaxHighlighting.enable = true;
+    autosuggestion.enable = true;
+    shellAliases = {
+      ll = "ls -l";
+      la = "ls -la";
+      hist = "history 1";
+      p2 = "cd ~/Nextcloud/obsidian/player2; nvim readme.md";
+      nc = "cd ~/nix-config; nvim README.md";
+      nano = "nvim";
+      neofetch = "fastfetch";
+      k = "kubectl";
+    };
+    initContent = lib.mkBefore ''
+      export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+    '';
   };
-
-  home.file.".zshrc".source = "${dotfiles}/zsh/.zshrc";
 
   home.packages = with pkgs; [
     zsh
     oh-my-zsh
-    zsh-syntax-highlighting
-    zsh-fast-syntax-highlighting
-    zsh-autocomplete
   ];
 
 }

@@ -1,4 +1,4 @@
-{ lib, config, pkgs, dotfiles, username, ... }:
+{ lib, config, pkgs, username, ... }:
 {
   # Import sub-modules
   imports = [
@@ -35,9 +35,8 @@
     stateVersion = "24.11";
   };
 
-  # GNU Stow Alternative
-  home.file.".config/hypr/hyprland.conf".source = "${dotfiles}/hypr/hyprland.conf";
-  home.file.".config/waybar".source = "${dotfiles}/waybar";
+  # Basic Hyprland and Waybar configurations can be added here if needed
+  # For now, removed dotfiles dependencies
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

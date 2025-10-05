@@ -54,7 +54,9 @@
     tokei         # Counts code, comments, and blanks lines
     cargo         # Downloads your Rust project's dependencies and builds your project
     rustc         # Safe, concurrent, practical language (wrapper script)
-    marksman      # Language server for Markdown
+    # marksman      # Language server for Markdown (.NET - has runtime issues)
+    markdown-oxide # Rust-based markdown LSP server inspired by Obsidian
+    # mpls          # Live preview of markdown using Language Server Protocol
     claude-code   # An agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster
     codex         # Lightweight coding agent that runs in your terminal
     fabric-ai     # Modular framework for solving specific problems using a crowdsourced set of AI prompts

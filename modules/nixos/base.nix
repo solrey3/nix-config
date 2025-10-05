@@ -55,7 +55,7 @@
   users.users.budchris = {
     isNormalUser = true;
     description = "Buddha Christ";
-    extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "docker" "input" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFtQcMtGB55jBNuxxvlKXfeYLhy0wsPtIVt2KorpgXhQ budchris@alpha"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMThLey2DR3QFjBCzKH2m0Eew6k4cRHL/xx+6JvA3qX3 budchris@bravo"

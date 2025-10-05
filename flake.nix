@@ -40,9 +40,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    dotfiles = {
-      url = "github:solrey3/dotfiles";
-    };
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     omarchy-nix = {
       url = "github:henrysipp/omarchy-nix";
@@ -65,7 +62,6 @@
     stylix,
     flake-utils,
     disko,
-    dotfiles,
     zen-browser,
     omarchy-nix,
     ...
@@ -90,7 +86,7 @@
       }: {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.extraSpecialArgs = specialArgs // {dotfiles = dotfiles;};
+        home-manager.extraSpecialArgs = specialArgs;
         home-manager.users.${username} = {imports = imports;};
         home-manager.backupFileExtension = "backup";
       })
@@ -238,7 +234,6 @@
       #     {
       #       home-manager.useGlobalPkgs = true;
       #       home-manager.useUserPackages = true;
-      #       home-manager.extraSpecialArgs.dotfiles = dotfiles;
       #       home-manager.users.budchris = {
       #         imports = [
       #           ./modules/home/linux.nix
@@ -284,7 +279,6 @@
           specialArgs
           // {
             hostname = "charlie";
-            dotfiles = dotfiles;
           };
         modules =
           [
@@ -309,7 +303,6 @@
           specialArgs
           // {
             hostname = "delta";
-            dotfiles = dotfiles;
           };
         modules =
           [
@@ -351,7 +344,6 @@
           specialArgs
           // {
             hostname = "juliet";
-            dotfiles = dotfiles;
           };
         modules =
           [
@@ -395,7 +387,6 @@
           specialArgs
           // {
             hostname = "foxtrot";
-            dotfiles = dotfiles;
           };
         modules =
           [
@@ -422,6 +413,7 @@
             allowUnfree = true;
           };
         };
+        extraSpecialArgs = specialArgs;
         modules = [
           {
             home.username = "${username}";
@@ -430,17 +422,7 @@
           }
           stylix.homeManagerModules.stylix
           ./modules/stylix.nix
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            home-manager.users.${username} = {
-              imports = [
-                ./modules/home/linux-desktop.nix
-              ];
-            };
-            home-manager.backupFileExtension = "backup";
-          }
+          ./modules/home/linux-desktop.nix
         ];
       };
 
@@ -452,6 +434,7 @@
             allowUnfree = true;
           };
         };
+        extraSpecialArgs = specialArgs;
         modules = [
           {
             home.username = "${username}";
@@ -460,18 +443,8 @@
           }
           stylix.homeManagerModules.stylix
           ./modules/stylix.nix
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs.dotfiles = dotfiles;
-            home-manager.users.${username} = {
-              imports = [
-                ./modules/home/linux-desktop.nix
-                ./modules/home/linux-apps-x86_64.nix
-              ];
-            };
-            home-manager.backupFileExtension = "backup";
-          }
+          ./modules/home/linux-desktop.nix
+          ./modules/home/linux-apps-x86_64.nix
         ];
       };
     };

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, dotfiles, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   programs.neovim = {
@@ -9,7 +9,17 @@
     vimdiffAlias = true;
   };
 
-
-  # Normal LazyVim config here, see https://github.com/LazyVim/starter/tree/main/lua
-  home.file.".config/nvim".source = "${dotfiles}/nvim";
+  # Install LSP servers and tools via Nix
+  home.packages = with pkgs; [
+    # LSP servers
+    marksman              # Markdown LSP
+    lua-language-server   # Lua LSP
+    nil                   # Nix LSP
+    nodePackages.bash-language-server
+    nodePackages.typescript-language-server
+    pyright
+    rust-analyzer
+    gopls
+    clang-tools
+  ];
 }
