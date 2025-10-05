@@ -112,7 +112,7 @@ All external dependencies are centrally managed in the flake inputs with version
 - `nixpkgs-unstable` for bleeding-edge packages 
 - `nixpkgs-darwin` follows nixpkgs-25.05-darwin for macOS-specific package versions
 - `home-manager` follows release-25.05 but uses nixpkgs-unstable
-- External inputs: `stylix`, `disko`, `dotfiles`, `zen-browser`, `omarchy-nix`
+- External inputs: `stylix`, `disko`, `zen-browser`, `omarchy-nix`, `flake-utils`
 - Input following ensures consistent dependency versions
 
 #### Special Arguments
