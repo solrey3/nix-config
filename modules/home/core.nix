@@ -70,6 +70,9 @@
     ### Search & Navigation
     ripgrep       # Recursively searches directories for a regex pattern
     fzf           # Command-line fuzzy finder
+    zoxide        # A smarter cd command, inspired by z and autojump
+    eza           # A modern replacement for ls
+    fd            # A simple, fast and user-friendly alternative to find
 
     ### Terminal UI & Display
     # ncurses       # System for text-based user interfaces

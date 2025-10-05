@@ -11,8 +11,17 @@
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
     shellAliases = {
-      ll = "ls -l";
-      la = "ls -la";
+      # Traditional ls replacements with eza
+      ls = "eza";
+      ll = "eza -l";
+      la = "eza -la";
+      lt = "eza -T";
+      lg = "eza -l --git";
+      
+      # fd aliases
+      find = "fd";
+      
+      # Other aliases
       hist = "history 1";
       p2 = "cd ~/Nextcloud/obsidian/player2; nvim readme.md";
       nc = "cd ~/nix-config; nvim README.md";
@@ -22,6 +31,9 @@
     };
     initContent = lib.mkBefore ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      
+      # Initialize zoxide
+      eval "$(zoxide init zsh)"
     '';
   };
 

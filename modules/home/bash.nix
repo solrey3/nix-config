@@ -5,13 +5,25 @@
     enableCompletion = true;
     bashrcExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+      
+      # Initialize zoxide
+      eval "$(zoxide init bash)"
+      
+      # Traditional ls replacements with eza
+      alias ls="eza"
+      alias ll="eza -l"
+      alias la="eza -la"
+      alias lt="eza -T"
+      alias lg="eza -l --git"
+      
+      # fd aliases
+      alias find="fd"
+      
+      # Other aliases
       alias hist="history 1"
       alias p2="cd ~/Nextcloud/obsidian/player2; nvim readme.md"
       alias nc="cd ~/nix-config; nvim README.md"
       alias dtf="cd ~/nix-config/config; nvim"
-      alias ll='ls -lh'
-      alias la='ls -A'
-      alias l='ls -CF'
       alias nano="nvim"
       alias neofetch="fastfetch"
     '';
