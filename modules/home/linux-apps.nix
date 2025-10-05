@@ -10,6 +10,7 @@
     freerdp
     remmina
     ## GUI Applications
+    obsidian
     librewolf
     thunderbird
     protonmail-bridge-gui
@@ -20,7 +21,6 @@
     nextcloud-client
     vlc
     #### linux64 only
-    brave
     vscode
 
   ];

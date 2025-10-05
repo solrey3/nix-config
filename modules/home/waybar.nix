@@ -178,12 +178,21 @@
         };
 
         pulseaudio = {
+          # Volume display and controls
           format = "{volume}% {icon} {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";
           format-bluetooth-muted = " {icon} {format_source}";
           format-muted = " {format_source}";
           format-source = "{volume}% ";
           format-source-muted = "";
+          
+          # Volume control actions
+          on-click = "pavucontrol";
+          on-click-right = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+          on-scroll-up = "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+";
+          on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+          
+          # Icons for different audio devices and states
           format-icons = {
             headphone = "";
             hands-free = "";
@@ -193,7 +202,10 @@
             car = "";
             default = ["" "" ""];
           };
-          on-click = "pavucontrol";
+          
+          # Tooltip information
+          tooltip = true;
+          tooltip-format = "Volume: {volume}%\nClick: Open mixer\nRight-click: Mute/Unmute\nScroll: Volume control";
         };
 
         "custom/media" = {
