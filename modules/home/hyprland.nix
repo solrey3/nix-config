@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
@@ -63,7 +63,7 @@
 
       # Animation settings
       animations = {
-        enabled = "yes, please :)";
+        enabled = lib.mkForce true;
         
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
