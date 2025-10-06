@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       # Monitor configuration
-      monitor = ",preferred,auto,auto";
+      monitor = [ ",preferred,auto,auto" ];
 
       # Program variables
       "$terminal" = "alacritty";
