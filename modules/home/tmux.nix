@@ -54,6 +54,12 @@
       bind k select-pane -U
       bind l select-pane -R
 
+      # Direct pane navigation with Ctrl+hjkl (no prefix needed)
+      bind -n C-h select-pane -L
+      bind -n C-j select-pane -D
+      bind -n C-k select-pane -U
+      bind -n C-l select-pane -R
+
       # Pane resizing
       bind -r H resize-pane -L 5
       bind -r J resize-pane -D 5
