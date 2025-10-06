@@ -226,7 +226,7 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: "JetBrainsMono Nerd Font";
+          font-family: "JetBrainsMono Nerd Font", "JetBrainsMono NF";
           font-size: 13px;
           min-height: 0;
       }
