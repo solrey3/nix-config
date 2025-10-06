@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
       # Monitor configuration
-      monitor = ",preferred,auto,auto";
+      monitor = [ ",preferred,auto,auto" ];
 
       # Program variables
       "$terminal" = "alacritty";
@@ -41,7 +41,7 @@
 
       # Decoration settings
       decoration = {
-        rounding = 10;
+        rounding = lib.mkForce 10;
         rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
@@ -63,7 +63,7 @@
 
       # Animation settings
       animations = {
-        enabled = "yes, please :)";
+        enabled = lib.mkForce true;
         
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
