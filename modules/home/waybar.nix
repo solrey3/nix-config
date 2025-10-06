@@ -2,7 +2,7 @@
 {
   programs.waybar = {
     enable = true;
-    settings = {
+    settings = lib.mkDefault {
       mainBar = {
         layer = "top";
         position = "top";
@@ -222,7 +222,7 @@
       };
     };
 
-    style = ''
+    style = lib.mkDefault ''
       * {
           border: none;
           border-radius: 0;
