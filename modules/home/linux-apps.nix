@@ -13,6 +13,7 @@
     obsidian
     librewolf
     thunderbird
+    _1password-gui
     protonmail-bridge-gui
     quodlibet
     picard
