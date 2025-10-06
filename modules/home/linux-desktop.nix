@@ -15,6 +15,7 @@
     ./linux-apps.nix
     ./i3.nix
     ./waybar.nix
+    ./hyprland.nix
   ];
 
   # Home Manager needs a bit of information about you and the
