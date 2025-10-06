@@ -114,18 +114,12 @@
         modules =
           [
             ./hosts/bravo/configuration.nix
-            omarchy-nix.nixosModules.default
+            stylix.nixosModules.stylix
+            ./modules/stylix.nix
           ]
           ++ mkHome home-manager.nixosModules.home-manager [
-            {
-              home = {
-                username = username;
-                homeDirectory = "/home/${username}";
-                stateVersion = "24.11";
-              };
-            }
             ./modules/home/linux-desktop.nix
-            omarchy-nix.homeManagerModules.default
+            ./modules/home/linux-apps-x86_64.nix
           ];
       };
 

@@ -40,25 +40,10 @@
         "hyprland/workspaces" = {
           disable-scroll = true;
           all-outputs = false;
-          format = "{icon}";
-          format-icons = {
-            "1" = "1";
-            "2" = "2";
-            "3" = "3";
-            "4" = "4";
-            "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
-            "10" = "10";
-            urgent = "";
-            active = "";
-            default = "";
-          };
+          format = "{name}";
+          show-special = false;
           persistent-workspaces = {
-            "HDMI-A-1" = [ 1 2 3 4 5 ];
-            "HDMI-A-2" = [ 6 7 8 9 10 ];
+            "*" = [ 1 2 3 4 5 ];
           };
         };
 
@@ -76,27 +61,27 @@
         };
 
         mpd = {
-          format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ";
-          format-disconnected = "Disconnected ";
-          format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ";
+          format = "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% 󰕾";
+          format-disconnected = "Disconnected 󰝚";
+          format-stopped = "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰓛";
           unknown-tag = "N/A";
           interval = 5;
           consume-icons = {
-            on = " ";
+            on = "󰆐 ";
           };
           random-icons = {
-            off = "<span color=\"#f53c3c\"></span> ";
-            on = " ";
+            off = "<span color=\"#f53c3c\">󰒝</span> ";
+            on = "󰒞 ";
           };
           repeat-icons = {
-            on = " ";
+            on = "󰑖 ";
           };
           single-icons = {
-            on = "1 ";
+            on = "󰑘 ";
           };
           state-icons = {
-            paused = "";
-            playing = "";
+            paused = "󰏤";
+            playing = "󰐊";
           };
           tooltip-format = "MPD (connected)";
           tooltip-format-disconnected = "MPD (disconnected)";
@@ -105,8 +90,8 @@
         "idle_inhibitor" = {
           format = "{icon}";
           format-icons = {
-            activated = "";
-            deactivated = "";
+            activated = "󰅶";
+            deactivated = "󰾪";
           };
         };
 
@@ -115,28 +100,29 @@
         };
 
         clock = {
+          format = "{:%H:%M} 󰃰";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format-alt = "{:%Y-%m-%d}";
         };
 
         cpu = {
-          format = "{usage}% ";
+          format = "{usage}% 󰻠";
           tooltip = false;
         };
 
         memory = {
-          format = "{}% ";
+          format = "{}% 󰍛";
         };
 
         temperature = {
           critical-threshold = 80;
           format = "{temperatureC}°C {icon}";
-          format-icons = ["" "" ""];
+          format-icons = ["󰜗" "󰔏" "󱃃"];
         };
 
         backlight = {
           format = "{percent}% {icon}";
-          format-icons = ["" "" "" "" "" "" "" "" ""];
+          format-icons = ["󰃞" "󰃟" "󰃠" "󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓"];
         };
 
         battery = {
@@ -146,10 +132,10 @@
           };
           format = "{capacity}% {icon}";
           format-full = "{capacity}% {icon}";
-          format-charging = "{capacity}% ";
-          format-plugged = "{capacity}% ";
+          format-charging = "{capacity}% 󰂄";
+          format-plugged = "{capacity}% 󰚥";
           format-alt = "{time} {icon}";
-          format-icons = ["" "" "" "" ""];
+          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾"];
         };
 
         "battery#bat2" = {
@@ -161,19 +147,19 @@
           tooltip-format = "Power profile: {profile}\nDriver: {driver}";
           tooltip = true;
           format-icons = {
-            default = "";
-            performance = "";
-            balanced = "";
-            power-saver = "";
+            default = "󰈐";
+            performance = "󰓅";
+            balanced = "󰾅";
+            power-saver = "󰌪";
           };
         };
 
         network = {
-          format-wifi = "{essid} ({signalStrength}%) ";
-          format-ethernet = "{ipaddr}/{cidr} ";
-          tooltip-format = "{ifname} via {gwaddr} ";
-          format-linked = "{ifname} (No IP) ";
-          format-disconnected = "Disconnected ⚠";
+          format-wifi = "{essid} ({signalStrength}%) 󰖩";
+          format-ethernet = "{ipaddr}/{cidr} 󰈀";
+          tooltip-format = "{ifname} via {gwaddr} 󰌘";
+          format-linked = "{ifname} (No IP) 󰈁";
+          format-disconnected = "Disconnected 󰖪";
           format-alt = "{ifname}: {ipaddr}/{cidr}";
         };
 
@@ -181,10 +167,10 @@
           # Volume display and controls
           format = "{volume}% {icon} {format_source}";
           format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
-          format-source = "{volume}% ";
-          format-source-muted = "";
+          format-bluetooth-muted = "󰖁 {icon} {format_source}";
+          format-muted = "󰖁 {format_source}";
+          format-source = "{volume}% 󰍬";
+          format-source-muted = "󰍭";
           
           # Volume control actions
           on-click = "pavucontrol";
@@ -194,13 +180,13 @@
           
           # Icons for different audio devices and states
           format-icons = {
-            headphone = "";
-            hands-free = "";
-            headset = "";
-            phone = "";
-            portable = "";
-            car = "";
-            default = ["" "" ""];
+            headphone = "󰋋";
+            hands-free = "󱡏";
+            headset = "󰋎";
+            phone = "󰄜";
+            portable = "󰦧";
+            car = "󰄋";
+            default = ["󰖁" "󰕾" "󰕿"];
           };
           
           # Tooltip information
@@ -213,8 +199,8 @@
           return-type = "json";
           max-length = 40;
           format-icons = {
-            spotify = "";
-            default = "🎜";
+            spotify = "󰓇";
+            default = "󰝚";
           };
           escape = true;
           exec = "$HOME/.config/waybar/mediaplayer.py 2> /dev/null";
