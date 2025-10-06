@@ -3,7 +3,7 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = {
+    settings = lib.mkForce {
       # Monitor configuration
       monitor = [ ",preferred,auto,auto" ];
 
@@ -41,7 +41,7 @@
 
       # Decoration settings
       decoration = {
-        rounding = lib.mkForce 10;
+        rounding = 10;
         rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
@@ -63,7 +63,7 @@
 
       # Animation settings
       animations = {
-        enabled = lib.mkForce true;
+        enabled = true;
         
         bezier = [
           "easeOutQuint,0.23,1,0.32,1"
