@@ -18,7 +18,7 @@
         "waybar &"
         "nm-applet &" 
         "swww-daemon &"
-        "swww img ~/Pictures/Wallpapers/world-map.jpg"
+        "swww img ~/Pictures/Wallpapers/world-map.png"
       ];
 
       # Environment variables
