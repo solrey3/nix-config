@@ -1,4 +1,10 @@
 { pkgs, inputs, ... }:
+let
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
 
 {
   home.packages = with pkgs; [
@@ -13,7 +19,8 @@
     obsidian
     librewolf
     thunderbird
-    _1password-gui
+    pkgs-unstable._1password-gui
+    pkgs-unstable.opencode
     protonmail-bridge-gui
     quodlibet
     picard
