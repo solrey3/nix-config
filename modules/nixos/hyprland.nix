@@ -45,7 +45,7 @@
     xfce.thunar                       # File manager providing a graphical interface for managing files
 
     # Application launchers
-    rofi-wayland                      # Window switcher and application launcher for Wayland
+    rofi                              # Window switcher and application launcher for Wayland
     wofi                              # Simple application launcher and dmenu replacement for Wayland
 
     # Network management

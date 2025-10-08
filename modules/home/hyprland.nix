@@ -5,7 +5,10 @@
     enable = true;
     settings = {
       # Monitor configuration
-      monitor = ",preferred,auto,auto";
+      monitor = [
+        "DP-2,2560x1080@60,0x0,1"
+        "eDP-1,disable"
+      ];
 
       # Program variables
       "$terminal" = "alacritty";
@@ -118,11 +121,6 @@
         touchpad = {
           natural_scroll = false;
         };
-      };
-
-      # Gestures
-      gestures = {
-        workspace_swipe = false;
       };
 
       # Device-specific configuration
