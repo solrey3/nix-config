@@ -41,7 +41,7 @@
 
       # Decoration settings
       decoration = {
-        rounding = 10;
+        rounding = 0;
         rounding_power = 2;
         active_opacity = 1.0;
         inactive_opacity = 1.0;
@@ -146,6 +146,7 @@
         "$mainMod, Space, exec, $menu"
         "$mainMod, B, exec, $browser"
         "$mainMod, O, exec, obsidian"
+        "$mainMod, slash, exec, 1password"
         "$mainMod, P, pseudo, # dwindle"
         "$mainMod, J, togglesplit, # dwindle"
 
@@ -191,7 +192,7 @@
         ", Print, exec, hyprshot -m region -o ~/Pictures/Screenshots"
 
         # Toggle waybar
-        "$mainMod SHIFT, Space, exec, pkill waybar || waybar -c /home/budchris/.config/waybar/config.json -s /home/budchris/.config/waybar/style.css &"
+        "$mainMod SHIFT, Space, exec, pkill waybar || waybar &"
       ];
 
       # Audio and brightness binds (with repeat)

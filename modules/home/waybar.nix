@@ -6,8 +6,8 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
-        spacing = 4;
+        height = 32;
+        spacing = 8;
         
         modules-left = [
           "hyprland/workspaces"
@@ -235,7 +235,7 @@
           margin: 0 2px;
           background: transparent;
           color: #565f89;
-          border-radius: 4px;
+          border-radius: 0;
           transition: all 0.3s ease;
       }
 
@@ -264,12 +264,14 @@
       #pulseaudio,
       #tray,
       #idle_inhibitor,
-      #mpd {
-          padding: 0 10px;
-          margin: 0 2px;
+      #mpd,
+      #backlight,
+      #power-profiles-daemon {
+          padding: 0 12px;
+          margin: 0 3px;
           background: rgba(26, 27, 38, 0.8);
           color: #c0caf5;
-          border-radius: 6px;
+          border-radius: 0;
       }
 
       #window {
@@ -364,6 +366,7 @@
 
       #tray {
           background: rgba(26, 27, 38, 0.6);
+          margin: 0 4px;
       }
 
       #tray > .passive {
@@ -396,7 +399,7 @@
       }
 
       tooltip {
-          border-radius: 8px;
+          border-radius: 0;
           background: rgba(26, 27, 38, 0.9);
           color: #c0caf5;
       }
