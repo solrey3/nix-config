@@ -15,6 +15,7 @@
       ./../../modules/nixos/avahi.nix
       ./../../modules/nixos/docker.nix
       ./../../modules/nixos/steam.nix
+      ./../../modules/nixos/power-management.nix
     ];
 
   # Bootloader.
