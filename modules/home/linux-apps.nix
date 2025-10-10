@@ -27,6 +27,7 @@ in
     transmission_4-gtk
     wireshark
     nextcloud-client
+    signal-desktop
     vlc
     #### linux64 only
     vscode

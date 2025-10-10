@@ -145,6 +145,7 @@
         "$mainMod, B, exec, $browser"
         "$mainMod, O, exec, obsidian"
         "$mainMod, slash, exec, 1password"
+        "$mainMod SHIFT, Return, exec, signal-desktop"
         "$mainMod, P, pseudo, # dwindle"
         "$mainMod, J, togglesplit, # dwindle"
 
