@@ -4,10 +4,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # Monitor configuration
+      # Monitor configuration - disable laptop display when LG ultrawide is connected
       monitor = [
-        "DP-2,2560x1080@60,0x0,1"
-        "eDP-1,disable"
+        "DP-3,2560x1080@60,0x0,1"  # LG ULTRAWIDE on DP-3
+        "eDP-1,disable"             # Disable laptop display when external monitor is connected
       ];
 
       # Program variables
