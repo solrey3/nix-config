@@ -4,10 +4,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # Monitor configuration - auto-switch between external and laptop display
+      # Monitor configuration - external when available, laptop when not
       monitor = [
-        "DP-3,2560x1080@60,0x0,1"  # LG ULTRAWIDE on DP-3
-        "eDP-1,1920x1080@60,0x0,1"  # Laptop display (enabled when external disconnected)
+        "DP-3,2560x1080@60,0x0,1"     # LG ULTRAWIDE on DP-3
+        "eDP-1,disable"               # Disable laptop display initially
       ];
 
       # Program variables
@@ -22,6 +22,8 @@
         "nm-applet &" 
         "swww-daemon &"
         "swww img ~/Pictures/Wallpapers/world-map.png"
+        # Monitor management script to handle plug/unplug
+        "bash -c 'while true; do if hyprctl monitors | grep -q \"DP-3\"; then hyprctl keyword monitor \"eDP-1,disable\"; else hyprctl keyword monitor \"eDP-1,1920x1080@60,0x0,1\"; fi; sleep 2; done' &"
       ];
 
       # Environment variables
