@@ -14,6 +14,7 @@
       ./../../modules/nixos/avahi.nix
       ./../../modules/nixos/docker.nix
       ./../../modules/nixos/lxqt.nix
+      ./../../modules/nixos/tailscale.nix
     ];
 
   # Bootloader.

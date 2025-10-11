@@ -19,6 +19,7 @@
       ./../../modules/nixos/navidrome.nix
       ./../../modules/nixos/ollama.nix
       ./../../modules/nixos/steam.nix
+      ./../../modules/nixos/tailscale.nix
     ];
 
   # Bootloader.

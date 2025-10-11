@@ -16,6 +16,7 @@
       ./../../modules/nixos/docker.nix
       ./../../modules/nixos/steam.nix
       ./../../modules/nixos/power-management.nix
+      ./../../modules/nixos/tailscale.nix
     ];
 
   # Bootloader.

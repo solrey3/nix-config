@@ -15,6 +15,7 @@
       ./../../modules/nixos/bluetooth.nix
       ./../../modules/nixos/avahi.nix
       ./../../modules/nixos/docker.nix
+      ./../../modules/nixos/tailscale.nix
     ];
 
   # Bootloader.
