@@ -58,10 +58,12 @@
     extraGroups = [ "networkmanager" "wheel" "audio" "docker" "input" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFtQcMtGB55jBNuxxvlKXfeYLhy0wsPtIVt2KorpgXhQ budchris@alpha"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMThLey2DR3QFjBCzKH2m0Eew6k4cRHL/xx+6JvA3qX3 budchris@bravo"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH46Qt9QJViVBCplguSvAKWdMfRgFIeqpabWNVXnWYY+ budchris@bravo"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJyppyDxJZe9hQHLaD4rYi88SfTlEuieUiYbXgwwtr6C budchris@charlie"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINNTDemhkFYx8kw6p096XBVp7H2gnONZLMX+4uDgwue/ budchris@delta"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlWwXAozSb4h6jPnhw34P0Niebj5LskgC3DVM76cbQY budchris@juliet"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFdNJeN48PBRxNZL85RhQxTLLyDMVWwPf6RGqA4x5egf budchris@oscar"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDlvFs1iIYAJ4HAM5XZUC9pAhxrcq8Wu2NXH915lXOy8 budchris@ip13"
     ];
   };
 

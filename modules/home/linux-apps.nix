@@ -21,6 +21,7 @@ in
     thunderbird
     pkgs-unstable._1password-gui
     pkgs-unstable.opencode
+    pkgs-unstable.claude-code
     protonmail-bridge-gui
     quodlibet
     picard

@@ -20,6 +20,7 @@
       exec-once = [
         "waybar &"
         "nm-applet &" 
+        "blueman-applet &"
         "swww-daemon &"
         "swww img ~/Pictures/Wallpapers/world-map.png"
       ];
