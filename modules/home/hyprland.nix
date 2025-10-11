@@ -193,8 +193,11 @@
         # Toggle waybar
         "$mainMod SHIFT, Space, exec, pkill waybar || waybar &"
 
-        # Toggle laptop display when external disconnected
+        # Enable laptop display when external disconnected
         "$mainMod SHIFT, D, exec, hyprctl keyword monitor \"eDP-1,1920x1080@60,0x0,1\""
+        
+        # Disable laptop display when external connected
+        "$mainMod SHIFT, X, exec, hyprctl keyword monitor \"eDP-1,disable\""
       ];
 
       # Audio and brightness binds (with repeat)
