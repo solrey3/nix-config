@@ -4,10 +4,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # Monitor configuration - external when available, laptop when not
+      # Monitor configuration - external preferred, disable laptop when external connected
       monitor = [
-        "DP-3,2560x1080@60,0x0,1"     # LG ULTRAWIDE on DP-3
-        "eDP-1,disable"               # Disable laptop display initially
+        "DP-3,2560x1080@60,0x0,1"     # LG ULTRAWIDE (primary when connected)
+        "eDP-1,disable"               # Disable laptop when external monitor available
       ];
 
       # Program variables
@@ -22,8 +22,6 @@
         "nm-applet &" 
         "swww-daemon &"
         "swww img ~/Pictures/Wallpapers/world-map.png"
-        # Monitor management script to handle plug/unplug
-        "bash -c 'while true; do if hyprctl monitors | grep -q \"DP-3\"; then hyprctl keyword monitor \"eDP-1,disable\"; else hyprctl keyword monitor \"eDP-1,1920x1080@60,0x0,1\"; fi; sleep 2; done' &"
       ];
 
       # Environment variables
@@ -194,6 +192,9 @@
 
         # Toggle waybar
         "$mainMod SHIFT, Space, exec, pkill waybar || waybar &"
+
+        # Toggle laptop display when external disconnected
+        "$mainMod SHIFT, D, exec, hyprctl keyword monitor \"eDP-1,1920x1080@60,0x0,1\""
       ];
 
       # Audio and brightness binds (with repeat)
