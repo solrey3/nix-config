@@ -4,10 +4,10 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # Monitor configuration - external preferred, disable laptop when external connected
+      # Monitor configuration - auto-detect with fallback to laptop
       monitor = [
         "DP-3,2560x1080@60,0x0,1"     # LG ULTRAWIDE (primary when connected)
-        "eDP-1,disable"               # Disable laptop when external monitor available
+        "eDP-1,1920x1080@60,0x0,1"    # Laptop display (fallback when no external)
       ];
 
       # Program variables
