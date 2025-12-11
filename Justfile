@@ -87,6 +87,11 @@ nixos-oscar:
 nixos-oscar-debug:
   sudo nixos-rebuild switch --flake .#oscar --impure --show-trace
 
+nixos-papa:
+  sudo nixos-rebuild switch --flake .#papa --impure
+nixos-papa-debug:
+  sudo nixos-rebuild switch --flake .#papa --impure --show-trace
+
 home-echo:
   home-manager switch --flake .#echo
 
