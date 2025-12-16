@@ -10,12 +10,13 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./../../modules/nixos/base.nix
-    ./../../modules/nixos/plasma.nix
+    ./../../modules/nixos/hyprland.nix
     ./../../modules/nixos/pipewire.nix
     ./../../modules/nixos/bluetooth.nix
     ./../../modules/nixos/avahi.nix
     ./../../modules/nixos/docker.nix
     ./../../modules/nixos/tailscale.nix
+    ./../../modules/nixos/steam.nix
   ];
 
   # Bootloader.
