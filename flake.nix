@@ -153,6 +153,21 @@
           ];
       };
 
+      # Configuration for NixOS India on Steam Deck (x86_64-linux)
+      india = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules =
+          [
+            ./hosts/india/configuration.nix
+            stylix.nixosModules.stylix
+            ./modules/stylix.nix
+          ]
+          ++ mkHome home-manager.nixosModules.home-manager [
+            ./modules/home/linux-desktop.nix
+            ./modules/home/linux-apps-x86_64.nix
+          ];
+      };
+
       # Configuration for NixOS Kilo on Beelink EQR5 (x86_64-linux)
       kilo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

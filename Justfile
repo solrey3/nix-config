@@ -67,6 +67,11 @@ nixos-golf:
 nixos-golf-debug:
   sudo nixos-rebuild switch --flake .#golf --impure --show-trace
 
+nixos-india:
+  sudo nixos-rebuild switch --flake .#india --impure
+nixos-india-debug:
+  sudo nixos-rebuild switch --flake .#india --impure --show-trace
+
 nixos-kilo:
   sudo nixos-rebuild switch --flake .#kilo --impure
 nixos-kilo-debug:
